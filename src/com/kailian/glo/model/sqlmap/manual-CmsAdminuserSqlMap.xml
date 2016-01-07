@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<!-- 存放手写的sql -->
+<sqlMap>
+	<delete id="CmsAdminuser.updatecount">
+    <![CDATA[
+    	update cms_admin_group set userCount=(select count(*) from cms_adminuser where userGroupId=#groupid#) where id=#groupid#;
+    ]]>
+    </delete>
+
+</sqlMap>

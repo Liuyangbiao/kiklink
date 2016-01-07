@@ -1,0 +1,467 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8" />
+<title>我们都爱回音哥</title>
+<script type="text/javascript" src="http://files.cnblogs.com/syunka/gamellk.js"></script>
+<script type="text/javascript">
+    var _canvas = null;
+    var _canvasCtx=null;
+    var _img=null;
+    var _gameTimer=null;
+    var lineTimer=null;
+    var startTime=null;
+    var allMinutes, allSeconds;
+    var timeSeconds;
+    var useMinutes, useSeconds;
+    var editFlag=false;
+    var stopFlag=false;
+    var _Minutes=0,_Seconds=0;
+    window.onload=function() {
+        document.oncontextmenu=function() {
+            window.event.returnValue=false;
+        }
+        _canvas = document.getElementById("myCanvas");
+        if(_canvas !=null) {
+            _canvas.onmousedown=myCanvas_clk;
+            _canvasCtx = _canvas.getContext("2d");
+            _canvasCtx.lineWidth=4;
+            _canvasCtx.lineCap = 'round';
+            _canvasCtx.lineJoin = 'round';
+            _canvasCtx.fillStyle="black";
+        }
+        document.getElementById("comboBox4").selectedIndex = gameobj.picFlag;
+        document.getElementById("comboBox1").selectedIndex = gameobj.levelFlag;
+        document.getElementById("comboBox3").selectedIndex = gameobj.mode;
+        document.getElementById("comboBox2").selectedIndex = gameobj.outpost;
+        init();
+    }
+    function init() {
+        document.getElementById("btnTime").disabled = true;
+        document.getElementById("btnTime").value = "0 次 提示";
+        document.getElementById("btnShuffle").disabled = true;
+        document.getElementById("btnShuffle").value = "0 次 洗牌";
+        document.getElementById("btnStop").disabled = true;
+        document.getElementById("timerImg").style.width='400px';
+    }
+    function comboBox3_Changed() {
+        if (document.getElementById("comboBox3").selectedIndex == 0)
+            document.getElementById("comboBox2").disabled = false;
+        else
+            document.getElementById("comboBox2").disabled = true;
+        gameobj.mode = document.getElementById("comboBox3").selectedIndex;
+    }
+    function comboBox4_Changed() {
+        gameobj.picFlag = document.getElementById("comboBox4").selectedIndex;
+    }
+    function comboBox1_Changed() {
+        gameobj.levelFlag = document.getElementById("comboBox1").selectedIndex;
+    }
+    function comboBox2_Changed() {
+        gameobj.outpost = document.getElementById("comboBox2").selectedIndex;
+    }
+    function btnGame_clk() {
+        if (gameobj.playFlag) {
+            if (!window.confirm("您当前正在游戏中，确定要开始新游戏吗？"))
+                return;
+        }
+        init();
+        gameNew();
+    }
+    function btnTime_clk() {
+        if (gameobj._picPt[0].i != 0) {
+            _canvasCtx.strokeStyle="green";
+            _canvasCtx.strokeRect(4+gameobj.picinfoArr[gameobj._picPt[0].i][gameobj._picPt[0].j].X, 4+gameobj.picinfoArr[gameobj._picPt[0].i][gameobj._picPt[0].j].Y, gameobj.step - 9, gameobj.step - 9);
+            _canvasCtx.strokeRect(4+gameobj.picinfoArr[gameobj._picPt[1].i][gameobj._picPt[1].j].X, 4+gameobj.picinfoArr[gameobj._picPt[1].i][gameobj._picPt[1].j].Y, gameobj.step - 9, gameobj.step - 9);
+            if (document.getElementById("btnTime").value.indexOf("无限") == -1 && gameobj.givemeTime > 0)
+            {
+                gameobj.givemeTime -= 1;
+                document.getElementById("btnTime").value = gameobj.givemeTime + " 次 提示";
+                if (gameobj.givemeTime == 0)
+                    document.getElementById("btnTime").disabled = true;
+            }
+        }
+    }
+    function btnShuffle_clk() {
+        gameobj.randomPic();
+        drawPic();
+        if (document.getElementById("btnShuffle").value.indexOf("无限") == -1 && gameobj.shuffle > 0)
+        {
+            gameobj.shuffle -= 1;
+            document.getElementById("btnShuffle").value = gameobj.shuffle + " 次 洗牌";
+            if (gameobj.shuffle == 0)
+                document.getElementById("btnShuffle").disabled = true;
+        }
+    }
+    function gameNew() {
+        gameobj.playFlag = true;
+        stopFlag=false;
+        document.getElementById("btnStop").value="暂停";
+        startTime=new Date();
+        timeSeconds=startTime.getSeconds();
+        useMinutes=0,useSeconds=0;
+        _Minutes=0,_Seconds=0;
+        allSeconds = 3 * 60 + parseInt(document.getElementById("comboBox4").selectedIndex) * 60 + parseInt(document.getElementById("comboBox1").selectedIndex) * 180 ;
+        allSeconds = 3 * 60 + parseInt(document.getElementById("comboBox4").selectedIndex) * parseInt(document.getElementById("comboBox1").selectedIndex) * 30 + parseInt(document.getElementById("comboBox1").selectedIndex) * 60;
+        allMinutes = Math.floor(allSeconds/60);
+        allSeconds = allSeconds % 60;
+        document.getElementById("timerText").innerHTML='已用'+useMinutes+':'+useSeconds+'/总'+allMinutes+':'+allSeconds;
+        document.getElementById("btnStop").disabled = false;
+        gameobj._1stPt.setij(0, 0);
+        gameobj._picPt[0].setij(0, 0);
+        gameobj._picPt[1].setij(0, 0);
+        document.getElementById("comboBox1").selectedIndex = gameobj.levelFlag;
+        document.getElementById("comboBox3").selectedIndex = gameobj.mode;
+        document.getElementById("comboBox4").selectedIndex = gameobj.picFlag;
+        if (gameobj.mode == 0) {
+            document.getElementById("comboBox2").disabled = false;
+            document.getElementById("comboBox2").selectedIndex = gameobj.outpost;
+            gameobj.givemeTime=100;
+            document.getElementById("btnTime").disabled = false;
+            document.getElementById("btnTime").value = "无限 提示";
+            gameobj.shuffle=0;
+            document.getElementById("btnShuffle").disabled = true;
+            document.getElementById("btnShuffle").value = "0 次 洗牌";
+            document.getElementById("outpostinfo").innerHTML = "";
+        }
+        else {
+            document.getElementById("comboBox2").disabled = true;
+            gameobj.outpost = 0;
+            gameobj.givemeTime = parseInt(document.getElementById("comboBox1").selectedIndex)+1;
+            gameobj.shuffle = 2;
+            document.getElementById("btnTime").disabled = false;
+            document.getElementById("btnTime").value = gameobj.givemeTime + " 次 提示";
+            document.getElementById("btnShuffle").disabled = false;
+            document.getElementById("btnShuffle").value = gameobj.shuffle + " 次 洗牌";
+            document.getElementById("outpostinfo").innerHTML = "第 1 关 普通";
+        }
+        gameobj.initPic();
+        gameobj.randomPic();
+        drawPic();
+        setTimeout("timer_Tick()",1);
+    }
+    function gameNext() {
+        gameobj.playFlag = true;
+        startTime=new Date();
+        timeSeconds=startTime.getSeconds();
+        useMinutes=0;
+        useSeconds=0;
+        document.getElementById("timerText").innerHTML='已用'+useMinutes+':'+useSeconds+'/总'+allMinutes+':'+allSeconds;
+        document.getElementById("btnStop").disabled = false;
+        gameobj._1stPt.setij(0, 0);
+        gameobj._picPt[0].setij(0, 0);
+        gameobj._picPt[1].setij(0, 0);
+        gameobj.givemeTime += 2;
+        gameobj.shuffle = 2;
+        document.getElementById("btnTime").disabled = false;
+        document.getElementById("btnTime").value = gameobj.givemeTime + " 次 提示";
+        document.getElementById("btnShuffle").disabled = false;
+        document.getElementById("btnShuffle").value = gameobj.shuffle + " 次 洗牌";
+        document.getElementById("outpostinfo").innerHTML = "第 " + (gameobj.outpost + 1) + " 关";
+        if (gameobj.outpost == 0)
+            document.getElementById("outpostinfo").innerHTML += " 普通";
+        if (gameobj.outpost == 1)
+            document.getElementById("outpostinfo").innerHTML += " 上下分离";
+        else if (gameobj.outpost == 2)
+            document.getElementById("outpostinfo").innerHTML += " 左右分离";
+        else if (gameobj.outpost == 3)
+            document.getElementById("outpostinfo").innerHTML += " 向下集中";
+        else if (gameobj.outpost == 4)
+            document.getElementById("outpostinfo").innerHTML += " 向左集中";
+        gameobj.initPic();
+        gameobj.randomPic();
+        drawPic();
+        setTimeout("timer_Tick()",1);
+    }
+    function timer_Tick() {
+        if(gameobj.playFlag && !stopFlag) {
+            if(useMinutes*60+useSeconds>= allMinutes*60+allSeconds) {
+                document.getElementById("timerImg").style.width='0px';
+                gameobj.playFlag = false;
+                init();
+                _canvasCtx.font="60px 隶书";
+                _canvasCtx.strokeStyle="green";
+                _canvasCtx.clearRect(0,0,_canvas.width,_canvas.height);
+                if(gameobj.mode==1) {
+                    _canvasCtx.strokeText("很不幸，您未闯过第" + (gameobj.outpost+1) + "关！",50,280);
+                    gameobj.outpost=0;
+                }
+                else {
+                    _canvasCtx.strokeText("很不幸，您失败了！",120,280);
+                }
+                return;
+            }
+            var nowDate=new Date();
+            if(nowDate.getSeconds()!=timeSeconds) {
+                timeSeconds=nowDate.getSeconds();
+                useSeconds++;
+                if(useSeconds==60) {
+                    useMinutes++;
+                    useSeconds=0;
+                }
+                document.getElementById("timerText").innerHTML='已用'+useMinutes+':'+useSeconds+'/总'+allMinutes+':'+allSeconds;
+            }
+            document.getElementById("timerImg").style.width = (400- Math.floor((useMinutes*60+useSeconds)*400 / (allMinutes*60+allSeconds)))+'px';
+            while(editFlag) {}
+            _gameTimer=setTimeout("timer_Tick()",100);
+            var mynodeinfo=null;
+            if (gameobj._picPt[0].i != 0 && gameobj.picinfoArr[gameobj._picPt[0].i][gameobj._picPt[0].j].indexID == gameobj.picinfoArr[gameobj._picPt[1].i][gameobj._picPt[1].j].indexID && gameobj.picinfoArr[gameobj._picPt[0].i][gameobj._picPt[0].j].state == 1 && gameobj.picinfoArr[gameobj._picPt[1].i][gameobj._picPt[1].j].state == 1) {
+                mynodeinfo = gameobj.checkImage(gameobj._picPt[0], gameobj._picPt[1]);
+                if (mynodeinfo != null) return;
+                else {
+                    gameobj._picPt[0].setij(0, 0);
+                    gameobj._picPt[1].setij(0, 0);
+                }
+            }
+            var _1tempPt = new nodeinfo(0, 0), _2tempPt = new nodeinfo(0, 0);
+            var i, j, ii, jj, count = 0;
+            for (i = Math.floor((gameobj.levelPt[gameobj.levelPt.length - 1].i - gameobj.levelPt[gameobj.levelFlag].i)/ 2); i < gameobj.levelPt[gameobj.levelPt.length - 1].i - Math.floor((gameobj.levelPt[gameobj.levelPt.length - 1].i - gameobj.levelPt[gameobj.levelFlag].i) / 2); i++)
+            {
+                for (j = Math.floor((gameobj.levelPt[gameobj.levelPt.length - 1].j - gameobj.levelPt[gameobj.levelFlag].j)/ 2); j < gameobj.levelPt[gameobj.levelPt.length - 1].j - Math.floor((gameobj.levelPt[gameobj.levelPt.length - 1].j - gameobj.levelPt[gameobj.levelFlag].j) / 2); j++)
+                {
+                    count += gameobj.picinfoArr[i][j].state;
+                    if (gameobj.picinfoArr[i][j].state == 1)
+                    {
+                        _1tempPt.setij(i, j);
+                        for (ii = i; ii < gameobj.levelPt[gameobj.levelPt.length - 1].i - Math.floor((gameobj.levelPt[gameobj.levelPt.length - 1].i - gameobj.levelPt[gameobj.levelFlag].i) / 2); ii++)
+                        {
+                            for (jj = ii == i ? j + 1 : 0; jj < gameobj.levelPt[gameobj.levelPt.length - 1].j - Math.floor((gameobj.levelPt[gameobj.levelPt.length - 1].j - gameobj.levelPt[gameobj.levelFlag].j) / 2); jj++)
+                            {
+                                if (gameobj.picinfoArr[ii][jj].state == 1 && gameobj.picinfoArr[i][j].indexID == gameobj.picinfoArr[ii][jj].indexID)
+                                {
+                                    _2tempPt.setij(ii, jj);
+                                    mynodeinfo = gameobj.checkImage(_1tempPt, _2tempPt);
+                                }
+                                if (mynodeinfo != null)
+                                {
+                                    gameobj._picPt[0] = _1tempPt;
+                                    gameobj._picPt[1] = _2tempPt;
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (count == 0)
+            {
+                gameobj.playFlag = false;
+                init();
+                _Seconds+=useSeconds;
+                _Minutes=_Minutes+useMinutes+Math.floor(_Seconds/60);
+                _Seconds=_Seconds % 60;
+                _canvasCtx.font="60px 隶书";
+                _canvasCtx.strokeStyle="green";
+                _canvasCtx.clearRect(0,0,_canvas.width,_canvas.height);
+                if (gameobj.mode == 0)
+                {
+                    _canvasCtx.strokeText("恭喜，本局您已胜出！",100,230);
+                    _canvasCtx.strokeText("所用时间："+_Minutes+'分'+_Seconds+'秒',130,320);
+                }
+                else if (gameobj.outpost < 4)
+                {
+                    gameobj.outpost+=1;
+                    _canvasCtx.strokeText("恭喜，您已通过第" + gameobj.outpost + "关！",80,230);
+                    _canvasCtx.strokeText("点击进入下一关。",160,320);
+                }
+                else
+                {
+                    gameobj.outpost=0;
+                    document.getElementById("outpostinfo").innerHTML = "恭喜，您已通关！";
+                    _canvasCtx.strokeText("恭喜您闯关成功！",140,230);
+                    _canvasCtx.strokeText("所用时间："+_Minutes+'分'+_Seconds+'秒',130,320);
+                }
+            }
+            else
+            {
+                gameobj.randomPic();
+                drawPic();
+            }
+        }
+        else {
+            _gameTimer=null;
+            return;
+        }
+    }
+    function drawPic() {
+        _canvasCtx.clearRect(0,0,_canvas.width,_canvas.height);
+        _img=new Image();
+        _img.onload=function() {
+            for (var i = 1; i < gameobj.levelPt[gameobj.levelPt.length - 1].i - 1; i++)
+                for (var j = 1; j < gameobj.levelPt[gameobj.levelPt.length - 1].j - 1; j++)
+                {
+                    if (gameobj.picinfoArr[i][j].state == 1) {
+                        _canvasCtx.drawImage(
+                            _img,
+                            gameobj.picinfoArr[i][j].indexID*50,0,50,50,
+                            gameobj.picinfoArr[i][j].X, gameobj.picinfoArr[i][j].Y,gameobj.step-1,gameobj.step-1
+                        );
+                    }
+                    else {
+                        _canvasCtx.fillRect(gameobj.picinfoArr[i][j].X, gameobj.picinfoArr[i][j].Y,gameobj.step-1,gameobj.step-1);
+                    }
+                }
+        }
+        _img.src=llkimg;
+    }
+    function drawLineFun(mynodeinfo, mycolor) {
+        _canvasCtx.strokeStyle=mycolor;
+        _canvasCtx.beginPath();
+        _canvasCtx.moveTo(gameobj.picinfoArr[mynodeinfo[0].i][mynodeinfo[0].j].X + Math.floor(gameobj.step / 2), gameobj.picinfoArr[mynodeinfo[0].i][mynodeinfo[0].j].Y + Math.floor(gameobj.step / 2));
+        for (var i = 1; i < mynodeinfo.length; i++)
+        {
+            _canvasCtx.lineTo(gameobj.picinfoArr[mynodeinfo[i].i][mynodeinfo[i].j].X + Math.floor(gameobj.step / 2), gameobj.picinfoArr[mynodeinfo[i].i][mynodeinfo[i].j].Y + Math.floor(gameobj.step / 2));
+        }
+        _canvasCtx.stroke();
+    }
+    function clearPic(mynodeinfo, inPt) {
+        gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].state = 0;
+        gameobj.picinfoArr[inPt.i][inPt.j].state = 0;
+        drawLineFun(mynodeinfo, 'blue');
+        
+        setTimeout(function() {
+            if(!gameobj.playFlag) return;
+            _canvasCtx.fillRect(gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].X, gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].Y,gameobj.step-1,gameobj.step-1);
+            _canvasCtx.fillRect(gameobj.picinfoArr[inPt.i][inPt.j].X, gameobj.picinfoArr[inPt.i][inPt.j].Y,gameobj.step-1,gameobj.step-1);
+            _canvasCtx.strokeStyle='black';
+            _canvasCtx.stroke();
+            if (gameobj.outpost == 1)
+            {
+                gameobj.toTtoB(_canvas, _canvasCtx, mynodeinfo);
+            }
+            else if (gameobj.outpost == 2)
+            {
+                gameobj.toLtoR(_canvas, _canvasCtx, mynodeinfo);
+            }
+            else if (gameobj.outpost == 3)
+            {
+                gameobj.toBottom(_canvas, _canvasCtx, mynodeinfo);
+            }
+            else if (gameobj.outpost == 4)
+            {
+                gameobj.toLeft(_canvas, _canvasCtx, mynodeinfo);
+            }
+            gameobj._1stPt.setij(0, 0);
+        }, 100);
+    }
+    function myCanvas_clk(e) {
+        if(e.button != 0) return;
+        if(gameobj.playFlag && !stopFlag) {
+            var mynodeinfo = new Array();
+            var _x=_canvas.offsetLeft;
+            var _y=_canvas.offsetTop;
+            var tempC=_canvas;
+            while (tempC.offsetParent != null) {
+                tempC = tempC.offsetParent;
+                _x += tempC.offsetLeft;
+                _y += tempC.offsetTop;
+            }
+            var _2ndPt = new nodeinfo(Math.floor((e.clientY+document.body.scrollTop-_y)/gameobj.step),Math.floor((e.clientX+document.body.scrollLeft-_x)/gameobj.step));
+            if ((gameobj._1stPt.i != _2ndPt.i || gameobj._1stPt.j != _2ndPt.j) && gameobj.picinfoArr[_2ndPt.i][_2ndPt.j].state == 1) {
+                if (gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].indexID == gameobj.picinfoArr[_2ndPt.i][_2ndPt.j].indexID)
+                {
+                    mynodeinfo = gameobj.checkImage(gameobj._1stPt, _2ndPt);
+                    if (mynodeinfo != null)
+                    {
+                        editFlag=true;
+                        clearPic(mynodeinfo, _2ndPt);
+                        editFlag=false;
+                        return;
+                    }
+                    _canvasCtx.drawImage(
+                        _img,
+                        gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].indexID*50,0,50,50,
+                        gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].X, gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].Y,gameobj.step-1,gameobj.step-1
+                    );
+                    gameobj._1stPt.setij(0, 0);
+                }
+                else
+                {
+                    if (gameobj._1stPt.i > 0)
+                    {
+                        _canvasCtx.drawImage(
+                            _img,
+                            gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].indexID*50,0,50,50,
+                            gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].X, gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].Y,gameobj.step-1,gameobj.step-1
+                        );
+                    }
+                    gameobj._1stPt = _2ndPt;
+                    _canvasCtx.globalAlpha=0.4;
+                    _canvasCtx.strokeStyle="white";
+                    _canvasCtx.fillRect(gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].X, gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].Y,gameobj.step-1,gameobj.step-1);
+                    _canvasCtx.strokeRect(4+gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].X, 4+gameobj.picinfoArr[gameobj._1stPt.i][gameobj._1stPt.j].Y, gameobj.step - 9, gameobj.step - 9);
+                    _canvasCtx.globalAlpha=1;
+                }
+            }
+        }
+        else if(gameobj.mode==1 && gameobj.outpost>0 && !stopFlag) {
+            gameNext();
+        }
+        else return;
+    }
+    function btnStop_clk() {
+        if(document.getElementById("btnStop").value=='暂停') {
+            stopFlag=true;
+            document.getElementById("btnStop").value="开始";
+            document.getElementById("btnTime").disabled = true;
+            document.getElementById("btnShuffle").disabled = true;
+        }
+        else {
+            stopFlag=false;
+            document.getElementById("btnStop").value="暂停";
+            setTimeout("timer_Tick()",1);
+            if(gameobj.givemeTime>0)
+                document.getElementById("btnTime").disabled = false;
+            if(gameobj.shuffle>0)
+                document.getElementById("btnShuffle").disabled = false;
+        }
+    }
+    var gameobj = new llkmain();
+</script>
+</head>
+<body style="color: green">
+<table border="0" cellpadding="0" cellspacing="0" style="border-color:Black;width: 740px; height: auto; margin: auto; text-align:left">
+    <tr style="vertical-align:middle; height:30px">
+    <td style="width:110px">游戏设置</td>
+    <td>
+    <input id="btnGame" type="button" value="新游戏" onclick="javascript:btnGame_clk()" />
+    <select id="comboBox4" name="comboBox4" onchange="javascript:comboBox4_Changed()">
+            <option>简单</option>
+            <option>两栏</option>
+            <option>困难</option>
+        </select>
+        <select id="comboBox1" name="comboBox1" onchange="javascript:comboBox1_Changed()">
+            <option>6行 8列</option>
+            <option>8行 10列</option>
+            <option>10行 12列</option>
+            <option>12行 14列</option>
+            <option>12行 16列</option>
+        </select>
+        <select id="comboBox3" name="comboBox3" onchange="javascript:comboBox3_Changed()">
+            <option>一般模式</option>
+            <option>闯关模式</option>
+        </select>
+        <select id="comboBox2" name="comboBox2" onchange="javascript:comboBox2_Changed()">
+            <option>普通</option>
+            <option>上下分离</option>
+            <option>左右分离</option>
+            <option>向下集中</option>
+            <option>向左集中</option>
+        </select><div id="outpostinfo" style="float: right; color:Red; margin-right: 50px"></div></td>
+    </tr>
+    <tr style="vertical-align:middle;height:30px">
+    <td>游戏剩余时间</td>
+    <td><input id="btnStop" type="button" value="暂停" onclick="javascript:btnStop_clk()" style="float:left" /><div style="float:left;width:400px;height:10px;border: 1px solid green;margin-left:10px; margin-right: 10px;margin-top:7px"><img id="timerImg" style="float:left;background-color: green;width:400px;height:10px;margin-top:0" /></div><div id="timerText" style="float:left;coloe:black"></div></td>
+    </tr>
+    <tr style="vertical-align:middle;height:30px">
+    <td colspan="2"><table border="0" cellpadding="0" cellspacing="0" style="width:100%"><tr>
+    <td style="width: 50%">提示次数：<input id="btnTime" type="button" onclick="javascript:btnTime_clk()" /></td>
+    <td>洗牌次数：<input id="btnShuffle" type="button" onclick="javascript:btnShuffle_clk()" /></td></tr></table>
+    </td>
+    </tr>
+    <tr style="height:580px;vertical-align:middle;">
+    <td colspan="2" width="100%"><canvas id="myCanvas" width="738px" height="574px" style="background-color:Black""><div id="divtest" style="color: #FFF">您当前的浏览器不支持Html5，请使用谷歌Chrome、Opera、Firefox、Safari最新版或IE9。</div></canvas></td>
+    </tr></table>
+</body>
+</html>
+

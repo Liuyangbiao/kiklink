@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<!-- 存放手写的sql -->
+<sqlMap>
+	<select id="selectBySql" resultClass="java.util.HashMap" remapResults="true" parameterClass="java.util.HashMap"> 
+		<isNotEmpty property="sql">$sql$</isNotEmpty> 
+	</select> 
+
+	<update id="updateBySql" parameterClass="java.util.HashMap"> 
+		<isNotEmpty property="sql">$sql$</isNotEmpty> 
+	</update> 
+
+</sqlMap>

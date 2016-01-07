@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.KlSellerShop" class="com.kailian.glo.model.KlSellerShop">
+        <result property="id" column="id"/>
+        <result property="userid" column="userid"/>
+        <result property="userType" column="userType"/>
+        <result property="shopName" column="shopName"/>
+        <result property="logo" column="logo"/>
+        <result property="shoptype" column="shoptype"/>
+        <result property="provinceid" column="provinceid"/>
+        <result property="province" column="province"/>
+        <result property="cityid" column="cityid"/>
+        <result property="city" column="city"/>
+        <result property="quid" column="quid"/>
+        <result property="qu" column="qu"/>
+        <result property="realName" column="realName"/>
+        <result property="idNumber" column="idNumber"/>
+        <result property="idPicture" column="idPicture"/>
+        <result property="idPcitureBack" column="idPcitureBack"/>
+        <result property="birthYear" column="birthYear"/>
+        <result property="birthMonth" column="birthMonth"/>
+        <result property="birthDate" column="birthDate"/>
+        <result property="sex" column="sex"/>
+        <result property="phoneno" column="phoneno"/>
+        <result property="email" column="email"/>
+        <result property="address" column="address"/>
+        <result property="postcode" column="postcode"/>
+        <result property="profile" column="profile"/>
+        <result property="bankname" column="bankname"/>
+        <result property="bankopenname" column="bankopenname"/>
+        <result property="banknumber" column="banknumber"/>
+        <result property="templateId" column="templateId"/>
+        <result property="template" column="template"/>
+        <result property="companyName" column="companyName"/>
+        <result property="passportPicture" column="passportPicture"/>
+        <result property="orgNumber" column="orgNumber"/>
+        <result property="createDate" column="createDate"/>
+        <result property="pointDescriptionMatch" column="pointDescriptionMatch"/>
+        <result property="pointPerfational" column="pointPerfational"/>
+        <result property="pointServiceAttitude" column="pointServiceAttitude"/>
+        <result property="pointAppointmentSuccessful" column="pointAppointmentSuccessful"/>
+        <result property="flowerPercent" column="flowerPercent"/>
+        <result property="servedClients" column="servedClients"/>
+        <result property="savedCount" column="savedCount"/>
+        <result property="introduction" column="introduction"/>
+        <result property="suggestreason" column="suggestreason"/>
+        <result property="moreservice" column="moreservice"/>
+        <result property="mapx" column="mapx"/>
+        <result property="mapy" column="mapy"/>
+        <result property="mapimg" column="mapimg"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+         <result property="weiboimg" column="weiboimg"/>
+         <result property="weixinimg" column="weixinimg"/>
+         
+         <result property="classtable" column="classtable"/>
+         <result property="customtype" column="customtype"/>
+         <result property="ext6" column="ext6"/>
+         <result property="ext7" column="ext7"/>
+         <result property="ext8" column="ext8"/>
+         <result property="ext9" column="ext9"/>
+         <result property="ext10" column="ext10"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="KlSellerShop.columns">
+	    <![CDATA[
+        id ,userid ,userType ,shopName ,logo ,shoptype ,provinceid ,province ,cityid ,city ,quid ,qu ,realName ,idNumber ,idPicture ,idPcitureBack ,birthYear ,birthMonth ,birthDate ,sex ,phoneno ,email ,address ,postcode ,profile ,bankname ,bankopenname ,banknumber ,templateId ,template ,companyName ,passportPicture ,orgNumber ,createDate ,pointDescriptionMatch ,pointPerfational ,pointServiceAttitude ,pointAppointmentSuccessful ,flowerPercent ,servedClients ,savedCount ,introduction ,suggestreason ,moreservice ,mapx ,mapy ,mapimg ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser,weiboimg,weixinimg,classtable,customtype,ext6,ext7,ext8,ext9,ext10 
+	    ]]>
+	</sql>
+	
+    <insert id="KlSellerShop.insert" >
+    <![CDATA[
+        INSERT INTO kl_seller_shop (
+	        id  ,
+	        userid  ,
+	        userType  ,
+	        shopName  ,
+	        logo  ,
+	        shoptype  ,
+	        provinceid  ,
+	        province  ,
+	        cityid  ,
+	        city  ,
+	        quid  ,
+	        qu  ,
+	        realName  ,
+	        idNumber  ,
+	        idPicture  ,
+	        idPcitureBack  ,
+	        birthYear  ,
+	        birthMonth  ,
+	        birthDate  ,
+	        sex  ,
+	        phoneno  ,
+	        email  ,
+	        address  ,
+	        postcode  ,
+	        profile  ,
+	        bankname  ,
+	        bankopenname  ,
+	        banknumber  ,
+	        templateId  ,
+	        template  ,
+	        companyName  ,
+	        passportPicture  ,
+	        orgNumber  ,
+	        createDate  ,
+	        pointDescriptionMatch  ,
+	        pointPerfational  ,
+	        pointServiceAttitude  ,
+	        pointAppointmentSuccessful  ,
+	        flowerPercent  ,
+	        servedClients  ,
+	        savedCount  ,
+	        introduction  ,
+	        suggestreason  ,
+	        moreservice  ,
+	        mapx  ,
+	        mapy  ,
+	        mapimg  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        weiboimg,
+	        weixinimg,
+	        classtable,customtype,ext6,ext7,ext8,ext9,ext10
+        ) VALUES (
+        	#id# ,
+        	#userid# ,
+        	#userType# ,
+        	#shopName# ,
+        	#logo# ,
+        	#shoptype# ,
+        	#provinceid# ,
+        	#province# ,
+        	#cityid# ,
+        	#city# ,
+        	#quid# ,
+        	#qu# ,
+        	#realName# ,
+        	#idNumber# ,
+        	#idPicture# ,
+        	#idPcitureBack# ,
+        	#birthYear# ,
+        	#birthMonth# ,
+        	#birthDate# ,
+        	#sex# ,
+        	#phoneno# ,
+        	#email# ,
+        	#address# ,
+        	#postcode# ,
+        	#profile# ,
+        	#bankname# ,
+        	#bankopenname# ,
+        	#banknumber# ,
+        	#templateId# ,
+        	#template# ,
+        	#companyName# ,
+        	#passportPicture# ,
+        	#orgNumber# ,
+        	#createDate# ,
+        	#pointDescriptionMatch# ,
+        	#pointPerfational# ,
+        	#pointServiceAttitude# ,
+        	#pointAppointmentSuccessful# ,
+        	#flowerPercent# ,
+        	#servedClients# ,
+        	#savedCount# ,
+        	#introduction# ,
+        	#suggestreason# ,
+        	#moreservice# ,
+        	#mapx# ,
+        	#mapy# ,
+        	#mapimg# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#weiboimg# ,
+        	#weixinimg# ,
+        	#classtable#,#customtype#,#ext6#,#ext7#,#ext8#,#ext9#,#ext10#
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="KlSellerShop.update" >
+    <![CDATA[
+        UPDATE kl_seller_shop SET
+	        userid = #userid# ,
+	        userType = #userType# ,
+	        shopName = #shopName# ,
+	        logo = #logo# ,
+	        shoptype = #shoptype# ,
+	        provinceid = #provinceid# ,
+	        province = #province# ,
+	        cityid = #cityid# ,
+	        city = #city# ,
+	        quid = #quid# ,
+	        qu = #qu# ,
+	        realName = #realName# ,
+	        idNumber = #idNumber# ,
+	        idPicture = #idPicture# ,
+	        idPcitureBack = #idPcitureBack# ,
+	        birthYear = #birthYear# ,
+	        birthMonth = #birthMonth# ,
+	        birthDate = #birthDate# ,
+	        sex = #sex# ,
+	        phoneno = #phoneno# ,
+	        email = #email# ,
+	        address = #address# ,
+	        postcode = #postcode# ,
+	        profile = #profile# ,
+	        bankname = #bankname# ,
+	        bankopenname = #bankopenname# ,
+	        banknumber = #banknumber# ,
+	        templateId = #templateId# ,
+	        template = #template# ,
+	        companyName = #companyName# ,
+	        passportPicture = #passportPicture# ,
+	        orgNumber = #orgNumber# ,
+	        createDate = #createDate# ,
+	        pointDescriptionMatch = #pointDescriptionMatch# ,
+	        pointPerfational = #pointPerfational# ,
+	        pointServiceAttitude = #pointServiceAttitude# ,
+	        pointAppointmentSuccessful = #pointAppointmentSuccessful# ,
+	        flowerPercent = #flowerPercent# ,
+	        servedClients = #servedClients# ,
+	        savedCount = #savedCount# ,
+	        introduction = #introduction# ,
+	        suggestreason = #suggestreason# ,
+	        moreservice = #moreservice# ,
+	        mapx = #mapx# ,
+	        mapy = #mapy# ,
+	        mapimg = #mapimg# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        weiboimg = #weiboimg# ,
+	        weixinimg = #weixinimg#,
+	        classtable=#classtable#,
+	        customtype=#customtype#,
+	        ext6=#ext6#,
+	        ext7=#ext7#,
+	        ext8=#ext8#,
+	        ext9=#ext9#,
+	        ext10=#ext10#
+	        
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="KlSellerShop.delete">
+    <![CDATA[
+        DELETE FROM kl_seller_shop WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="KlSellerShop.getById" resultMap="RM.KlSellerShop">
+	    SELECT <include refid="KlSellerShop.columns"/>
+	    <![CDATA[
+	        FROM kl_seller_shop 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="KlSellerShop.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userid">
+		             userid = #userid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userType">
+		             userType = #userType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopName">
+		             shopName like '%$shopName$%'
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="logo">
+		             logo = #logo#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shoptype">
+		             shoptype = #shoptype#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="provinceid">
+		             provinceid = #provinceid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="province">
+		             province = #province#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="cityid">
+		             cityid = #cityid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="city">
+		             city = #city#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="quid">
+		             quid = #quid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="qu">
+		             qu = #qu#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="realName">
+		             realName = #realName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="idNumber">
+		             idNumber = #idNumber#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="idPicture">
+		             idPicture = #idPicture#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="idPcitureBack">
+		             idPcitureBack = #idPcitureBack#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="birthYear">
+		             birthYear = #birthYear#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="birthMonth">
+		             birthMonth = #birthMonth#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="birthDate">
+		             birthDate = #birthDate#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="sex">
+		             sex = #sex#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="phoneno">
+		             phoneno = #phoneno#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="email">
+		             email = #email#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="address">
+		             address = #address#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="postcode">
+		             postcode = #postcode#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="profile">
+		             profile = #profile#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="bankname">
+		             bankname = #bankname#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="bankopenname">
+		             bankopenname = #bankopenname#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="banknumber">
+		             banknumber = #banknumber#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="templateId">
+		             templateId = #templateId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="template">
+		             template = #template#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="companyName">
+		             companyName = #companyName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="passportPicture">
+		             passportPicture = #passportPicture#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="orgNumber">
+		             orgNumber = #orgNumber#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createDate">
+		             createDate = #createDate#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointDescriptionMatch">
+		             pointDescriptionMatch = #pointDescriptionMatch#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointPerfational">
+		             pointPerfational = #pointPerfational#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointServiceAttitude">
+		             pointServiceAttitude = #pointServiceAttitude#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointAppointmentSuccessful">
+		             pointAppointmentSuccessful = #pointAppointmentSuccessful#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="flowerPercent">
+		             flowerPercent = #flowerPercent#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="servedClients">
+		             servedClients = #servedClients#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="savedCount">
+		             savedCount = #savedCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="introduction">
+		             introduction = #introduction#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="suggestreason">
+		             suggestreason = #suggestreason#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="moreservice">
+		             moreservice = #moreservice#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="mapx">
+		             mapx = #mapx#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="mapy">
+		             mapy = #mapy#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="mapimg">
+		             mapimg = #mapimg#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="classtable">
+		             classtable = #classtable#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="customtype">
+		             customtype = #customtype#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext6">
+		             ext6 = #ext6#
+		       </isNotEmpty>
+		       
+		       <isNotEmpty prepend="AND" property="ext7">
+		             ext7 = #ext7#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext8">
+		             ext8 = #ext8#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext9">
+		             ext9 = #ext9#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext10">
+		             ext10 = #ext10#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="KlSellerShop.findPage.count" resultClass="long">
+        SELECT count(*) FROM kl_seller_shop <include refid="KlSellerShop.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="KlSellerShop.findPage" resultMap="RM.KlSellerShop">
+    	SELECT <include refid="KlSellerShop.columns"/> FROM kl_seller_shop 
+		<include refid="KlSellerShop.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="mapx">
+				((mapx-#mapx#)*(mapx-#mapx#)+(mapy-#mapy#)*(mapy-#mapy#))
+			</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="KlSellerShop.findTop" resultMap="RM.KlSellerShop">
+    	SELECT <include refid="KlSellerShop.columns"/> FROM kl_seller_shop  
+    	<include refid="KlSellerShop.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="mapx">
+				((mapx-#mapx#)*(mapx-#mapx#)+(mapy-#mapy#)*(mapy-#mapy#))
+			</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

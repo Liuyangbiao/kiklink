@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.KlSellerProduct" class="com.kailian.glo.model.KlSellerProduct">
+        <result property="id" column="id"/>
+        <result property="shopId" column="shopId"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="classCount" column="classCount"/>
+        <result property="perClassMinutes" column="perClassMinutes"/>
+        <result property="categoryid" column="categoryid"/>
+        <result property="validDays" column="validDays"/>
+        <result property="teachType" column="teachType"/>
+        <result property="returnClassCount" column="returnClassCount"/>
+        <result property="photo" column="photo"/>
+        <result property="provinceid" column="provinceid"/>
+        <result property="province" column="province"/>
+        <result property="cityid" column="cityid"/>
+        <result property="city" column="city"/>
+        <result property="quid" column="quid"/>
+        <result property="qu" column="qu"/>
+        <result property="quanid" column="quanid"/>
+        <result property="quan" column="quan"/>
+        <result property="gotoHome" column="gotoHome"/>
+        <result property="placePriceInclued" column="placePriceInclued"/>
+        <result property="placeAddition" column="placeAddition"/>
+        <result property="allConsulting" column="allConsulting"/>
+        <result property="freeConsulting" column="freeConsulting"/>
+        <result property="description" column="description"/>
+        <result property="tags" column="tags"/>
+        <result property="savedCount" column="savedCount"/>
+        <result property="buyedCount" column="buyedCount"/>
+        <result property="flowerCount" column="flowerCount"/>
+        <result property="eggCount" column="eggCount"/>
+        <result property="middleCount" column="middleCount"/>
+        <result property="templateId" column="templateId"/>
+        <result property="template" column="template"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="ext1" column="ext1"/>
+        <result property="ext2" column="ext2"/>
+        <result property="ext3" column="ext3"/>
+        <result property="ext4" column="ext4"/>
+        <result property="ext5" column="ext5"/>
+        <result property="extInt1" column="extInt1"/>
+        <result property="extInt2" column="extInt2"/>
+        <result property="extInt3" column="extInt3"/>
+        <result property="extInt4" column="extInt4"/>
+        <result property="extInt5" column="extInt5"/>
+        <result property="mapx" column="mapx"/>
+        <result property="mapy" column="mapy"/>
+        
+        <result property="subname" column="subname"/>
+        <result property="ext6" column="ext6"/>
+        <result property="ext7" column="ext7"/>
+        <result property="ext8" column="ext8"/>
+        <result property="ext9" column="ext9"/>
+        <result property="ext10" column="ext10"/>
+        
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="KlSellerProduct.columns">
+	    <![CDATA[
+        id ,shopId ,name ,price ,classCount ,perClassMinutes ,categoryid ,validDays ,teachType ,returnClassCount ,photo ,provinceid ,province ,cityid ,city ,quid ,qu ,quanid ,quan ,gotoHome ,placePriceInclued ,placeAddition ,allConsulting ,freeConsulting ,description ,tags ,savedCount ,buyedCount ,flowerCount ,eggCount ,middleCount ,templateId ,template ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,ext1 ,ext2 ,ext3 ,ext4 ,ext5 ,extInt1 ,extInt2 ,extInt3 ,extInt4 ,extInt5,mapx,mapy,subname,ext6,ext7,ext8,ext9,ext10 
+	    ]]>
+	</sql>
+	
+	<sql id="KlSellerProduct2.columns">
+	    <![CDATA[
+        id ,distinct shopId as shopId,name ,price ,classCount ,perClassMinutes ,categoryid ,validDays ,teachType ,returnClassCount ,photo ,provinceid ,province ,cityid ,city ,quid ,qu ,quanid ,quan ,gotoHome ,placePriceInclued ,placeAddition ,allConsulting ,freeConsulting ,description ,tags ,savedCount ,buyedCount ,flowerCount ,eggCount ,middleCount ,templateId ,template ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,ext1 ,ext2 ,ext3 ,ext4 ,ext5 ,extInt1 ,extInt2 ,extInt3 ,extInt4 ,extInt5,mapx,mapy,subname,ext6,ext7,ext8,ext9,ext10 
+	    ]]>
+	</sql>
+	
+    <insert id="KlSellerProduct.insert" >
+    <![CDATA[
+        INSERT INTO kl_seller_product (
+	        id  ,
+	        shopId  ,
+	        name  ,
+	        price  ,
+	        classCount  ,
+	        perClassMinutes  ,
+	        categoryid  ,
+	        validDays  ,
+	        teachType  ,
+	        returnClassCount  ,
+	        photo  ,
+	        provinceid  ,
+	        province  ,
+	        cityid  ,
+	        city  ,
+	        quid  ,
+	        qu  ,
+	        quanid  ,
+	        quan  ,
+	        gotoHome  ,
+	        placePriceInclued  ,
+	        placeAddition  ,
+	        allConsulting  ,
+	        freeConsulting  ,
+	        description  ,
+	        tags  ,
+	        savedCount  ,
+	        buyedCount  ,
+	        flowerCount  ,
+	        eggCount  ,
+	        middleCount  ,
+	        templateId  ,
+	        template  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        ext1  ,
+	        ext2  ,
+	        ext3  ,
+	        ext4  ,
+	        ext5  ,
+	        extInt1  ,
+	        extInt2  ,
+	        extInt3  ,
+	        extInt4  ,
+	        extInt5  ,
+	        mapx,
+	        mapy,
+	        subname,ext6,ext7,ext8,ext9,ext10
+        ) VALUES (
+        	#id# ,
+        	#shopId# ,
+        	#name# ,
+        	#price# ,
+        	#classCount# ,
+        	#perClassMinutes# ,
+        	#categoryid# ,
+        	#validDays# ,
+        	#teachType# ,
+        	#returnClassCount# ,
+        	#photo# ,
+        	#provinceid# ,
+        	#province# ,
+        	#cityid# ,
+        	#city# ,
+        	#quid# ,
+        	#qu# ,
+        	#quanid# ,
+        	#quan# ,
+        	#gotoHome# ,
+        	#placePriceInclued# ,
+        	#placeAddition# ,
+        	#allConsulting# ,
+        	#freeConsulting# ,
+        	#description# ,
+        	#tags# ,
+        	#savedCount# ,
+        	#buyedCount# ,
+        	#flowerCount# ,
+        	#eggCount# ,
+        	#middleCount# ,
+        	#templateId# ,
+        	#template# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#ext1# ,
+        	#ext2# ,
+        	#ext3# ,
+        	#ext4# ,
+        	#ext5# ,
+        	#extInt1# ,
+        	#extInt2# ,
+        	#extInt3# ,
+        	#extInt4# ,
+        	#extInt5# ,
+        	#mapx# ,
+        	#mapy# ,
+        	#subname#,#ext6#,#ext7#,#ext8#,#ext9#,#ext10#
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="KlSellerProduct.update" >
+    <![CDATA[
+        UPDATE kl_seller_product SET
+	        shopId = #shopId# ,
+	        name = #name# ,
+	        price = #price# ,
+	        classCount = #classCount# ,
+	        perClassMinutes = #perClassMinutes# ,
+	        categoryid = #categoryid# ,
+	        validDays = #validDays# ,
+	        teachType = #teachType# ,
+	        returnClassCount = #returnClassCount# ,
+	        photo = #photo# ,
+	        provinceid = #provinceid# ,
+	        province = #province# ,
+	        cityid = #cityid# ,
+	        city = #city# ,
+	        quid = #quid# ,
+	        qu = #qu# ,
+	        quanid = #quanid# ,
+	        quan = #quan# ,
+	        gotoHome = #gotoHome# ,
+	        placePriceInclued = #placePriceInclued# ,
+	        placeAddition = #placeAddition# ,
+	        allConsulting = #allConsulting# ,
+	        freeConsulting = #freeConsulting# ,
+	        description = #description# ,
+	        tags = #tags# ,
+	        savedCount = #savedCount# ,
+	        buyedCount = #buyedCount# ,
+	        flowerCount = #flowerCount# ,
+	        eggCount = #eggCount# ,
+	        middleCount = #middleCount# ,
+	        templateId = #templateId# ,
+	        template = #template# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        ext1 = #ext1# ,
+	        ext2 = #ext2# ,
+	        ext3 = #ext3# ,
+	        ext4 = #ext4# ,
+	        ext5 = #ext5# ,
+	        extInt1 = #extInt1# ,
+	        extInt2 = #extInt2# ,
+	        extInt3 = #extInt3# ,
+	        extInt4 = #extInt4# ,
+	        extInt5 = #extInt5# ,
+	        mapx = #mapx#,
+	        mapy = #mapy#,
+	        subname=#subname#,
+	        ext6=#ext6#,
+	        ext7=#ext7#,
+	        ext8=#ext8#,
+	        ext9=#ext9#,
+	        ext10=#ext10#
+	        
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="KlSellerProduct.delete">
+    <![CDATA[
+        DELETE FROM kl_seller_product WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="KlSellerProduct.getById" resultMap="RM.KlSellerProduct">
+	    SELECT <include refid="KlSellerProduct.columns"/>
+	    <![CDATA[
+	        FROM kl_seller_product 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="KlSellerProduct.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopId">
+		             shopId = #shopId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopIdNe">
+		             shopId &lt;&gt; #shopIdNe#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="name">
+		            ( name like '%$name$%'  or tags like '%$name$%'  )
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="price">
+		             price = #price#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pricefrom">
+		             price &gt; #pricefrom#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="priceto">
+		             price &lt; #priceto#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="classCount">
+		             classCount = #classCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="perClassMinutes">
+		             perClassMinutes = #perClassMinutes#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="categoryid">
+		             categoryid = #categoryid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="validDays">
+		             validDays = #validDays#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="teachType">
+		             teachType = #teachType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="returnClassCount">
+		             returnClassCount = #returnClassCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="photo">
+		             photo = #photo#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="provinceid">
+		             provinceid = #provinceid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="province">
+		             province = #province#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="cityid">
+		             cityid = #cityid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="city">
+		             city = #city#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="quid">
+		             quid = #quid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="qu">
+		             qu = #qu#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="quanid">
+		             quanid = #quanid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="quan">
+		             quan = #quan#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="gotoHome">
+		             gotoHome = #gotoHome#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="placePriceInclued">
+		             placePriceInclued = #placePriceInclued#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="placeAddition">
+		             placeAddition = #placeAddition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="allConsulting">
+		             allConsulting = #allConsulting#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="freeConsulting">
+		             freeConsulting = #freeConsulting#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="description">
+		             description = #description#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="tags">
+		             tags like '%$tags$%'
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="savedCount">
+		             savedCount = #savedCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="buyedCount">
+		             buyedCount = #buyedCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="flowerCount">
+		             flowerCount = #flowerCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="eggCount">
+		             eggCount = #eggCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="middleCount">
+		             middleCount = #middleCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="templateId">
+		             templateId = #templateId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="template">
+		             template = #template#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="statusFrom">
+		             status &gt; #statusFrom#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelongstart">
+		             createtimelong &gt; #createtimelongstart#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelongend">
+		             createtimelong &lt; #createtimelongend#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext1">
+		             ext1 = #ext1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext2">
+		             ext2 = #ext2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext3">
+		             ext3 = #ext3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext4">
+		             ext4 = #ext4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext5">
+		             ext5 = #ext5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt1">
+		             extInt1 = #extInt1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt2">
+		             extInt2 = #extInt2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt3">
+		             extInt3 = #extInt3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt4">
+		             extInt4 = #extInt4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt5">
+		             extInt5 = #extInt5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="mapxfrom">
+		             mapx &gt;  #mapxfrom#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="mapxto">
+		             mapx &lt;  #mapxto#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="mapyfrom">
+		             mapy &gt;  #mapyfrom#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="mapyto">
+		             mapy &lt;  #mapyto#
+		       </isNotEmpty>
+		        <isNotEmpty prepend="AND" property="shoptype">
+		             shopId in (select s.id from kl_seller_shop as s where s.shoptype=#shoptype#)
+		       </isNotEmpty>
+		        <isNotEmpty prepend="AND" property="starfrom">
+		             shopId in (select c.targetId from cms_common_comment as c where c.targetType='10010' and c.point &gt; #starfrom#)
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="subname">
+		             subname = #subname#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext6">
+		             ext6 = #ext6#
+		       </isNotEmpty>
+		       
+		       <isNotEmpty prepend="AND" property="ext7">
+		             ext7 = #ext7#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext8">
+		             ext8 = #ext8#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext9">
+		             ext9 = #ext9#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext10">
+		             ext10 = #ext10#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ids">
+		             id in (#ids#)
+		       </isNotEmpty>
+
+	    </dynamic>	
+	</sql>
+	 
+    <select id="KlSellerProduct2.findPage.count" resultClass="long">
+        SELECT count(distinct shopId) FROM kl_seller_product <include refid="KlSellerProduct.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="KlSellerProduct2.findPage" resultMap="RM.KlSellerProduct">
+    	SELECT <include refid="KlSellerProduct2.columns"/> FROM kl_seller_product as tp 
+		<include refid="KlSellerProduct.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+    
+    
+    <select id="KlSellerProduct.findPage.count" resultClass="long">
+        SELECT count(*) FROM kl_seller_product <include refid="KlSellerProduct.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="KlSellerProduct.findPage" resultMap="RM.KlSellerProduct">
+    	SELECT <include refid="KlSellerProduct.columns"/> FROM kl_seller_product as tp 
+		<include refid="KlSellerProduct.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="KlSellerProduct.findTop" resultMap="RM.KlSellerProduct">
+    	SELECT <include refid="KlSellerProduct.columns"/> FROM kl_seller_product  as tp 
+    	<include refid="KlSellerProduct.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

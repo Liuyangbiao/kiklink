@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.KlShoppingCarthistory" class="com.kailian.glo.model.KlShoppingCarthistory">
+        <result property="id" column="id"/>
+        <result property="orderid" column="orderid"/>
+        <result property="shopid" column="shopid"/>
+        <result property="productid" column="productid"/>
+        <result property="shopcartid" column="shopcartid"/>
+        <result property="productName" column="productName"/>
+        <result property="shopName" column="shopName"/>
+        <result property="userid" column="userid"/>
+        <result property="username" column="username"/>
+        <result property="classCount" column="classCount"/>
+        <result property="perPrice" column="perPrice"/>
+        <result property="price" column="price"/>
+        <result property="count" column="count"/>
+        <result property="couponId" column="couponId"/>
+        <result property="couponPrice" column="couponPrice"/>
+        <result property="payway" column="payway"/>
+        <result property="paybank" column="paybank"/>
+        <result property="payusername" column="payusername"/>
+        <result property="payaccount" column="payaccount"/>
+        <result property="mobile" column="mobile"/>
+        <result property="email" column="email"/>
+        <result property="shopmobile" column="shopmobile"/>
+        <result property="shopemail" column="shopemail"/>
+        <result property="payflownumber" column="payflownumber"/>
+        <result property="yuyuema" column="yuyuema"/>
+        <result property="status" column="status"/>
+        <result property="statusstr" column="statusstr"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="ext1" column="ext1"/>
+        <result property="ext2" column="ext2"/>
+        <result property="ext3" column="ext3"/>
+        <result property="ext4" column="ext4"/>
+        <result property="ext5" column="ext5"/>
+        <result property="extInt1" column="extInt1"/>
+        <result property="extInt2" column="extInt2"/>
+        <result property="extInt3" column="extInt3"/>
+        <result property="extInt4" column="extInt4"/>
+        <result property="extInt5" column="extInt5"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="KlShoppingCarthistory.columns">
+	    <![CDATA[
+        id ,orderid ,shopid ,productid ,shopcartid ,productName ,shopName ,userid ,username ,classCount ,perPrice ,price ,count ,couponId ,couponPrice ,payway ,paybank ,payusername ,payaccount ,mobile ,email ,shopmobile ,shopemail ,payflownumber ,yuyuema ,status ,statusstr ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,ext1 ,ext2 ,ext3 ,ext4 ,ext5 ,extInt1 ,extInt2 ,extInt3 ,extInt4 ,extInt5 
+	    ]]>
+	</sql>
+	
+    <insert id="KlShoppingCarthistory.insert" >
+    <![CDATA[
+        INSERT INTO kl_shopping_carthistory (
+	        id  ,
+	        orderid  ,
+	        shopid  ,
+	        productid  ,
+	        shopcartid  ,
+	        productName  ,
+	        shopName  ,
+	        userid  ,
+	        username  ,
+	        classCount  ,
+	        perPrice  ,
+	        price  ,
+	        count  ,
+	        couponId  ,
+	        couponPrice  ,
+	        payway  ,
+	        paybank  ,
+	        payusername  ,
+	        payaccount  ,
+	        mobile  ,
+	        email  ,
+	        shopmobile  ,
+	        shopemail  ,
+	        payflownumber  ,
+	        yuyuema  ,
+	        status  ,
+	        statusstr  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        ext1  ,
+	        ext2  ,
+	        ext3  ,
+	        ext4  ,
+	        ext5  ,
+	        extInt1  ,
+	        extInt2  ,
+	        extInt3  ,
+	        extInt4  ,
+	        extInt5  
+        ) VALUES (
+        	#id# ,
+        	#orderid# ,
+        	#shopid# ,
+        	#productid# ,
+        	#shopcartid# ,
+        	#productName# ,
+        	#shopName# ,
+        	#userid# ,
+        	#username# ,
+        	#classCount# ,
+        	#perPrice# ,
+        	#price# ,
+        	#count# ,
+        	#couponId# ,
+        	#couponPrice# ,
+        	#payway# ,
+        	#paybank# ,
+        	#payusername# ,
+        	#payaccount# ,
+        	#mobile# ,
+        	#email# ,
+        	#shopmobile# ,
+        	#shopemail# ,
+        	#payflownumber# ,
+        	#yuyuema# ,
+        	#status# ,
+        	#statusstr# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#ext1# ,
+        	#ext2# ,
+        	#ext3# ,
+        	#ext4# ,
+        	#ext5# ,
+        	#extInt1# ,
+        	#extInt2# ,
+        	#extInt3# ,
+        	#extInt4# ,
+        	#extInt5# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="KlShoppingCarthistory.update" >
+    <![CDATA[
+        UPDATE kl_shopping_carthistory SET
+	        orderid = #orderid# ,
+	        shopid = #shopid# ,
+	        productid = #productid# ,
+	        shopcartid = #shopcartid# ,
+	        productName = #productName# ,
+	        shopName = #shopName# ,
+	        userid = #userid# ,
+	        username = #username# ,
+	        classCount = #classCount# ,
+	        perPrice = #perPrice# ,
+	        price = #price# ,
+	        count = #count# ,
+	        couponId = #couponId# ,
+	        couponPrice = #couponPrice# ,
+	        payway = #payway# ,
+	        paybank = #paybank# ,
+	        payusername = #payusername# ,
+	        payaccount = #payaccount# ,
+	        mobile = #mobile# ,
+	        email = #email# ,
+	        shopmobile = #shopmobile# ,
+	        shopemail = #shopemail# ,
+	        payflownumber = #payflownumber# ,
+	        yuyuema = #yuyuema# ,
+	        status = #status# ,
+	        statusstr = #statusstr# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        ext1 = #ext1# ,
+	        ext2 = #ext2# ,
+	        ext3 = #ext3# ,
+	        ext4 = #ext4# ,
+	        ext5 = #ext5# ,
+	        extInt1 = #extInt1# ,
+	        extInt2 = #extInt2# ,
+	        extInt3 = #extInt3# ,
+	        extInt4 = #extInt4# ,
+	        extInt5 = #extInt5# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="KlShoppingCarthistory.delete">
+    <![CDATA[
+        DELETE FROM kl_shopping_carthistory WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="KlShoppingCarthistory.getById" resultMap="RM.KlShoppingCarthistory">
+	    SELECT <include refid="KlShoppingCarthistory.columns"/>
+	    <![CDATA[
+	        FROM kl_shopping_carthistory 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="KlShoppingCarthistory.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="orderid">
+		             orderid = #orderid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopid">
+		             shopid = #shopid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="productid">
+		             productid = #productid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopcartid">
+		             shopcartid = #shopcartid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="productName">
+		             productName = #productName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopName">
+		             shopName = #shopName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userid">
+		             userid = #userid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="username">
+		             username = #username#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="classCount">
+		             classCount = #classCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="perPrice">
+		             perPrice = #perPrice#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="price">
+		             price = #price#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="count">
+		             count = #count#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="couponId">
+		             couponId = #couponId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="couponPrice">
+		             couponPrice = #couponPrice#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="payway">
+		             payway = #payway#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="paybank">
+		             paybank = #paybank#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="payusername">
+		             payusername = #payusername#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="payaccount">
+		             payaccount = #payaccount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="mobile">
+		             mobile = #mobile#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="email">
+		             email = #email#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopmobile">
+		             shopmobile = #shopmobile#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopemail">
+		             shopemail = #shopemail#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="payflownumber">
+		             payflownumber = #payflownumber#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="yuyuema">
+		             yuyuema = #yuyuema#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="statusstr">
+		             statusstr = #statusstr#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext1">
+		             ext1 = #ext1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext2">
+		             ext2 = #ext2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext3">
+		             ext3 = #ext3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext4">
+		             ext4 = #ext4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext5">
+		             ext5 = #ext5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt1">
+		             extInt1 = #extInt1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt2">
+		             extInt2 = #extInt2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt3">
+		             extInt3 = #extInt3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt4">
+		             extInt4 = #extInt4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt5">
+		             extInt5 = #extInt5#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="KlShoppingCarthistory.findPage.count" resultClass="long">
+        SELECT count(*) FROM kl_shopping_carthistory <include refid="KlShoppingCarthistory.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="KlShoppingCarthistory.findPage" resultMap="RM.KlShoppingCarthistory">
+    	SELECT <include refid="KlShoppingCarthistory.columns"/> FROM kl_shopping_carthistory 
+		<include refid="KlShoppingCarthistory.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="KlShoppingCarthistory.findTop" resultMap="RM.KlShoppingCarthistory">
+    	SELECT <include refid="KlShoppingCarthistory.columns"/> FROM kl_shopping_carthistory  
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

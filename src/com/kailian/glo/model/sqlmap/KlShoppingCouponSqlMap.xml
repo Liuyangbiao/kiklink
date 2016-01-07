@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.KlShoppingCoupon" class="com.kailian.glo.model.KlShoppingCoupon">
+        <result property="id" column="id"/>
+        <result property="userid" column="userid"/>
+        <result property="couponcode" column="couponcode"/>
+        <result property="type" column="type"/>
+        <result property="price" column="price"/>
+        <result property="validDate" column="validDate"/>
+        <result property="validDateLong" column="validDateLong"/>
+        <result property="invalidDate" column="invalidDate"/>
+        <result property="invalidDateLong" column="invalidDateLong"/>
+        <result property="source" column="source"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="KlShoppingCoupon.columns">
+	    <![CDATA[
+        id ,userid ,couponcode ,type ,price ,validDate ,validDateLong ,invalidDate ,invalidDateLong ,source ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="KlShoppingCoupon.insert" >
+    <![CDATA[
+        INSERT INTO kl_shopping_coupon (
+	        id  ,
+	        userid  ,
+	        couponcode  ,
+	        type  ,
+	        price  ,
+	        validDate  ,
+	        validDateLong  ,
+	        invalidDate  ,
+	        invalidDateLong  ,
+	        source  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#userid# ,
+        	#couponcode# ,
+        	#type# ,
+        	#price# ,
+        	#validDate# ,
+        	#validDateLong# ,
+        	#invalidDate# ,
+        	#invalidDateLong# ,
+        	#source# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="KlShoppingCoupon.update" >
+    <![CDATA[
+        UPDATE kl_shopping_coupon SET
+	        userid = #userid# ,
+	        couponcode = #couponcode# ,
+	        type = #type# ,
+	        price = #price# ,
+	        validDate = #validDate# ,
+	        validDateLong = #validDateLong# ,
+	        invalidDate = #invalidDate# ,
+	        invalidDateLong = #invalidDateLong# ,
+	        source = #source# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="KlShoppingCoupon.delete">
+    <![CDATA[
+        DELETE FROM kl_shopping_coupon WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="KlShoppingCoupon.getById" resultMap="RM.KlShoppingCoupon">
+	    SELECT <include refid="KlShoppingCoupon.columns"/>
+	    <![CDATA[
+	        FROM kl_shopping_coupon 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="KlShoppingCoupon.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userid">
+		             userid = #userid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="couponcode">
+		             couponcode = #couponcode#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="type">
+		             type = #type#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="price">
+		             price = #price#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="validDate">
+		             validDate = #validDate#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="validDateLong">
+		             validDateLong = #validDateLong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="invalidDate">
+		             invalidDate = #invalidDate#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="invalidDateLong">
+		             invalidDateLong = #invalidDateLong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="source">
+		             source = #source#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="KlShoppingCoupon.findPage.count" resultClass="long">
+        SELECT count(*) FROM kl_shopping_coupon <include refid="KlShoppingCoupon.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="KlShoppingCoupon.findPage" resultMap="RM.KlShoppingCoupon">
+    	SELECT <include refid="KlShoppingCoupon.columns"/> FROM kl_shopping_coupon 
+		<include refid="KlShoppingCoupon.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="KlShoppingCoupon.findTop" resultMap="RM.KlShoppingCoupon">
+    	SELECT <include refid="KlShoppingCoupon.columns"/> FROM kl_shopping_coupon 
+    	<include refid="KlShoppingCoupon.findPage.where"/> 
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

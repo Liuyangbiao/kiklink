@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsSurvey" class="com.kailian.glo.model.CmsSurvey">
+        <result property="id" column="id"/>
+        <result property="cnname" column="cnname"/>
+        <result property="enname" column="enname"/>
+        <result property="surveyType" column="surveyType"/>
+        <result property="listcount" column="listcount"/>
+        <result property="surveycount" column="surveycount"/>
+        <result property="tags" column="tags"/>
+        <result property="declearation" column="declearation"/>
+        <result property="coverimg" column="coverimg"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="surveyId" column="surveyId"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsSurvey.columns">
+	    <![CDATA[
+        id ,cnname ,enname ,surveyType ,listcount ,surveycount ,tags ,declearation ,coverimg ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,surveyId 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsSurvey.insert" >
+    <![CDATA[
+        INSERT INTO cms_survey (
+	        id  ,
+	        cnname  ,
+	        enname  ,
+	        surveyType  ,
+	        listcount  ,
+	        surveycount  ,
+	        tags  ,
+	        declearation  ,
+	        coverimg  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        surveyId  
+        ) VALUES (
+        	#id# ,
+        	#cnname# ,
+        	#enname# ,
+        	#surveyType# ,
+        	#listcount# ,
+        	#surveycount# ,
+        	#tags# ,
+        	#declearation# ,
+        	#coverimg# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#surveyId# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsSurvey.update" >
+    <![CDATA[
+        UPDATE cms_survey SET
+	        cnname = #cnname# ,
+	        enname = #enname# ,
+	        surveyType = #surveyType# ,
+	        listcount = #listcount# ,
+	        surveycount = #surveycount# ,
+	        tags = #tags# ,
+	        declearation = #declearation# ,
+	        coverimg = #coverimg# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        surveyId = #surveyId# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsSurvey.delete">
+    <![CDATA[
+        DELETE FROM cms_survey WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsSurvey.getById" resultMap="RM.CmsSurvey">
+	    SELECT <include refid="CmsSurvey.columns"/>
+	    <![CDATA[
+	        FROM cms_survey 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsSurvey.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="cnname">
+		             cnname = #cnname#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="enname">
+		             enname = #enname#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="surveyType">
+		             surveyType = #surveyType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="listcount">
+		             listcount = #listcount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="surveycount">
+		             surveycount = #surveycount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="tags">
+		             tags = #tags#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="declearation">
+		             declearation = #declearation#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coverimg">
+		             coverimg = #coverimg#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="surveyId">
+		             surveyId = #surveyId#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsSurvey.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_survey <include refid="CmsSurvey.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsSurvey.findPage" resultMap="RM.CmsSurvey">
+    	SELECT <include refid="CmsSurvey.columns"/> FROM cms_survey 
+		<include refid="CmsSurvey.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsSurvey.findTop" resultMap="RM.CmsSurvey">
+    	SELECT <include refid="CmsSurvey.columns"/> FROM cms_survey  
+    	<include refid="CmsSurvey.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

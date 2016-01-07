@@ -1,0 +1,70 @@
+.form .input1{height:24px; line-height:24px; width:205px; padding:0 10px; border:#dcdcdc solid 1px; background:url(../image/input1.gif) top repeat-x;}
+
+.loginDiv{padding:42px 0 70px 0;}
+.login{min-height:435px; _height:435px; position:relative; background:#FFF; border:#ccc solid 1px;
+box-shadow:0 3px 2px #ddd;
+}
+.login h1{height:35px; line-height:35px; overflow:hidden; padding-left:30px; background:#f4f4f4; border:#FFF solid 1px;}
+.login h1 span{font-size:12px; padding-left:6px; color:#666;}
+.login .form{padding-top:42px;}
+.login li{height:51px; line-height:26px; overflow:hidden; position:relative; padding-left:200px;}
+.login em{position:absolute; left:0px; top:0px; width:195px; text-align:right; font-size:14px; display:block;}
+.login .input1{float:left;}
+.login .input2{width:83px;}
+.login .lzm{float:left; padding:0 10px;}
+.login .li_01{top:-10px;}
+.login .li_01 input{position:relative; left:-2px; top:2px;}
+.login .liBtn{line-height:32px;}
+.login .btn1{width:90px; height:32px; background:url(../image/lbtn.png) left top no-repeat; color:#fff; cursor:pointer; float:left; margin-right:15px;}
+.login .btn1:hover{text-decoration:underline;}
+/**/
+.login .tipsDiv{position:absolute; right:0px; top:75px; width:260px; height:220px; padding:85px 90px 0 40px; overflow:hidden; background:url(../image/lline.gif) left top repeat-y;}
+.login .msg1{height:51px; line-height:32px; overflow:hidden; background:url(../image/lline1.gif) left bottom repeat-x; font-size:14px;}
+.login .msg1 a{display:inline-block; width:90px; height:32px; text-align:center; color:#fff; background:url(../image/lbtn.png) left top no-repeat;}
+.login .msg2{padding-top:15px;}
+.login .msg2 a{display:inline-block; background:url(../image/nimg22_1.png) center top no-repeat; width:36px; height:20px; position:relative; top:5px;}
+.login .msg2 a:hover{background:url(../image/nimg22_1_1.png) center top no-repeat;}
+.login .msg2 .a1{background:url(../image/nimg22_2.png) center top no-repeat;}
+.login .msg2 .a1:hover{background:url(../image/nimg22_2_1.png) center top no-repeat;}
+/**/
+.password .form{padding-left:175px;}
+/**/
+.backPassword .title{font-size:18px; color:#666; padding:50px 0 20px 285px;}
+.backPassword .form{padding-left:175px;}
+
+.pNoticeDiv{min-height:320px; _height:320px; position:relative; background:#FFF; border:#ccc solid 1px;
+box-shadow:0 3px 2px #ddd;
+}
+.pNoticeDiv h2{background:url(../image/pNoticeDiv.gif) top repeat-x; height:32px; line-height:30px; overflow:hidden; padding-left:16px; color:#666;}
+/**/
+.pNotice{min-height:290px; _height:290px; position:relative; padding-left:380px;}
+.pNotice .ico{position:absolute; left:310px; top:75px;}
+.pNotice .name{font-size:18px; color:#666; padding:75px 0 15px 0;}
+.pNotice .msg{font-size:14px; line-height:25px; width:480px;}
+/**/
+.pNotice2{padding-left:310px;}
+.pNotice2 .ico{left:235px;}
+
+.reg{min-height:435px; _height:435px; position:relative; background:#FFF; border:#ccc solid 1px; padding:30px 0;
+box-shadow:0 3px 2px #ddd;
+}
+.reg .step{height:32px; overflow:hidden; padding-left:250px; background:#fdf2f3;}
+.reg .title{height:75px; overflow:hidden; padding-left:350px;}
+.reg .title li{float:left; width:115px; height:75px; line-height:75px; overflow:hidden; font-size:14px;}
+.reg .title input{float:left; position:relative; top:28px; margin-right:6px;}
+/**/
+.reg .form li{height:44px; line-height:26px; overflow:hidden; padding-left:350px; position:relative;}
+.reg .form em{position:absolute; left:0px; top:0px; width:340px; text-align:right; font-size:14px; display:block;}
+.reg .input1{float:left;}
+.reg .radio{position:relative; top:2px; left:-2px;}
+.reg .lzm{float:left; padding-left:10px;}
+.reg .tips{color:#898989; float:left; padding-left:10px; white-space:nowrap;}
+.reg .form .li_01{position:relative; top:-10px; line-height:43px;}
+.reg .tips2{width:362px; height:43px; line-height:43px; padding-left:20px; overflow:hidden; background:url(../image/lbg.png) left top no-repeat; position:absolute; left:500px; top:0px; display:none; white-space:nowrap;}
+.reg .btn1{width:90px; height:32px; color:#fff; border:0px; background:url(../image/lbtn.png) left top no-repeat; float:left; cursor:pointer; font-size:14px; margin-right:10px;}
+.reg .btn2{background:url(../image/lbtn2.png) left top no-repeat;}
+
+.mainTest{min-height:210px; _height:210px;}
+.mainTest .imgDiv{position:absolute; left:272px; top:125px;}
+.mainTest .content{font-size:14px; line-height:25px; padding:55px 0 0 335px;}
+.mainTest .content2{padding:75px 0 0 350px;}

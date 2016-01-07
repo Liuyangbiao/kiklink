@@ -1,0 +1,1680 @@
+#HeaderFrameContainer {
+	MARGIN: 0px auto; WIDTH: 970px
+}
+#Header {
+	MARGIN: 0px auto; WIDTH: 970px
+}
+#Body {
+	MARGIN: 0px auto; WIDTH: 970px
+}
+#Footer {
+	MARGIN: 0px auto; WIDTH: 970px
+}
+#SiteTop {
+	LINE-HEIGHT: 27px; MARGIN-BOTTOM: 5px; BACKGROUND: #ececec; HEIGHT: 27px
+}
+.siteTopUl {
+	MARGIN: 0px auto; WIDTH: 970px
+}
+.siteTopUl LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 25px; WIDTH: 100px; FLOAT: right; HEIGHT: 25px
+}
+.siteTopUl LI A {
+	DISPLAY: block; HEIGHT: 25px; COLOR: #666
+}
+.siteTopUl LI A:hover {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BACKGROUND: #fff; BORDER-TOP: #ccc 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #ccc 1px solid; TEXT-DECORATION: none
+}
+#Header {
+	HEIGHT: 112px
+}
+.logo {
+	WIDTH: 200px; BACKGROUND: url(../images/logo.gif) no-repeat left top; FLOAT: left; HEIGHT: 86px
+}
+.logo A {
+	TEXT-INDENT: -9999px; DISPLAY: block; HEIGHT: 86px; OVERFLOW: hidden
+}
+.navContainer {
+	WIDTH: 760px; FLOAT: right
+}
+.adBanner {
+	MARGIN-BOTTOM: 10px; HEIGHT: 60px
+}
+.mainNav {
+	HEIGHT: 26px
+}
+.mainNav LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 26px; WIDTH: 100px; FLOAT: left; HEIGHT: 26px; MARGIN-RIGHT: 10px
+}
+.mainNav .noSpace {
+	MARGIN: 0px
+}
+.mainNav LI A {
+	DISPLAY: block; BACKGROUND: url(../images/navBg.jpg) no-repeat left top; HEIGHT: 26px; COLOR: #000; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.mainNav LI A:hover {
+	BACKGROUND: url(../images/navBg.jpg) no-repeat left -26px; COLOR: #fff; FONT-WEIGHT: bold
+}
+.mainNav .mouseOn {
+	BACKGROUND: url(../images/navBg.jpg) no-repeat left -26px; COLOR: #fff; FONT-WEIGHT: bold
+}
+.floatWindowTree {
+	Z-INDEX: 100; POSITION: absolute; WIDTH: 500px; BACKGROUND: #fff; HEIGHT: auto; TOP: 151px; RIGHT: 100px
+}
+.floatWindowTree .bar {
+	BORDER-BOTTOM: #7fa7c2 1px solid; BORDER-LEFT: #7fa7c2 1px solid; PADDING-BOTTOM: 1px; LINE-HEIGHT: 24px; PADDING-LEFT: 6px; PADDING-RIGHT: 1px; BACKGROUND: url(../images/homePageContainerBar.jpg) repeat-x left center; HEIGHT: 24px; BORDER-TOP: #7fa7c2 1px solid; BORDER-RIGHT: #7fa7c2 1px solid; PADDING-TOP: 1px
+}
+.floatWindowTree .bar .title {
+	FLOAT: left; FONT-WEIGHT: bold
+}
+.floatWindowTree .treeBox {
+	BORDER-BOTTOM: #7fa7c2 1px solid; BORDER-LEFT: #7fa7c2 1px solid; MARGIN-BOTTOM: 10px; BACKGROUND: #fff; BORDER-TOP: medium none; BORDER-RIGHT: #7fa7c2 1px solid
+}
+.floatWindowTree .tree {
+	PADDING-BOTTOM: 10px; OVERFLOW-X: hidden; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; HEIGHT: 280px; OVERFLOW: scroll; PADDING-TOP: 10px
+}
+.floatWindowTree .control {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: #bdd2e0 1px solid; PADDING-TOP: 10px
+}
+.infoBar {
+	BACKGROUND: url(../images/inforBarBg.jpg) repeat-x; HEIGHT: 26px
+}
+.welcome {
+	LINE-HEIGHT: 26px; HEIGHT: 26px; COLOR: #fff
+}
+.loginArea {
+	LINE-HEIGHT: 26px; HEIGHT: 26px; COLOR: #fff
+}
+.welcome {
+	PADDING-LEFT: 30px; FLOAT: left
+}
+.loginArea {
+	PADDING-RIGHT: 30px; FLOAT: right
+}
+.loginArea A {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.loginArea A:hover {
+	TEXT-DECORATION: underline
+}
+.space {
+	HEIGHT: 10px
+}
+#Body {
+	
+}
+#LeftSide {
+	WIDTH: 200px; FLOAT: left
+}
+.navTitleBar {
+	BORDER-BOTTOM: #9e9e9e 1px solid; LINE-HEIGHT: 27px; HEIGHT: 27px
+}
+.navTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.navTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.navTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.navTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.navTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.navTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.navTitleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 184px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.navTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.itemTitleBar {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; LINE-HEIGHT: 28px; BACKGROUND: url(../images/navItemBg.jpg) repeat-x; HEIGHT: 28px; BORDER-TOP: medium none; FONT-WEIGHT: bold; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.itemTitle {
+	PADDING-LEFT: 30px; WIDTH: 168px; BACKGROUND: url(../images/navItemTitleSign.gif) no-repeat 10px 2px
+}
+.navItemContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; WIDTH: 198px; BACKGROUND: #f6f6f6; BORDER-TOP: medium none; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.navItemList {
+	PADDING-BOTTOM: 10px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 140px; PADDING-RIGHT: 0px; PADDING-TOP: 10px
+}
+.navItemList LI {
+	LINE-HEIGHT: 25px; TEXT-INDENT: 10px; BACKGROUND: url(../images/listSign.gif) no-repeat left 10px; HEIGHT: 25px
+}
+.navItemList LI A {
+	DISPLAY: block; HEIGHT: 25px
+}
+#RightSide {
+	WIDTH: 760px; FLOAT: right
+}
+.rightMainContainer {
+	MARGIN-BOTTOM: 10px
+}
+.rightMainTitleBar {
+	HEIGHT: 27px
+}
+.rightMainTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.rightMainTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.rightMainTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.rightMainTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.rightMainTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.rightMainTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.rightMainTitleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 744px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.rightMainTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.rightMainTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.rightMainTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.comment {
+	PADDING-BOTTOM: 10px; LINE-HEIGHT: 25px; MARGIN: 10px auto; PADDING-LEFT: 10px; WIDTH: 720px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.leftServiceAdvantagesContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; WIDTH: 198px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; BORDER-TOP: medium none; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 10px
+}
+.serviceAdvantages {
+	LINE-HEIGHT: 20px; MARGIN: 0px auto; WIDTH: 180px
+}
+.procurementInfoList {
+	MARGIN: 0px auto 10px; WIDTH: 720px
+}
+.procurementInfoList LI {
+	BORDER-BOTTOM: #ccc 1px dashed; TEXT-ALIGN: right; LINE-HEIGHT: 30px; BACKGROUND: url(../images/listSign.gif) no-repeat 5px 13px; HEIGHT: 30px; COLOR: #aaa
+}
+.procurementInfoList LI SPAN {
+	TEXT-ALIGN: left; TEXT-INDENT: 15px; WIDTH: 600px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; FLOAT: left; OVERFLOW: hidden
+}
+.procurementInfoList LI SPAN A {
+	TEXT-DECORATION: none
+}
+.procurementInfoList LI SPAN A:hover {
+	TEXT-DECORATION: underline
+}
+.procurementInfoList .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.procurementInfoList .lock {
+	BACKGROUND: url(../images/lockSign.gif) no-repeat 1px 9px
+}
+.annexTitle {
+	BORDER-BOTTOM: #aaa 1px dashed; LINE-HEIGHT: 25px; TEXT-INDENT: 25px; MARGIN: 10px auto; WIDTH: 900px; BACKGROUND: url(../images/titleSign.gif) no-repeat left 4px; HEIGHT: 25px; FONT-WEIGHT: bold
+}
+.annexList {
+	MARGIN: 0px auto; WIDTH: 800px
+}
+.annexList LI {
+	LINE-HEIGHT: 25px; TEXT-INDENT: 25px; BACKGROUND: url(../images/annexSign.gif) no-repeat left 5px; HEIGHT: 25px
+}
+.rightsChoose {
+	
+}
+.rightsChoose LI {
+	LINE-HEIGHT: 25px; WIDTH: 60%; HEIGHT: 25px; COLOR: #06f
+}
+.rightsChoose .subLi {
+	BORDER-BOTTOM: #ccc 1px dashed; PADDING-LEFT: 25px; MARGIN-BOTTOM: 5px; COLOR: #000
+}
+.rightsChoose .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.serviceList LI {
+	LINE-HEIGHT: 25px; WIDTH: 30%; FLOAT: left; HEIGHT: 25px; COLOR: #06f
+}
+.registContainer {
+	
+}
+.registStep_1 {
+	MARGIN: 0px auto; WIDTH: 894px; HEIGHT: 20px
+}
+.registStep_2 {
+	MARGIN: 0px auto; WIDTH: 894px; HEIGHT: 20px
+}
+.registStep_3 {
+	MARGIN: 0px auto; WIDTH: 894px; HEIGHT: 20px
+}
+.registStep_4 {
+	MARGIN: 0px auto; WIDTH: 894px; HEIGHT: 20px
+}
+.registStep_5 {
+	MARGIN: 0px auto; WIDTH: 894px; HEIGHT: 20px
+}
+.registStep_6 {
+	MARGIN: 0px auto; WIDTH: 894px; HEIGHT: 20px
+}
+.registStep_1 {
+	BACKGROUND: url(../images/registerGuide.gif) no-repeat left 0px
+}
+.registStep_2 {
+	BACKGROUND: url(../images/registerGuide.gif) no-repeat left -20px
+}
+.registStep_3 {
+	BACKGROUND: url(../images/registerGuide.gif) no-repeat left -40px
+}
+.registStep_4 {
+	BACKGROUND: url(../images/registerGuide.gif) no-repeat left -60px
+}
+.registStep_5 {
+	BACKGROUND: url(../images/registerGuide.gif) no-repeat left -80px
+}
+.registStep_6 {
+	BACKGROUND: url(../images/registerGuide.gif) no-repeat left -100px
+}
+.registTitleBar {
+	HEIGHT: 27px
+}
+.progress {
+	TEXT-ALIGN: center; LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.registTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.registTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.registTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.registTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.registTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.registTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.registTitleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 954px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.registTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.registTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.registTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.registContainer .infoContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 20px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 20px
+}
+.registTip {
+	MARGIN: 0px auto; WIDTH: 900px
+}
+.registTitle {
+	MARGIN: 0px auto; WIDTH: 900px
+}
+.registTab {
+	MARGIN: 0px auto; WIDTH: 900px
+}
+.registSubmitContainer {
+	MARGIN: 0px auto; WIDTH: 900px
+}
+.registTip {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #f60; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 10px
+}
+.registTitle {
+	BORDER-BOTTOM: #ccc 1px dashed; LINE-HEIGHT: 25px; TEXT-INDENT: 25px; MARGIN: 10px auto; BACKGROUND: url(../images/titleSign.gif) no-repeat left 4px; HEIGHT: 25px; FONT-WEIGHT: bold
+}
+.registTab {
+	MARGIN: 0px auto
+}
+.registTab TBODY TH {
+	LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.registTab TBODY TD {
+	LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.registTab TBODY TH {
+	TEXT-ALIGN: right; WIDTH: 150px; VERTICAL-ALIGN: top
+}
+.registTab TBODY TD {
+	WIDTH: 750px
+}
+.registSubmitContainer {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 10px
+}
+.registFeedBack {
+	MARGIN: 10px auto; WIDTH: 600px
+}
+.feedBackInfo {
+	BACKGROUND: url(../images/regComplete.jpg) no-repeat left 0px; HEIGHT: 90px
+}
+.feedBackInfo H1 {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; LINE-HEIGHT: 25px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 500px; PADDING-RIGHT: 0px; FLOAT: right; PADDING-TOP: 0px
+}
+.feedBackNotice {
+	MARGIN: 0px auto; WIDTH: 300px
+}
+.feedBackNotice LI {
+	LINE-HEIGHT: 30px; HEIGHT: 30px; FONT-WEIGHT: bold
+}
+.searchForm {
+	BORDER-BOTTOM: #3a829b 2px solid; TEXT-ALIGN: center; BORDER-LEFT: #3a829b 2px solid; PADDING-BOTTOM: 10px; MARGIN: 0px auto 10px; PADDING-LEFT: 0px; WIDTH: 966px; PADDING-RIGHT: 0px; BORDER-TOP: #3a829b 2px solid; BORDER-RIGHT: #3a829b 2px solid; PADDING-TOP: 10px
+}
+.leftGoodsContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; WIDTH: 198px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; BORDER-TOP: medium none; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 10px
+}
+.goodsMenuContainer {
+	LINE-HEIGHT: 20px; MARGIN: 0px auto; WIDTH: 180px
+}
+.goodsMenu {
+	BORDER-BOTTOM: #aaa 1px dashed; MARGIN-BOTTOM: 10px; HEIGHT: auto; OVERFLOW: hidden; _padding-bottom: 30px
+}
+.goodsMenu LI {
+	LINE-HEIGHT: 26px; HEIGHT: 26px; FONT-WEIGHT: bold
+}
+.goodsMenu .root {
+	TEXT-INDENT: 10px; BACKGROUND: url(../images/goodsSign.gif) no-repeat left 7px
+}
+.goodsMenu .subMenu {
+	TEXT-ALIGN: center; LINE-HEIGHT: 26px; WIDTH: 60px; MARGIN-BOTTOM: 5px; BACKGROUND: url(../images/goodsMenuLine.gif) no-repeat right 50%; FLOAT: left; HEIGHT: 26px; FONT-WEIGHT: normal
+}
+.goodsMenu .noBg {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.findGoods {
+	TEXT-ALIGN: center; LINE-HEIGHT: 35px; MARGIN: 0px auto; WIDTH: 180px
+}
+.featuredProducts {
+	MARGIN: 0px auto; WIDTH: 650px
+}
+.featuredProducts LI {
+	TEXT-ALIGN: center; MARGIN: 10px 10px 10px 0px; WIDTH: 120px; FLOAT: left
+}
+.featuredProducts LI IMG {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN-BOTTOM: 5px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.featuredProducts .noSpace {
+	
+}
+.goodsList {
+	BORDER-BOTTOM: #aaa 1px dashed; PADDING-BOTTOM: 10px; MARGIN: 10px auto; WIDTH: 760px
+}
+.goodsPicture {
+	TEXT-ALIGN: center; WIDTH: 180px; FLOAT: left
+}
+.goodsInfo {
+	WIDTH: 580px; FLOAT: right
+}
+.goodsInfo LI {
+	LINE-HEIGHT: 25px
+}
+.goodsInfo LI IMG {
+	MARGIN-RIGHT: 10px
+}
+.frontPageBar {
+	MARGIN: 30px auto
+}
+.goodsTab {
+	BORDER-BOTTOM: #eaeaea 1px solid; BORDER-LEFT: #eaeaea 1px solid; MARGIN: 10px auto; WIDTH: 750px; BORDER-COLLAPSE: collapse; BORDER-TOP: #eaeaea 1px solid; BORDER-RIGHT: #eaeaea 1px solid
+}
+.goodsTab CAPTION {
+	LINE-HEIGHT: 35px; HEIGHT: 35px; FONT-SIZE: 14px
+}
+.goodsTab THEAD TH {
+	LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.goodsTab TBODY TH {
+	LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.goodsTab TBODY TD {
+	LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.goodsTab THEAD TH {
+	TEXT-ALIGN: left; TEXT-INDENT: 10px; BACKGROUND: #f0f0f0
+}
+.goodsTab TBODY TH {
+	BORDER-BOTTOM: #eaeaea 1px solid; TEXT-ALIGN: right; BORDER-LEFT: #eaeaea 1px solid; WIDTH: 100px; BORDER-TOP: #eaeaea 1px solid; BORDER-RIGHT: #eaeaea 1px solid
+}
+.goodsTab TBODY TD {
+	BORDER-BOTTOM: #eaeaea 1px solid; BORDER-LEFT: #eaeaea 1px solid; TEXT-INDENT: 5px; WIDTH: 650px; BORDER-TOP: #eaeaea 1px solid; BORDER-RIGHT: #eaeaea 1px solid
+}
+.goodsTab .col1 {
+	TEXT-ALIGN: right; WIDTH: 20%
+}
+.goodsTab .col2 {
+	WIDTH: 80%
+}
+.searchResultInfo {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; LINE-HEIGHT: 40px; MARGIN: 0px auto 10px; PADDING-LEFT: 10px; BACKGROUND: #fff0d9; HEIGHT: 40px; FONT-SIZE: 14px; BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid
+}
+.noSearchResultContainer {
+	TEXT-ALIGN: center; LINE-HEIGHT: 200px; MARGIN: 0px auto 10px; HEIGHT: 200px; FONT-SIZE: 14px
+}
+.secondList {
+	MARGIN: 10px auto; WIDTH: 700px
+}
+.thirdList {
+	MARGIN: 10px auto; WIDTH: 700px
+}
+.secondList LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 25px; WIDTH: 70px; FLOAT: left; HEIGHT: 25px
+}
+.thirdList LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 25px; WIDTH: 70px; FLOAT: left; HEIGHT: 25px
+}
+.thirdList {
+	BORDER-TOP: #ccc 1px solid; PADDING-TOP: 10px
+}
+.thirdList LI A {
+	COLOR: #666
+}
+.hotelSearchFormContainer {
+	WIDTH: 710px; FLOAT: left
+}
+.hotelSearchFormTitleBar {
+	
+}
+.hotelSearchFormTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.hotelSearchFormTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.hotelSearchFormTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.hotelSearchFormTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.hotelSearchFormTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.hotelSearchFormTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.hotelSearchFormTitleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 694px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.hotelSearchFormTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.hotelSearchFormTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.hotelSearchFormTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.hotelSearchFormContainer .infoContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 230px; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 10px
+}
+.hotelSearchTab {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 0px auto; WIDTH: 650px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelSearchTab TBODY TH {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; LINE-HEIGHT: 30px; HEIGHT: 30px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelSearchTab TBODY TD {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; LINE-HEIGHT: 30px; HEIGHT: 30px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelSearchTab TBODY TH {
+	TEXT-ALIGN: right; WIDTH: 100px
+}
+.hotelSearchTab TBODY TD {
+	TEXT-ALIGN: left; WIDTH: 550px
+}
+.hotelSearchFormSubmitContainer {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 650px; PADDING-RIGHT: 0px; PADDING-TOP: 10px
+}
+.hotelTopListContainer {
+	WIDTH: 250px; FLOAT: right
+}
+.hotelTopListTitleBar {
+	
+}
+.hotelTopListTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.hotelTopListTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.hotelTopListTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.hotelTopListTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.hotelTopListTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.hotelTopListTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.hotelTopListTitleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 234px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.hotelTopListTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.hotelTopListTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.hotelTopListTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.hotelTopListContainer .infoContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 230px; OVERFLOW: hidden; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 10px
+}
+.hotelTopListContainer .infoList {
+	MARGIN: 0px auto; WIDTH: 228px
+}
+.hotelTopListContainer .infoList LI {
+	BORDER-BOTTOM: #ccc 1px dashed; TEXT-ALIGN: right; LINE-HEIGHT: 30px; TEXT-INDENT: 15px; BACKGROUND: url(../images/listSign.gif) no-repeat 5px 13px; HEIGHT: 30px; COLOR: #f00
+}
+.hotelTopListContainer .infoList LI SPAN {
+	WIDTH: 140px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; FLOAT: left; OVERFLOW: hidden
+}
+.hotelTopListContainer .infoList LI SPAN A {
+	TEXT-DECORATION: none
+}
+.hotelTopListContainer .infoList LI SPAN A:hover {
+	TEXT-DECORATION: underline
+}
+.hotelTopListContainer .infoList .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelAreaSelectContainer {
+	WIDTH: 970px
+}
+.hotelAreaSelectTitleBar {
+	BORDER-BOTTOM: #9e9e9e 1px solid
+}
+.hotelAreaSelectTitleBar .leftCorner {
+	LINE-HEIGHT: 30px; FLOAT: left; HEIGHT: 30px
+}
+.hotelAreaSelectTitleBar .titleContainer {
+	LINE-HEIGHT: 30px; FLOAT: left; HEIGHT: 30px
+}
+.hotelAreaSelectTitleBar .rightCorner {
+	LINE-HEIGHT: 30px; FLOAT: left; HEIGHT: 30px
+}
+.hotelAreaSelectTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.hotelAreaSelectTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.hotelAreaSelectTitleBar .leftCorner {
+	BACKGROUND: url(../images/hotel/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.hotelAreaSelectTitleBar .titleContainer {
+	POSITION: relative; PADDING-LEFT: 10px; WIDTH: 954px; BACKGROUND: url(../images/hotel/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.hotelAreaSelectTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.hotelAreaSelectTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.hotelAreaSelectTitleBar .rightCorner {
+	BACKGROUND: url(../images/hotel/titleLeftCornerRightBg.jpg) no-repeat
+}
+.hotelAreaSelectContainer .infoContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: #d0d0d0 1px solid; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 0px
+}
+.hotelAreaSelectSubTabContainer .tabNav {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: #9e9e9e 1px solid; BACKGROUND: #ecedec; HEIGHT: 30px; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.hotelAreaSelectTab {
+	POSITION: absolute; WIDTH: 504px; TOP: 9px; RIGHT: 50px; _width: 518px
+}
+.hotelAreaSelectTab LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 22px; WIDTH: 46px; BACKGROUND: url(../images/hotelTopTab.jpg) no-repeat left -22px; FLOAT: left; HEIGHT: 22px; COLOR: #000; MARGIN-LEFT: 10px; CURSOR: pointer
+}
+.hotelAreaSelectTab .onTab {
+	BACKGROUND: url(../images/hotelTopTab.jpg) no-repeat left 0px
+}
+.hotelAreaSelectContainer .infoContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.hotelSelectSubContainer {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 15px
+}
+.selectResultList {
+	MARGIN: 0px auto; WIDTH: 900px
+}
+.selectResultList .selectResultListLi {
+	
+}
+.selectResultList STRONG {
+	LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.subList LI {
+	LINE-HEIGHT: 25px; WIDTH: 90px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; MARGIN-BOTTOM: 5px; FLOAT: left; HEIGHT: 25px; OVERFLOW: hidden; MARGIN-RIGHT: 10px
+}
+.leftSideContainer {
+	WIDTH: 220px; FLOAT: left; MARGIN-RIGHT: 10px
+}
+.leftHotel {
+	MARGIN-BOTTOM: 10px
+}
+.leftHotel .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.leftHotel .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.leftHotel .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.leftHotel .titleBar .leftCorner {
+	WIDTH: 3px; FONT-SIZE: 0px
+}
+.leftHotel .titleBar .rightCorner {
+	WIDTH: 3px; FONT-SIZE: 0px
+}
+.leftHotel .titleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.leftHotel .titleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 204px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.leftHotel .titleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.leftHotel .titleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.leftHotel .titleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.leftHotel .infoContainer_1 {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.leftHotel .infoContainer_2 {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.leftHotel .infoContainer_1 {
+	HEIGHT: 90px; OVERFLOW: hidden
+}
+.leftHotel .infoContainer_2 {
+	HEIGHT: 197px
+}
+.infoContainer_1 .list {
+	MARGIN: 0px auto 10px; WIDTH: 200px
+}
+.infoContainer_2 .list {
+	MARGIN: 0px auto 10px; WIDTH: 200px
+}
+.infoContainer_1 .list LI {
+	LINE-HEIGHT: 30px; WIDTH: 100px; FLOAT: left; HEIGHT: 30px
+}
+.infoContainer_2 .list {
+	PADDING-TOP: 10px
+}
+.infoContainer_2 .list LI {
+	BORDER-BOTTOM: #aaa 1px dashed; PADDING-BOTTOM: 5px; MARGIN-BOTTOM: 10px
+}
+.infoContainer_2 .list LI H2 {
+	COLOR: #009; FONT-SIZE: 12px
+}
+.infoContainer_2 .list LI P {
+	LINE-HEIGHT: 20px
+}
+.infoContainer_2 .list .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.middleContainer {
+	WIDTH: 530px; FLOAT: left; MARGIN-RIGHT: 10px
+}
+.bestHotleContainer .titleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.bestHotleContainer .titleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.bestHotleContainer .titleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.bestHotleContainer .titleBar .leftCorner {
+	WIDTH: 3px
+}
+.bestHotleContainer .titleBar .rightCorner {
+	WIDTH: 3px
+}
+.bestHotleContainer .titleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.bestHotleContainer .titleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 514px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.bestHotleContainer .titleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.bestHotleContainer .titleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.bestHotleContainer .titleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.bestHotleContainer .infoContainer {
+	HEIGHT: 316px; PADDING-TOP: 10px
+}
+.commentsItem {
+	MARGIN: 0px auto; WIDTH: 500px
+}
+.hotelNameBar {
+	LINE-HEIGHT: 25px; PADDING-LEFT: 10px; BACKGROUND: #dce3e4; HEIGHT: 25px; FONT-WEIGHT: bold
+}
+.hotelNameBar A {
+	COLOR: #3393ac
+}
+.commentsContainer {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN: 0px 10px 10px 0px; WIDTH: 243px; FLOAT: left; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.commentsContainer IMG {
+	MARGIN: 5px 10px 5px 5px; FLOAT: left
+}
+.hotelComments {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; WIDTH: 150px; PADDING-RIGHT: 0px; FLOAT: left; HEIGHT: 110px; PADDING-TOP: 5px
+}
+.hotelComments H2 {
+	LINE-HEIGHT: 22px; HEIGHT: 22px; FONT-SIZE: 12px
+}
+.hotelComments H2 A {
+	COLOR: #333
+}
+.hotelComments SPAN {
+	LINE-HEIGHT: 22px; HEIGHT: 22px; COLOR: #f30
+}
+.hotelComments P {
+	LINE-HEIGHT: 22px
+}
+.rightSideContainer {
+	WIDTH: 200px; FLOAT: left
+}
+.roomInfoTab {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; WIDTH: 400px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.roomInfoTab TBODY TH {
+	LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.roomInfoTab TBODY TD {
+	LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.roomInfoTab TH {
+	WIDTH: 80px; FONT-WEIGHT: normal
+}
+.roomInfoTab TD {
+	WIDTH: 320px
+}
+.roomPriceTab {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; WIDTH: 420px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.roomPriceTab THEAD TH {
+	TEXT-ALIGN: center; LINE-HEIGHT: 25px; WIDTH: 60px; HEIGHT: 25px
+}
+.roomPriceTab TBODY TD {
+	TEXT-ALIGN: center; LINE-HEIGHT: 25px; WIDTH: 60px; HEIGHT: 25px
+}
+.roomPriceTab THEAD TH {
+	TEXT-ALIGN: left
+}
+.roomPriceTab TBODY TD {
+	
+}
+.leftBookedContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 198px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; BORDER-TOP: medium none; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 10px
+}
+.leftFavoriteContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 198px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; BORDER-TOP: medium none; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 10px
+}
+.leftRecommendHotelContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 198px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 10px; BORDER-TOP: medium none; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 10px
+}
+.bookedHotel {
+	MARGIN: 0px auto; WIDTH: 180px
+}
+.favoriteHotel {
+	MARGIN: 0px auto; WIDTH: 180px
+}
+.recommendHotels {
+	MARGIN: 0px auto; WIDTH: 180px
+}
+.bookedHotel .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.favoriteHotel .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.bookedHotel LI {
+	BORDER-BOTTOM: #aaa 1px dashed; LINE-HEIGHT: 25px; MARGIN-BOTTOM: 5px; HEIGHT: 25px
+}
+.favoriteHotel LI {
+	BORDER-BOTTOM: #aaa 1px dashed; LINE-HEIGHT: 25px; MARGIN-BOTTOM: 5px; HEIGHT: 25px
+}
+.favoriteHotel LI {
+	WIDTH: 180px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.bookedHotel LI .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.favoriteHotel LI .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.recommendHotels LI {
+	BORDER-BOTTOM: #aaa 1px dashed; PADDING-BOTTOM: 5px; LINE-HEIGHT: 25px; MARGIN-BOTTOM: 10px
+}
+.recommendHotels .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.recommendHotels LI H2 {
+	COLOR: #009; FONT-SIZE: 12px
+}
+.recommendHotels LI P {
+	WORD-WRAP: break-word; WORD-BREAK: normal
+}
+.hotelInfoContainer {
+	MARGIN: 10px auto; WIDTH: 720px
+}
+.hotelPicture {
+	TEXT-ALIGN: center; WIDTH: 220px; FLOAT: left; OVERFLOW: hidden
+}
+.hotelPicture IMG {
+	_margin-top: 10px
+}
+.hotelPicArea {
+	WIDTH: 160px; HEIGHT: 160px; OVERFLOW: hidden
+}
+.hotelPicScrollArea {
+	WIDTH: 150px; HEIGHT: 108px; OVERFLOW: hidden
+}
+.morePic {
+	MARGIN: 0px auto; WIDTH: 180px; PADDING-TOP: 10px
+}
+.morePic LI {
+	TEXT-ALIGN: center; WIDTH: 60px; FLOAT: left
+}
+.hotelInfo {
+	WIDTH: 500px; FLOAT: right
+}
+.hotelInfo LI {
+	POSITION: relative; LINE-HEIGHT: 25px
+}
+.hotelInfo LI SPAN {
+	WIDTH: 400px; TEXT-OVERFLOW: ellipsis; DISPLAY: block; MAX-WIDTH: 400px; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.mapContainer {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN: 10px auto; WIDTH: 500px; HEIGHT: 374px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.favoriteBtn {
+	POSITION: absolute; WIDTH: 48px; HEIGHT: 19px; TOP: 0px; RIGHT: 10px
+}
+.clientNoticeTab {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 10px auto; WIDTH: 700px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.clientNoticeTab CAPTION {
+	LINE-HEIGHT: 35px; HEIGHT: 35px; FONT-SIZE: 12px
+}
+.clientNoticeTab TH {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 25px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; HEIGHT: 25px; PADDING-TOP: 5px
+}
+.clientNoticeTab TD {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 25px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; HEIGHT: 25px; PADDING-TOP: 5px
+}
+.clientNoticeTab TH {
+	TEXT-ALIGN: right; WIDTH: 100px
+}
+.clientNoticeTab TD {
+	WIDTH: 500px
+}
+.searchTitleBar {
+	
+}
+.searchTitle {
+	LINE-HEIGHT: 50px; PADDING-LEFT: 60px; WIDTH: 400px; BACKGROUND: url(../images/hotel/hotelSign.jpg) no-repeat; FLOAT: left; HEIGHT: 50px; FONT-SIZE: 14px
+}
+.bookStepBar {
+	WIDTH: 210px; FLOAT: right; HEIGHT: 50px; _width: 212px
+}
+.bookStep {
+	WIDTH: 40px; FLOAT: left; MARGIN-LEFT: 2px
+}
+.bookStep DT {
+	HEIGHT: 7px; _font-size: 1px
+}
+.bookStep .onStep {
+	BACKGROUND: #f60
+}
+.bookStep .outStep {
+	BACKGROUND: #dbdbdb
+}
+.bookStep DD {
+	TEXT-ALIGN: center; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.searchResultInfoBar {
+	TEXT-ALIGN: right; LINE-HEIGHT: 20px; HEIGHT: 20px
+}
+.otherSearchBar {
+	
+}
+.searchResultPageBar {
+	
+}
+.hotelPageBarTab {
+	MARGIN: 10px auto 0px; WIDTH: 760px
+}
+.changeOrder {
+	WIDTH: 200px
+}
+.changeOrder LI {
+	LINE-HEIGHT: 25px; FLOAT: left; HEIGHT: 25px
+}
+.changeOrder .upSign {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; CURSOR: pointer; PADDING-TOP: 0px
+}
+.changeOrder .downSign {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; CURSOR: pointer; PADDING-TOP: 0px
+}
+.changeOrder .upSign {
+	BACKGROUND: url(../images/down&upSign.gif) no-repeat left 8px
+}
+.changeOrder .downSign {
+	BACKGROUND: url(../images/down&upSign.gif) no-repeat left -17px
+}
+.hotelPageBarTab TBODY TH {
+	HEIGHT: 25px
+}
+.hotelPageBarTab TBODY TD {
+	HEIGHT: 25px
+}
+.hotelPageBarTab TBODY TH {
+	TEXT-ALIGN: left; LINE-HEIGHT: 25px; PADDING-LEFT: 20px; WIDTH: 200px
+}
+.hotelPageBarTab TBODY TD {
+	WIDTH: 540px
+}
+.hotelPageBar {
+	HEIGHT: 25px
+}
+.hotelPageBar LI {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 25px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FLOAT: right; HEIGHT: 25px; PADDING-TOP: 0px
+}
+.otherSearchBar {
+	BORDER-BOTTOM: #8cb2d6 1px solid; BORDER-LEFT: #8cb2d6 1px solid; MARGIN: 10px auto; BORDER-TOP: #8cb2d6 1px solid; BORDER-RIGHT: #8cb2d6 1px solid
+}
+.otherSearchBarTitle {
+	LINE-HEIGHT: 27px; PADDING-LEFT: 30px; BACKGROUND: url(../images/hotel/otherSearchSign.gif) #ececec no-repeat 10px 5px; HEIGHT: 27px
+}
+.otherSearchContainer {
+	PADDING-BOTTOM: 10px; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 700px; PADDING-RIGHT: 0px; PADDING-TOP: 10px
+}
+.otherSearchContainer LI {
+	LINE-HEIGHT: 25px; HEIGHT: 25px; COLOR: #333
+}
+.otherSearchContainer LI A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; COLOR: #333; PADDING-TOP: 0px
+}
+.searchResultContainer {
+	BORDER-BOTTOM: #8cb2d6 1px solid; BORDER-LEFT: #8cb2d6 1px solid; MARGIN: 10px auto; BACKGROUND: #ececec; BORDER-TOP: #8cb2d6 1px solid; BORDER-RIGHT: #8cb2d6 1px solid
+}
+.searchResultPictureInfo {
+	WIDTH: 130px; FLOAT: left; PADDING-TOP: 20px
+}
+.searchResultPictureInfo DL {
+	MARGIN: 0px auto; WIDTH: 100px
+}
+.searchResultPictureInfo DL DT {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 5px
+}
+.searchResultPictureInfo DL DD {
+	LINE-HEIGHT: 25px; PADDING-LEFT: 30px; BACKGROUND: url(../images/hotel/viewSign.gif) no-repeat 10px 4px; HEIGHT: 25px
+}
+.searchResultCommentsInfo {
+	POSITION: relative; WIDTH: 628px; BACKGROUND: #fff; FLOAT: left
+}
+.favoiteBtnContainer {
+	POSITION: absolute; TOP: 10px; RIGHT: 20px
+}
+.hotelInfoComments {
+	MARGIN: 0px auto; WIDTH: 600px; CLEAR: both; PADDING-TOP: 10px
+}
+.hotelInfoComments LI {
+	LINE-HEIGHT: 25px
+}
+.hotelInfoComments LI SPAN {
+	WIDTH: 400px; TEXT-OVERFLOW: ellipsis; DISPLAY: block; MAX-WIDTH: 400px; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.mapBtn {
+	POSITION: absolute; TOP: 10px; RIGHT: 10px
+}
+.hotelInfoTab {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 10px auto; WIDTH: 600px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelInfoTab THEAD TH {
+	BORDER-BOTTOM: #a8c6dc 1px dashed; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.hotelInfoTab TBODY TD {
+	BORDER-BOTTOM: #a8c6dc 1px dashed; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.hotelInfoTab THEAD TH {
+	BACKGROUND: #e1eef8; COLOR: #069; FONT-WEIGHT: normal
+}
+.hotelInfoTab TBODY TD {
+	
+}
+.hotelInfoTab TBODY .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelInfoTab2 {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 10px auto; WIDTH: 700px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelInfoTab2 THEAD TH {
+	BORDER-BOTTOM: #a8c6dc 1px dashed; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.hotelInfoTab2 TBODY TD {
+	BORDER-BOTTOM: #a8c6dc 1px dashed; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.hotelInfoTab2 THEAD TH {
+	BACKGROUND: #e1eef8; COLOR: #069; FONT-WEIGHT: normal
+}
+.hotelInfoTab2 TBODY TD {
+	
+}
+.hotelInfoTab2 TBODY .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.otherInforCotainer {
+	MARGIN: 0px auto; WIDTH: 700px; HEIGHT: 130px
+}
+.otherInforCotainer LI {
+	TEXT-ALIGN: center; WIDTH: 175px; HEIGHT: 108px; MARGIN-RIGHT: 15px
+}
+.roomInfo {
+	
+}
+.roomInfoContainer {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: #f0f0f0; PADDING-TOP: 10px
+}
+.roomPic {
+	WIDTH: 150px; FLOAT: left
+}
+.roomContent {
+	WIDTH: 220px; FLOAT: left
+}
+.roomContent LI {
+	TEXT-ALIGN: left; LINE-HEIGHT: 25px; WIDTH: 110px; FLOAT: left; HEIGHT: 25px
+}
+.roomInfoContainer2 {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: #f0f0f0; PADDING-TOP: 10px
+}
+.roomPic2 {
+	WIDTH: 150px; FLOAT: left
+}
+.roomContent2 {
+	WIDTH: 300px; FLOAT: left
+}
+.roomContent2 LI {
+	TEXT-ALIGN: left; LINE-HEIGHT: 25px; WIDTH: 150px; FLOAT: left; HEIGHT: 25px
+}
+.priceTab {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; WIDTH: 490px; BORDER-COLLAPSE: collapse; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.priceTab CAPTION {
+	LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.priceTab THEAD TH {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; LINE-HEIGHT: 25px; WIDTH: 70px; HEIGHT: 25px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.priceTab TBODY TD {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; LINE-HEIGHT: 25px; WIDTH: 70px; HEIGHT: 25px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.priceTab THEAD TH {
+	TEXT-ALIGN: center !important; BACKGROUND: #eaeaea
+}
+.priceTab TBODY TD {
+	TEXT-ALIGN: center
+}
+.hotelPriceBox {
+	Z-INDEX: 10; BORDER-BOTTOM: #fc0 3px solid; POSITION: absolute; BORDER-LEFT: #fc0 3px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; WIDTH: 350px; PADDING-RIGHT: 2px; DISPLAY: none; BACKGROUND: #fff; BORDER-TOP: #fc0 3px solid; BORDER-RIGHT: #fc0 3px solid; PADDING-TOP: 2px
+}
+.hotelPriceBox P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #f00; PADDING-TOP: 0px
+}
+.hotelPriceBox TABLE {
+	TEXT-ALIGN: center; WIDTH: 100%; BORDER-COLLAPSE: collapse; FONT-SIZE: 12px
+}
+.hotelPriceBox TABLE TH {
+	BORDER-BOTTOM: #fc3 1px dashed; PADDING-BOTTOM: 1px; LINE-HEIGHT: 150%; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; BACKGROUND: #ffc; FONT-WEIGHT: normal; PADDING-TOP: 1px
+}
+.hotelPriceBox TABLE TD {
+	BORDER-BOTTOM: #fc3 1px dashed; PADDING-BOTTOM: 3px; LINE-HEIGHT: 120%; PADDING-LEFT: 3px; WIDTH: 12.5%; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+.helpInfoList {
+	MARGIN: 10px auto; WIDTH: 620px
+}
+.helpInfoList LI {
+	BORDER-BOTTOM: #ccc 1px dashed; LINE-HEIGHT: 30px; TEXT-INDENT: 15px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; BACKGROUND: url(../images/listSign.gif) no-repeat 5px 13px; HEIGHT: 30px; COLOR: #aaa; OVERFLOW: hidden
+}
+.helpInfoList LI A {
+	TEXT-DECORATION: none
+}
+.helpInfoList LI A:hover {
+	TEXT-DECORATION: underline
+}
+.helpInfoList .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.systemTab {
+	BORDER-BOTTOM: #666 1px solid; BORDER-LEFT: #666 1px solid; MARGIN: 0px auto; WIDTH: 400px; DISPLAY: block; BORDER-COLLAPSE: collapse; BORDER-TOP: #666 1px solid; BORDER-RIGHT: #666 1px solid
+}
+.erowserTab {
+	BORDER-BOTTOM: #666 1px solid; BORDER-LEFT: #666 1px solid; MARGIN: 0px auto; WIDTH: 600px; DISPLAY: block; BORDER-COLLAPSE: collapse; BORDER-TOP: #666 1px solid; BORDER-RIGHT: #666 1px solid
+}
+.systemTab TH {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc 1px solid; LINE-HEIGHT: 25px; HEIGHT: 25px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.systemTab TD {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc 1px solid; LINE-HEIGHT: 25px; HEIGHT: 25px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.erowserTab TH {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc 1px solid; LINE-HEIGHT: 25px; HEIGHT: 25px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.erowserTab TD {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc 1px solid; LINE-HEIGHT: 25px; HEIGHT: 25px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.systemTab TH {
+	BACKGROUND: #eee
+}
+.erowserTab TH {
+	BACKGROUND: #eee
+}
+.helpContentContainer {
+	BORDER-BOTTOM: #aaa 1px dashed; MARGIN: 10px auto 20px; WIDTH: 720px
+}
+.legalNoticeContentContainer {
+	BORDER-BOTTOM: #aaa 1px dashed; MARGIN: 10px auto 20px; WIDTH: 720px
+}
+.helpContentContainer {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #000; PADDING-TOP: 10px
+}
+.legalNoticeContentContainer H1 {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #000; PADDING-TOP: 10px
+}
+.helpContentContainer {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 10px; LINE-HEIGHT: 30px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; FONT-SIZE: 14px; WORD-BREAK: break-all; PADDING-TOP: 10px
+}
+.legalNoticeContentContainer P {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 10px; LINE-HEIGHT: 30px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; FONT-SIZE: 14px; WORD-BREAK: break-all; PADDING-TOP: 10px
+}
+.serviceContainer {
+	WIDTH: 330px; FLOAT: left; MARGIN-RIGHT: 10px
+}
+.serviceTabArea {
+	BORDER-BOTTOM: #3b819b 1px solid; POSITION: relative; BORDER-LEFT: #3b819b 1px solid; BACKGROUND: url(../images/serviceTabBarBg.jpg) repeat-x; HEIGHT: 22px; BORDER-TOP: #3b819b 1px solid; BORDER-RIGHT: #3b819b 1px solid
+}
+.serviceTab {
+	POSITION: absolute; PADDING-LEFT: 0px; WIDTH: 312px; TOP: 3px; LEFT: 4px
+}
+.serviceTab LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 20px; WIDTH: 70px; DISPLAY: inline; BACKGROUND: url(../images/serviceTabBg.gif) no-repeat left -20px; FLOAT: left; HEIGHT: 20px; COLOR: #fff; MARGIN-LEFT: 8px; CURSOR: pointer; FONT-WEIGHT: bold
+}
+.serviceTab .onTab {
+	LINE-HEIGHT: 20px; BACKGROUND: url(../images/serviceTabBg.gif) no-repeat; HEIGHT: 20px; COLOR: #000
+}
+.serviceFormArea {
+	BORDER-BOTTOM: #3b819b 1px solid; BORDER-LEFT: #3b819b 1px solid; BACKGROUND: #9bbfcb; HEIGHT: 170px; BORDER-TOP: medium none; BORDER-RIGHT: #3b819b 1px solid; PADDING-TOP: 5px
+}
+.serviceForm {
+	MARGIN: 0px auto; WIDTH: 320px; BACKGROUND: #fff; HEIGHT: 155px; PADDING-TOP: 10px
+}
+.serviceSearchTab {
+	MARGIN: 0px auto; WIDTH: 250px
+}
+.serviceSearchTab TBODY TH {
+	LINE-HEIGHT: 27px; HEIGHT: 27px
+}
+.serviceSearchTab TBODY TD {
+	LINE-HEIGHT: 27px; HEIGHT: 27px
+}
+.serviceSearchTab TFOOT TD {
+	LINE-HEIGHT: 27px; HEIGHT: 27px
+}
+.serviceSearchTab TBODY TH {
+	TEXT-ALIGN: right; WIDTH: 80px
+}
+.serviceSearchTab TBODY TD {
+	WIDTH: 170px
+}
+.serviceSearchTab TFOOT TD {
+	TEXT-ALIGN: center
+}
+.sliderContainer {
+	POSITION: relative; WIDTH: 250px; FLOAT: left; HEIGHT: 200px; OVERFLOW: hidden; MARGIN-RIGHT: 10px
+}
+.sliderNumber {
+	POSITION: absolute; TOP: 170px; RIGHT: 10px
+}
+.sliderNumber SPAN {
+	TEXT-ALIGN: center; LINE-HEIGHT: 15px; WIDTH: 25px; DISPLAY: inline-block; BACKGROUND: #333; HEIGHT: 15px; COLOR: #fff; CURSOR: pointer; MARGIN-RIGHT: 5px
+}
+.sliderNumber SPAN.on {
+	BACKGROUND: #af460e
+}
+.newsContainer {
+	WIDTH: 370px; FLOAT: left
+}
+.newsTitleBar {
+	
+}
+.newsTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.newsTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.newsTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.newsTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.newsTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.newsTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.newsTitleBar .titleContainer {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; WIDTH: 344px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.newsTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.newsTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.newsTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.newsContainer .infoContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 171px; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 0px
+}
+.newsContainer .infoList {
+	MARGIN: 0px auto; WIDTH: 350px; PADDING-TOP: 10px
+}
+.newsContainer .infoList LI {
+	BORDER-BOTTOM: #ccc 1px dashed; TEXT-ALIGN: right; LINE-HEIGHT: 30px; BACKGROUND: url(../images/listSign.gif) no-repeat 5px 13px; HEIGHT: 30px; COLOR: #aaa
+}
+.newsContainer .infoList LI SPAN {
+	TEXT-ALIGN: left; TEXT-INDENT: 15px; WIDTH: 250px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; FLOAT: left; OVERFLOW: hidden
+}
+.newsContainer .infoList LI SPAN A {
+	TEXT-DECORATION: none
+}
+.newsContainer .infoList LI SPAN A:hover {
+	TEXT-DECORATION: underline
+}
+.newsContainer .infoList .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelTopContainer {
+	WIDTH: 480px; FLOAT: left
+}
+.hotelTopTitleBar {
+	WIDTH: 480px
+}
+.hotelTopTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.hotelTopTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.hotelTopTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.hotelTopTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.hotelTopTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.hotelTopTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.hotelTopTitleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 464px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.hotelTopTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.hotelTopTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.hotelTopTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.hotelTopTabContainer {
+	BORDER-BOTTOM: #3a829b 1px solid; POSITION: relative; BORDER-LEFT: #9e9e9e 1px solid; LINE-HEIGHT: 30px; BACKGROUND: url(../images/hotelTopTabBg.jpg) repeat-x; HEIGHT: 30px; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.hotelTopContainer .tabNav {
+	POSITION: absolute; WIDTH: 432px; TOP: 8px; LEFT: 16px
+}
+.hotelTopContainer .tabNav LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 22px; WIDTH: 46px; DISPLAY: inline; BACKGROUND: url(../images/hotelTopTab.jpg) no-repeat left -22px; FLOAT: left; HEIGHT: 22px; COLOR: #000; MARGIN-LEFT: 8px; CURSOR: pointer; FONT-WEIGHT: bold
+}
+.hotelTopContainer .tabNav .onTab {
+	BACKGROUND: url(../images/hotelTopTab.jpg) no-repeat; COLOR: #f87d04
+}
+.hotelTopContainer .topContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; HEIGHT: 250px; BORDER-TOP: medium none; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.hotelTopList {
+	MARGIN: 0px auto; WIDTH: 450px; PADDING-TOP: 20px
+}
+.hotelTopList .noBorder {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelTopList LI {
+	BORDER-BOTTOM: #ccc 1px dashed; TEXT-ALIGN: center; LINE-HEIGHT: 25px; WIDTH: 450px; MARGIN-BOTTOM: 10px; COLOR: #aaa
+}
+.hotelTopList IMG {
+	BACKGROUND: #ccc; FLOAT: left
+}
+.hotelTopListSubList {
+	PADDING-LEFT: 10px; WIDTH: 130px; FLOAT: left
+}
+.hotelTopListSubList LI {
+	BORDER-BOTTOM: medium none; TEXT-ALIGN: left; BORDER-LEFT: medium none; MARGIN: 0px; WIDTH: 370px; COLOR: #333; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.hotelTopListSubList .hotelTitle {
+	WIDTH: 350px; TEXT-OVERFLOW: ellipsis; DISPLAY: block; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.procurementNoticeContainer {
+	WIDTH: 480px; FLOAT: right
+}
+.procurementNoticeTitleBar {
+	WIDTH: 480px
+}
+.procurementNoticeTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.procurementNoticeTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.procurementNoticeTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.procurementNoticeTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.procurementNoticeTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.procurementNoticeTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.procurementNoticeTitleBar .titleContainer {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; WIDTH: 454px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.procurementNoticeTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.procurementNoticeTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.procurementNoticeTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.procurementNoticeContainer .infoContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 281px; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid; PADDING-TOP: 0px
+}
+.procurementNoticeContainer .infoList {
+	MARGIN: 0px auto; WIDTH: 420px; PADDING-TOP: 10px
+}
+.procurementNoticeContainer .infoList LI {
+	BORDER-BOTTOM: #ccc 1px dashed; TEXT-ALIGN: right; LINE-HEIGHT: 30px; BACKGROUND: url(../images/listSign.gif) no-repeat 5px 13px; HEIGHT: 30px; COLOR: #aaa
+}
+.procurementNoticeContainer .infoList LI SPAN {
+	TEXT-ALIGN: left; TEXT-INDENT: 15px; WIDTH: 320px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; FLOAT: left; OVERFLOW: hidden
+}
+.procurementNoticeContainer .infoList LI SPAN A {
+	TEXT-DECORATION: none
+}
+.procurementNoticeContainer .infoList LI SPAN A:hover {
+	TEXT-DECORATION: underline
+}
+.procurementNoticeContainer .infoList .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.procurementNoticeContainer .infoList .lock {
+	BACKGROUND: url(../images/lockSign.gif) no-repeat 1px 9px
+}
+.corporateUrchasingContainer {
+	WIDTH: 480px; FLOAT: left
+}
+.corporateUrchasingTitleBar {
+	WIDTH: 480px
+}
+.corporateUrchasingTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.corporateUrchasingTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.corporateUrchasingTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.corporateUrchasingTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.corporateUrchasingTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.corporateUrchasingTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.corporateUrchasingTitleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 464px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.corporateUrchasingTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.corporateUrchasingTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.corporateUrchasingTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.corporateUrchasingTabContainer {
+	BORDER-BOTTOM: #3a829b 1px solid; POSITION: relative; BORDER-LEFT: #9e9e9e 1px solid; LINE-HEIGHT: 30px; BACKGROUND: url(../images/eProcurementTabBg.jpg) repeat-x; HEIGHT: 30px; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.corporateUrchasingTabContainer .tabNav {
+	POSITION: absolute; TOP: 8px; LEFT: 55px
+}
+.corporateUrchasingTabContainer .tabNav LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 22px; WIDTH: 80px; BACKGROUND: url(../images/eProcurementTab.jpg) no-repeat left -22px; FLOAT: left; HEIGHT: 22px; MARGIN-LEFT: 8px; CURSOR: pointer; FONT-WEIGHT: bold
+}
+.corporateUrchasingTabContainer .tabNav .onTab {
+	BACKGROUND: url(../images/eProcurementTab.jpg) no-repeat; COLOR: #f87d04
+}
+.corporateUrchasingContainer .topContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; HEIGHT: 250px; BORDER-TOP: medium none; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.corporateUrchasingListContainer {
+	MARGIN: 0px auto; WIDTH: 390px; PADDING-TOP: 5px
+}
+.corporateUrchasingList {
+	MARGIN: 0px auto; WIDTH: 380px; PADDING-TOP: 5px
+}
+.corporateUrchasingList LI {
+	TEXT-ALIGN: center; WIDTH: 120px; MARGIN-BOTTOM: 10px; FLOAT: left
+}
+.corporateUrchasingList SPAN {
+	LINE-HEIGHT: 25px; MARGIN: 0px auto; WIDTH: 80px; TEXT-OVERFLOW: ellipsis; DISPLAY: block; WHITE-SPACE: nowrap; HEIGHT: 25px; OVERFLOW: hidden
+}
+.corporateUrchasingList .noSpace {
+	MARGIN: 0px
+}
+.corporateUrchasingList IMG {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN-BOTTOM: 5px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.goodsFindTitle {
+	BORDER-BOTTOM: #aaa 1px dashed; LINE-HEIGHT: 25px; TEXT-INDENT: 25px; MARGIN: 30px auto 10px; WIDTH: 900px; BACKGROUND: url(../images/titleSign.gif) no-repeat left 4px; HEIGHT: 25px; FONT-WEIGHT: bold
+}
+.goodsFindList {
+	MARGIN: 0px auto; WIDTH: 800px
+}
+.goodsFindList LI {
+	LINE-HEIGHT: 25px; TEXT-INDENT: 25px; HEIGHT: 25px
+}
+.memBerLogoContainer {
+	
+}
+.memBerLogoTitleBar {
+	HEIGHT: 27px
+}
+.memBerLogoTitleBar .leftCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.memBerLogoTitleBar .titleContainer {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.memBerLogoTitleBar .rightCorner {
+	LINE-HEIGHT: 27px; FLOAT: left; HEIGHT: 27px
+}
+.memBerLogoTitleBar .leftCorner {
+	WIDTH: 3px
+}
+.memBerLogoTitleBar .rightCorner {
+	WIDTH: 3px
+}
+.memBerLogoTitleBar .leftCorner {
+	BACKGROUND: url(../images/titleLeftCornerLeftBg.jpg) no-repeat
+}
+.memBerLogoTitleBar .titleContainer {
+	PADDING-LEFT: 10px; WIDTH: 954px; BACKGROUND: url(../images/titleBg.jpg) repeat-x; FONT-WEIGHT: bold
+}
+.memBerLogoTitleBar .titleContainer A {
+	HEIGHT: 27px; COLOR: #3a829b; TEXT-DECORATION: none
+}
+.memBerLogoTitleBar .titleContainer A:hover {
+	TEXT-DECORATION: underline
+}
+.memBerLogoTitleBar .rightCorner {
+	BACKGROUND: url(../images/titleLeftCornerRightBg.jpg) no-repeat
+}
+.memBerLogoContainer .infoContainer {
+	BORDER-BOTTOM: #9e9e9e 1px solid; BORDER-LEFT: #9e9e9e 1px solid; HEIGHT: 146px; OVERFLOW: hidden; BORDER-TOP: #9e9e9e 1px solid; BORDER-RIGHT: #9e9e9e 1px solid
+}
+.memberLogoList {
+	MARGIN: 0px auto; WIDTH: 894px; HEIGHT: 63px; PADDING-TOP: 10px
+}
+.memberLogoList LI {
+	TEXT-ALIGN: center; WIDTH: 102px; FLOAT: left; MARGIN-RIGHT: 30px
+}
+.memberLogoList LI SPAN {
+	WIDTH: 102px; TEXT-OVERFLOW: ellipsis; DISPLAY: block; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.memberLogoList LI IMG {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; MARGIN-BOTTOM: 5px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.memberLogoList .noSpace {
+	MARGIN: 0px
+}
+.memberLogoList LI A {
+	COLOR: #999
+}
+#LoginContainer {
+	MARGIN: 0px auto; WIDTH: 953px
+}
+.loginLeft {
+	WIDTH: 596px; BACKGROUND: url(../images/loginLeftBg.jpg) no-repeat; FLOAT: left; HEIGHT: 388px
+}
+.lgoinMiddle {
+	WIDTH: 308px; BACKGROUND: url(../images/loginMiddleBg.jpg) no-repeat; FLOAT: left; HEIGHT: 388px
+}
+.lgoinRight {
+	WIDTH: 49px; BACKGROUND: url(../images/loginRightBg.jpg) no-repeat; FLOAT: left; HEIGHT: 388px
+}
+.loginTitle {
+	PADDING-LEFT: 55px; FONT-WEIGHT: bold; PADDING-TOP: 15px
+}
+.loginTabContainer {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 100px; WIDTH: 210px; PADDING-RIGHT: 0px; PADDING-TOP: 17px; _padding: 16px 0 0 90px
+}
+.loginTabContainer LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 25px; WIDTH: 90px; BACKGROUND: url(../images/loginTab.jpg) no-repeat left 0px; FLOAT: left; HEIGHT: 25px; MARGIN-LEFT: 10px; CURSOR: pointer
+}
+.loginTabContainer .mouseOn {
+	BACKGROUND: url(../images/loginTab.jpg) no-repeat left -25px; FONT-WEIGHT: bold
+}
+.loginFormContainer {
+	HEIGHT: 190px; PADDING-TOP: 20px
+}
+.loginTab {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 0px auto; WIDTH: 280px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.loginTab TBODY TH {
+	LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.loginTab TBODY TD {
+	LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.loginTab TBODY TH {
+	TEXT-ALIGN: right; WIDTH: 80px
+}
+.loginTab TBODY TD {
+	WIDTH: 200px
+}
+.registTipContainer {
+	MARGIN: 0px auto; WIDTH: 280px
+}
+.loginTip {
+	LINE-HEIGHT: 20px
+}
+.loginSubmitContainer {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+#Footer {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 20px
+}
+#Footer P {
+	TEXT-ALIGN: center; LINE-HEIGHT: 20px; COLOR: #aaa
+}
+.footerLink {
+	PADDING-BOTTOM: 30px; MARGIN: 0px auto; WIDTH: 404px
+}
+.footerLink LI {
+	TEXT-ALIGN: center; LINE-HEIGHT: 20px; WIDTH: 80px; FLOAT: left; HEIGHT: 20px; BORDER-RIGHT: #ccc 1px solid
+}
+.footerLink LI A {
+	COLOR: #666
+}
+.footerLink .noLine {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.departmentBtn {
+	MARGIN: 0px auto; WIDTH: 720px
+}
+.departmentBtn TD {
+	BORDER-BOTTOM: #ccc 1px dashed; PADDING-BOTTOM: 5px; LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.departmentTreeContainer {
+	OVERFLOW-Y: scroll; MARGIN: 0px auto; WIDTH: 720px; HEIGHT: 200px
+}

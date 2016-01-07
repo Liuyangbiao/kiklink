@@ -1,0 +1,172 @@
+.CreatePart1{padding:0 15px; min-height:887px; _height:887px;}
+.CreatePart1 h1{padding:20px 0 10px 0; background:url(../image/lline5.gif) left bottom repeat-x;}
+.CreatePart1 .list li{position:relative; border-bottom:#f3f3f3 solid 1px; padding-left:70px; height:97px; overflow:hidden;}
+.CreatePart1 .list .imgDiv{position:absolute; left:0px; top:18px;}
+.CreatePart1 .list .msg{padding:15px 0 5px 0; line-height:20px;}
+.CreatePart1 .list .btn{color:#e60012;}
+/**/
+.CreatePart1 .btnDiv{padding-top:28px;}
+.CreatePart1 .btnDiv a{display:block; width:186px; height:35px; line-height:32px; padding-left:20px; overflow:hidden; background:url(../image/lcBtn.gif) left top no-repeat; font-size:18px; color:#fff;}
+/**/
+.CreatePart1 .list1 li{width:101px; text-align:center; float:left; padding-top:12px; height:95px; overflow:hidden; border-bottom:#f3f3f3 solid 1px;}
+.CreatePart1 .list1 .name{padding-top:8px;}
+.CreatePart1 .div0 a{display:block; height:32px; line-height:32px; text-align:center; overflow:hidden; background:url(../image/lcBtn5.gif) left top no-repeat; font-size:14px;}
+
+.CreatePart2{color:#393c3d; min-height:860px; _height:860px;}
+.CreatePart2 h1{padding:15px 0 30px 32px;}
+.CreatePart2 li{height:52px; line-height:28px; overflow:hidden; padding-left:145px; position:relative;}
+.CreatePart2 em{width:131px; display:block; overflow:hidden; position:absolute; left:0px; top:0px; text-align:right; font-size:14px; color:#393c3d;}
+.CreatePart2 .input1{height:28px; padding-left:10px; width:402px; overflow:hidden; background:url(../image/lbg7.gif) left top no-repeat; float:left;}
+.CreatePart2 .input1 input{width:100%; height:28px; line-height:28px; color:#999; background:url(../image/lbg7.gif) right bottom no-repeat; float:left;}
+.CreatePart2 .selectDiv{float:left; background:url(../image/lslectBg.gif) left top no-repeat; width:412px; height:28px; line-height:28px; overflow:hidden; color:#999;}
+.CreatePart2 .li_01{height:257px; overflow:hidden;}
+.CreatePart2 textarea{background:url(../image/ltext.gif) left top no-repeat; width:490px; height:233px; line-height:28px; padding:0 10px; font-size:12px;}
+.CreatePart2 .btn1{background:url(../image/lbtn.png); width:90px; height:32px; border:0px; cursor:pointer; color:#fff; font-size:14px;}
+.CreatePart2 .btn2{display:inline-block; width:85px; height:25px; line-height:25px; text-align:center; overflow:hidden; background:url(../image/lcBtn3.gif) left top no-repeat; margin-right:5px;}
+.CreatePart2 dd{padding-right:35px; float:left;} 
+.CreatePart2 .btn3{color:#ed0002;}
+.CreatePart2 .li_02{height:127px;}
+.CreatePart2 .li_02 textarea{background:url(../image/ltext4.gif) left top no-repeat; width:590px; height:84px;}
+.CreatePart2 .msg{float:left; padding-right:52px;}
+/**/
+.speechForm li{height:45px; overflow:hidden; padding-left:90px;}
+.speechForm em{width:80px;}
+.speechForm .input1{width:580px;}
+.speechForm .li_01{height:250px; overflow:hidden;}
+.speechForm textarea{background:url(../image/ltext5.gif) left top no-repeat; width:570px; height:233px;}
+.speechForm .li_02 textarea{width:570px;}
+.speechForm dd input{position:relative; top:2px; left:-2px;}
+
+.CreateLayer{position:absolute; left:50%; top:50%; z-index:100; width:335px; height:155px; overflow:hidden; background:#fff; padding:80px 0 0 170px; display:none;}
+.CreateLayer .close{position:absolute; top:10px; right:12px; background:url(../image/nimg23.gif) left top no-repeat; width:23px; height:22px; overflow:hidden; display:block;}
+.CreateLayer .ico{position:absolute; left:110px; top:80px;}
+.CreateLayer .content{width:240px; text-align:center; overflow:hidden; font-size:18px; line-height:36px;}
+.CreateLayer .content a{color:#cb0000;}
+
+.CreateLayer1 .ico{left:172px;}
+
+.themePart1{padding:0 15px 20px 15px; width:207px; min-height:247px; _height:247px;}
+.themePart1 dl{position:relative; padding:40px 0 0 80px; height:80px; overflow:hidden; background:url(../image/lline5.gif) left bottom repeat-x; margin-bottom:18px;}
+.themePart1 dt{position:absolute; left:0px; top:40px;}
+.themePart1 .time{padding-top:10px;}
+.themePart1 .btn{display:block; height:35px; line-height:32px; padding-left:20px; overflow:hidden; background:url(../image/lcBtn.gif) left top no-repeat; font-size:18px; color:#fff;}
+/**/
+.themePart1 .name{padding:0 0 10px 0; font-size:16px; color:#232323;}
+.themePart1 .form{height:48px; overflow:hidden; background:url(../image/lsearch.png) left top no-repeat; border-bottom:#ddd dotted 1px; margin-bottom:18px;}
+.themePart1 .form .input1{width:168px; padding:0 5px; height:25px; line-height:25px; float:left;}
+.themePart1 .form .btn1{width:29px; height:25px; float:left; cursor:pointer;}
+
+.themePart2 h1{text-align:center; padding:15px 0; font-size:24px; color:#000;}
+.themePart2 .table{padding:0 17px;}
+.themePart2 td{height:40px; overflow:hidden; background:url(../image/lline6.gif) left bottom repeat-x; text-align:right;}
+.themePart2 td .name{text-align:left;}
+.themePart2 td .name a{padding-left:20px; background:url(../image/lico11.gif) 10px center no-repeat;}
+.themePart2 .title{text-align:left; font-size:18px; padding:15px 0 10px 25px;}
+/**/
+.perHome .table{padding:0 17px 17px;}
+
+.GroupPart1{position:relative; min-height:10px; _height:10px; padding:0 0 45px 105px;} 
+.GroupPart1 .imgDiv{position:absolute; left:22px; top:25px;}
+.GroupPart1 h2{padding:35px 0 10px 0;}
+.GroupPart1 .msg{line-height:20px;}
+
+.GroupPart2{padding:0 15px;}
+.GroupPart2 h1{padding:15px 0; background:url(../image/lline5.gif) left bottom repeat-x;}
+.GroupPart2 .list{padding:10px 0;}
+.GroupPart2 li{height:32px; line-height:32px; overflow:hidden; position:relative; background:url(../image/lico11.gif) left center no-repeat; padding-left:7px;}
+.GroupPart2 span{position:absolute; right:0px; top:0px;}
+
+.GroupShow{padding:15px 20px;}
+.GroupShow h1{text-align:center; font-size:24px; color:#000;}
+.GroupShow .content{padding:25px 0; text-align:justify; line-height:24px;}
+
+.votePart1{height:72px; width:622px; margin:0 auto; overflow:hidden; background:url(../image/limg515_4.png) center top no-repeat;}
+.votePart1 .fl{width:50%; overflow:hidden; color:#F00;}
+.votePart1 .fl div{text-align:right; padding-top:10px;}
+.votePart1 .fr{width:50%; overflow:hidden; text-align:right;}
+.votePart1 .fr div{text-align:left; padding:10px 0 0 20px;}
+
+.votePart2{height:55px; overflow:hidden; padding-top:20px; margin:0 15px; border-top:#ddd dashed 1px;}
+.votePart2 .fl a{display:block; float:left; width:44px; height:22px; line-height:22px; overflow:hidden; background:url(../image/limg58_1.jpg) left top no-repeat; padding-left:26px; font-weight:bold;}
+.votePart2 .fl .a1{background:url(../image/limg58_2.jpg) left top no-repeat;}
+.votePart2 .fr{width:143px; height:36px; line-height:36px; overflow:hidden; background:url(../image/limg155.png) left top no-repeat; padding-left:12px;}
+.votePart2 .fr a{padding-right:2px;}
+.votePart2 .fr .bigImg{position:relative; top:4px; padding-left:10px;}
+
+.votePart3{border-bottom:#ddd dashed 1px; margin:0 15px;}
+.votePart3 li{padding-left:80px; position:relative; height:127px; overflow:hidden; background:url(../image/lcBg.gif) 77px top no-repeat;}
+.votePart3 .imgDiv{position:absolute; left:0px; top:12px; width:65px; overflow:hidden; background:url(../image/lcBg.png) left top no-repeat; text-align:center; font-size:14px; color:#125090; font-weight:bold;}
+.votePart3 .imgDiv div{padding:6px 0 12px 0;}
+.votePart3 .time{color:#999; text-align:right; padding:10px 20px 15px 0;}
+.votePart3 .content{padding:0 0 0 25px;}
+
+.votePart4{border:#d9d9d9 solid 1px; background:#f5f5f5; padding:0 10px; margin:25px 15px;}
+.votePart4 h5{height:30px; line-height:30px; overflow:hidden; padding-left:4px;}
+.votePart4 textarea{width:681px; height:80px; padding:0px; font-size:12px; border:#aaa solid 1px; border-right:0px; border-bottom:#d9d9d9 solid 1px; background:#fff;}
+.votePart4 .btn{padding:9px 0 13px 0;}
+.votePart4 .btn a{display:block; width:61px; height:22px; line-height:22px; text-align:center; overflow:hidden; background:url(../image/lcBtn1.gif) left top no-repeat; font-weight:bold; color:#000;}
+
+.votePart5{padding:0 25px;}
+.votePart5 li{height:27px; line-height:15px; overflow:hidden; position:relative;}
+.votePart5 input{float:left; position:relative; top:-1px;}
+.votePart5 em{float:left; padding-left:15px; width:55px; display:block; overflow:hidden;}
+.votePart5 li div{width:500px; height:15px; float:left; background:#dcdcdc; display:block; overflow:hidden;}
+.votePart5 li div span{display:block; float:left; height:15px; overflow:hidden; text-align:right; color:#FFF;}
+.votePart5 .btn{height:45px; padding:5px 0 0 5px; overflow:hidden;}
+.votePart5 .btn a{display:block; height:25px; line-height:25px; width:70px; overflow:hidden; text-align:center; background:url(../image/lcBtn2.gif) left top no-repeat; font-size:14px; color:#fff;}
+
+.GroupShow1 .content{background:url(../image/lline7.gif) left bottom repeat-x;}
+
+.perHome1{background:#efefef; padding:0 25px; position:relative;}
+.perHome1 h1{color:#000; font-size:18px; padding:15px 0;}
+.perHome1 .list{width:664px; overflow:hidden;}
+.perHome1 ul{width:110%;}
+.perHome1 .list li{float:left; width:220px; height:93px; overflow:hidden; background:#fff; margin-right:46px; margin-bottom:25px; position:relative; padding-left:90px;}
+.perHome1 .imgDiv{position:absolute; left:15px; top:15px;}
+.perHome1 .msg{padding-top:18px; color:#363636; line-height:22px;}
+.perHome1 .btn{position:absolute; right:10px; bottom:10px; display:block; width:26px; height:15px; line-height:15px; text-align:center; background:#696969; color:#fff;}
+/**/
+.perHome1 .list1{position:absolute; left:160px; top:22px;}
+.perHome1 .list1 li{float:left; padding-right:25px;}
+
+.gMember{padding-left:35px;}
+.gMember h1{height:50px; line-height:50px; overflow:hidden; position:relative;}
+.gMember h1 .msg{position:absolute; left:50px; top:15px; font-size:12px;}
+.gMember h1 .msg a{display:block; float:left; padding:0 5px; height:20px; line-height:20px; overflow:hidden; color:#fff; background:#a9a9a9; margin-right:10px;}
+.gMember .list{width:664px; overflow:hidden;}
+.gMember ul{width:110%;}
+.gMember li{float:left; height:110px; width:61px; overflow:hidden; text-align:center; margin-right:40px;}
+.gMember li .name{padding-top:5px;}
+
+.groupTitle{height:25px; overflow:hidden; color:#dd000a;}
+.groupTitle a{margin-left:10px; display:inline-block; width:48px; height:18px; line-height:18px; text-align:center; color:#fff; background:url(../image/lcBtn4.gif) left top no-repeat;}
+
+.GroupHome li{height:150px; overflow:hidden; border:#ddd solid 1px; background:#fff; position:relative; padding:0 15px 0 185px; margin-bottom:5px;}
+.GroupHome .imgDiv{position:absolute; left:15px; top:10px;}
+.GroupHome .name{height:40px; line-height:40px; overflow:hidden;}
+.GroupHome .name a{color:#000;}
+.GroupHome .content{line-height:18px; padding-bottom:12px; text-align:justify;}
+.GroupHome .msg{position:relative; height:40px; overflow:hidden;}
+.GroupHome .msg a{padding:0 15px; color:#dd000a;}
+.GroupHome .msg em{color:#a6a6a6;}
+.GroupHome .msg span{position:absolute; right:0px; top:0px; color:#dd000a;}
+.GroupHome .select{position:absolute; left:13px; bottom:8px;}
+.GroupHome .select a{color:#1f5d98; padding:0 15px;}
+.GroupHome .select input{position:relative; top:2px;}
+
+.hotTopic{background:#efefef; color:#363636; min-height:50px; _height:50px;}
+.hotTopic dl{height:105px; overflow:hidden; position:relative; border-bottom:#dbdbdb solid 1px;}
+.hotTopic dt{position:absolute; left:22px; top:16px;}
+.hotTopic dd{padding-left:105px;}
+.hotTopic dd h1{padding:18px 0 5px 0; font-size:24px;}
+.hotTopic dd h1 a{color:#363636;}
+.hotTopic dd .msg{height:46px; line-height:21px; overflow:hidden;}
+.hotTopic dd .msg span{float:left;}
+.hotTopic dd .msg a{display:block; float:left; margin-left:8px; width:57px; height:21px; line-height:21px; text-align:center; overflow:hidden; color:#fff; background:url(../image/lcBtn6.gif) left top no-repeat;}
+.hotTopic .content{padding:10px 20px; min-height:50px; _height:50px; line-height:24px; position:relative; background:#f7f7f7;}
+.hotTopic .content a{display:block; width:50px; height:22px; line-height:22px; text-align:center; overflow:hidden; background:url(../image/lcBtn7.gif) left top no-repeat; position:absolute; right:18px; bottom:12px;}
+
+.hotTopic1{position:relative;}
+.hotTopic1 .btn{position:absolute; top:15px; right:15px; display:block; width:70px; height:28px; line-height:28px; text-align:center; overflow:hidden; background:url(../image/lcBtn8.gif) left top no-repeat; color:#fff;}
+.hotTopic1 th{height:30px; text-align:right;}
+.hotTopic1 th .name{text-align:left; padding-left:20px;}

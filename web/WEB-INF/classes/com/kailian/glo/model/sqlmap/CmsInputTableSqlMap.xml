@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsInputTable" class="com.kailian.glo.model.CmsInputTable">
+        <result property="id" column="id"/>
+        <result property="className" column="className"/>
+        <result property="inputName" column="inputName"/>
+        <result property="classComment" column="classComment"/>
+        <result property="inputComment" column="inputComment"/>
+        <result property="inputType" column="inputType"/>
+        <result property="inputEnName" column="inputEnName"/>
+        <result property="inputCnName" column="inputCnName"/>
+        <result property="linkClassName" column="linkClassName"/>
+        <result property="linkInputName" column="linkInputName"/>
+        <result property="linkParam" column="linkParam"/>
+        <result property="inputAddition" column="inputAddition"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="luceneIndexType" column="luceneIndexType"/>
+        <result property="minlength" column="minlength"/>
+        <result property="maxlength" column="maxlength"/>
+        <result property="required" column="required"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsInputTable.columns">
+	    <![CDATA[
+        id ,className ,inputName ,classComment ,inputComment ,inputType ,inputEnName ,inputCnName ,linkClassName ,linkInputName ,linkParam ,inputAddition ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,luceneIndexType ,minlength ,maxlength ,required 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsInputTable.insert" >
+    <![CDATA[
+        INSERT INTO cms_input_table (
+	        id  ,
+	        className  ,
+	        inputName  ,
+	        classComment  ,
+	        inputComment  ,
+	        inputType  ,
+	        inputEnName  ,
+	        inputCnName  ,
+	        linkClassName  ,
+	        linkInputName  ,
+	        linkParam  ,
+	        inputAddition  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        luceneIndexType  ,
+	        minlength  ,
+	        maxlength  ,
+	        required  
+        ) VALUES (
+        	#id# ,
+        	#className# ,
+        	#inputName# ,
+        	#classComment# ,
+        	#inputComment# ,
+        	#inputType# ,
+        	#inputEnName# ,
+        	#inputCnName# ,
+        	#linkClassName# ,
+        	#linkInputName# ,
+        	#linkParam# ,
+        	#inputAddition# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#luceneIndexType# ,
+        	#minlength# ,
+        	#maxlength# ,
+        	#required# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsInputTable.update" >
+    <![CDATA[
+        UPDATE cms_input_table SET
+	        className = #className# ,
+	        inputName = #inputName# ,
+	        classComment = #classComment# ,
+	        inputComment = #inputComment# ,
+	        inputType = #inputType# ,
+	        inputEnName = #inputEnName# ,
+	        inputCnName = #inputCnName# ,
+	        linkClassName = #linkClassName# ,
+	        linkInputName = #linkInputName# ,
+	        linkParam = #linkParam# ,
+	        inputAddition = #inputAddition# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        luceneIndexType = #luceneIndexType# ,
+	        minlength = #minlength# ,
+	        maxlength = #maxlength# ,
+	        required = #required# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsInputTable.delete">
+    <![CDATA[
+        DELETE FROM cms_input_table WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsInputTable.getById" resultMap="RM.CmsInputTable">
+	    SELECT <include refid="CmsInputTable.columns"/>
+	    <![CDATA[
+	        FROM cms_input_table 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsInputTable.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="className">
+		             className = #className#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="inputName">
+		             inputName = #inputName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="classComment">
+		             classComment = #classComment#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="inputComment">
+		             inputComment = #inputComment#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="inputType">
+		             inputType = #inputType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="inputEnName">
+		             inputEnName = #inputEnName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="inputCnName">
+		             inputCnName = #inputCnName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="linkClassName">
+		             linkClassName = #linkClassName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="linkInputName">
+		             linkInputName = #linkInputName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="linkParam">
+		             linkParam = #linkParam#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="inputAddition">
+		             inputAddition = #inputAddition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="luceneIndexType">
+		             luceneIndexType = #luceneIndexType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="minlength">
+		             minlength = #minlength#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="maxlength">
+		             maxlength = #maxlength#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="required">
+		             required = #required#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsInputTable.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_input_table <include refid="CmsInputTable.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsInputTable.findPage" resultMap="RM.CmsInputTable">
+    	SELECT <include refid="CmsInputTable.columns"/> FROM cms_input_table 
+		<include refid="CmsInputTable.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsInputTable.findTop" resultMap="RM.CmsInputTable">
+    	SELECT <include refid="CmsInputTable.columns"/> FROM cms_input_table  
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

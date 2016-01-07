@@ -1,0 +1,57 @@
+/* CSS Document */
+
+body { margin:0; padding:0; background:url(../images/index_03.jpg) repeat; }
+#content{ padding-top:0px;}
+#head { width:800px; height:40px; margin:0px auto 0; background-color:#b30d1a; line-height:40px; }
+.logo { width:170px; float:left; padding-left:15px; display:inline; }
+.title { float:left; display:inline; height:40px; overflow:hidden; }
+.title img { float:left; }
+.title span { float:left; display:inline; font-size:14px; padding:3px 25px; }
+.lei { float:left; display:inline; }
+#nav { width:800px; margin:0 auto; font-size:12px; }
+#nav li { background:url(../images/index_18.jpg) no-repeat center center; text-align:center; width:185px; height:163px; overflow:hidden; float:left; display:inline; margin:10px 0 0 10px; }
+ul,li,p{ margin:0; padding:0; list-style:none;}
+.nav_img { padding:6px 0; }
+.nav_text a { color:#FFF; text-decoration:none; }
+/* Clear Fix */
+.clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+.clearfix { display:inline-block; }
+/* Hide from IE Mac */
+.clearfix { display:block; }
+/* End hide from IE Mac */
+/* end of clearfix */
+#nav .style01,#nav_01 .style01{ background:url(../images/index_11.jpg) no-repeat center center; text-align:center; width:185px; height:163px; overflow:hidden; color:#000;}
+.style01 a{ color:#000; text-decoration:none;}
+#page{  margin:15px auto; text-align:center; font-family:"微软雅黑"; font-size:14px;}
+#page a{ color:#FFF; text-decoration:none; padding:0 7px;}
+#page a:link,#page a:visited{  color:#FFF; text-decoration:none; padding:0 7px; }
+#page a:hover{ color:#b30d1a; text-decoration:none; padding:0 7px;}
+
+/*排行榜*/
+#nav_01{  width:800px; margin:0 auto; font-size:12px;  }
+.turn_box li{ background: url(../images/index_18.jpg) no-repeat center center; text-align:center; width:185px; height:163px; overflow:hidden; 
+margin:10px 0 0 10px; }
+.turn_box{ width:195px; float:left; display:inline;}
+.turn_box p{ margin:10px 0 0 12px;}
+#demo1{ height:520px; overflow:hidden; }
+
+
+/*展示*/
+
+.aticle{ color:#FFF; font-size:12px; height:40px; line-height:40px;}
+.aticle p{ width:600px; float:left; display:inline;}
+.aticle span{ float:right; display:block; padding-right:15px;}
+.aticle span a{ color:#fff; text-decoration:none; padding:0 10px;}
+.mt_show{ background: url(../images/bg_03.gif) no-repeat center center; width:747px; height:519px; overflow:hidden; position:relative;}
+.turn_but_left{ position:absolute; top:230px; left:5px; filter:alpha(opacity=70); opacity: 0.7; z-index:9;}
+.turn_but_right{ position:absolute; top:230px; right:5px; filter:alpha(opacity=70); opacity: 0.7; z-index:99; }
+
+#turn_con{ position:relative;}
+.img_text{ background-color:#000;filter:alpha(opacity=70); opacity: 0.7; position:absolute; bottom:5px; height:42px; width:720px; left:5px; color:#FFF; font-size:14px; line-height:42px; padding-left:15px; z-index:9;}
+.sider_l{ background:url(../images/chang_03.jpg) no-repeat right 5px; width:310px; height:35px; font-weight:bold; padding-right:20px; display:block; float:left; letter-spacing:1px; padding-left:25px;   }
+.sider_l i{ font-style:normal; font-family:Arial; font-weight:normal;}
+.col_w{ color:#fff; text-decoration:none; background: url(../images/point.png) no-repeat left center; width:10px; height:12px; padding-left:15px; margin-left:15px; _background:url(../images/point.gif) no-repeat left center;}
+.col_h{ color:#F00; text-decoration:none; margin-left:15px;}
+.img{  width:747px; height:519px; overflow:hidden; }
+.img ul li{ width:735px; height:507px; max-width:735px; max-height:507px; overflow:hidden; padding:5px; vertical-align:middle; text-align:center;}
+.turn_con{  background: url(../images/bg_03.gif) no-repeat center center; width:747px; height:519px; overflow:hidden; }

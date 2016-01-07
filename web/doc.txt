@@ -1,0 +1,141 @@
+发送验证码;kailian/CmsUserInfo/mobileValidnum.do;1 成功 -1 失败
+手机号;mobile;字符串;11位	
+
+用户注册;kailian/CmsUserInfo/regist.do?ajax=ajax;1 成功 -1 失败
+手机号;mobile;字符串;11位	
+手机验证码;mobilevalidnum;字符串;6位
+密码;passwd;字符串;6-20	
+重复密码;repasswd;字符串;6-20
+注册类型;thirdType;字符串;手机注册:mobile
+用户名;username;字符串;3-20
+
+用户登录;kailian/CmsUserInfo/login.do?ajax=ajax;1 成功 -1 失败
+手机或者邮箱;moboremail;字符串;
+密码;passwd;字符串;
+
+找回密码;kailian/CmsUserInfo/mobpasswd.do?ajax=ajax;1 成功 -1 失败
+手机号;mobile;字符串;11位	
+手机验证码;mobilevalidnum;字符串;6位
+密码;passwd;字符串;6-20	
+
+第三方登录;kailian/CmsUserInfo/third.do?ajax=ajax;1 成功 -1 失败
+第三方登录类型;thirdType;字符串;qq或者weibo
+openid;openid;字符串;
+登录凭证;token;字符串;
+用户名;username;字符串;
+性别;sex;数字;0未知  1男 2女
+
+退出登录;kailian/CmsUserInfo/logout.do?ajax=ajax;1 成功 -1 失败
+
+验证图片;valid;
+
+第三方登录绑定手机号;kailian/CmsUserInfo/bindmobile.do?ajax=ajax;1 成功 -1 失败  
+手机号;mobile;字符串;11位	
+
+
+首页活动图片;kailian/CmsBiaodanDetail/listAjax.do?inputListId=1&ajax=ajax;1 成功  -1 失败 其中的content为一个子json，targettype：目标类型（product产品 shop店铺） targetid：目标id   img：图片
+
+首页特惠推荐;kailian/KlSellerProduct/search.do?status=1&ajax=ajax;1 成功   -1 失败
+
+课程搜索;kailian/KlSellerProduct/search.do?status=1&ajax=ajax;1 成功   -1 失败
+关键字;name;字符串;长度0-30;
+排序方式;sort;字符串;长度0-30，参数说明：buyedCount desc:人气排序、price：价格、distance:距离排序
+距离范围;distance;数字;功能待开发
+标签;tags;字符串;长度0-30，用逗号分隔
+价格底限;pricefrom;数字;;
+价格上限;priceto;数字;;
+客户端经度;mapx;数字;;
+客户端纬度;mapy;数字;;
+分类;cat;数字;10球类/20健身瑜伽/30运动恢复/40水上冰上/50极限户外/60舞蹈/70射击搏击格斗
+
+
+查看产品详情;kailian/KlSellerProduct/show.do?ajax=ajax;1 成功 -1 失败
+课程id;id;数字; 
+
+查看产品图片;kailian/CmsCommonPhoto/listAjax.do?ownnertype=20&ajax=ajax;;1 成功 -1 失败;1 成功 -1 失败
+产品id;ownnerid;数字; 
+
+产品评价;kailian/KlSellerProduct/productcomment.do?ajax=ajax;1 成功 -1 失败
+课程id;id;数字; 
+
+产品购买记录;kailian/KlShoppingShoppingcartproduct/listAjax.do?sort=id desc;1 成功 -1 失败
+课程id;productid;数字; 
+
+产品教练;kailian/KlSellerProduct/coaches.do?ajax=ajax;1 成功 -1 失败
+课程id;id;数字; 
+
+
+查看店铺内容;kailian/KlSellerShop/show.do?ajax=ajax;1 成功 -1 失败;1 成功 -1 失败
+店铺id;id;数字; 
+
+查看店铺图片;kailian/CmsCommonPhoto/listAjax.do?ownnertype=21&ajax=ajax;;1 成功 -1 失败;1 成功 -1 失败
+店铺id;ownnerid;数字; 
+
+
+加入购物车;kailian/KlShoppingShoppingcartproduct/shopCar.do?ajax=ajax;1 成功 -1 失败 suggest:推荐的课程 products:购物车中的课程
+产品id;productid;数字;
+数量;count;数字
+
+查看购物车;kailian/KlShoppingShoppingcartproduct/shopCar.do?ajax=ajax;1 成功 -1 失败 suggest:推荐的课程 products:购物车中的课程
+
+去结算;kailian/KlShoppingShoppingcartproduct/waitpay.do?ajax=ajax;1 成功 -1 失败  其他参数 name207:id为207的商品的数量  delids:207  207继续购买   这里的详细说明电话沟通
+客户留言;ext2;字符串;0-30;
+订单id;orderid;数字;
+
+完成支付;kailian/KlShoppingShoppingcartproduct/payOver.do?ajax=ajax&status=20;1 成功 -1 失败 暂时测试用的接口，支付宝尚未接入
+订单id;orderid;数字;
+
+
+我的课程;kailian/KlShoppingShoppingcartproduct/myclass.do?ajax=ajax;1 成功 -1 失败
+
+待评价课程;kailian/KlShoppingShoppingcartproduct/myclass.do?ajax=ajax&payed=1&nocommened=1;1 成功 -1 失败
+
+我的订单;kailian/KlShoppingOrder/userorders.do?ajax=ajax;1 成功 -1 失败
+
+已支付订单;kailian/KlShoppingOrder/userorders.do?ajax=ajax&payed=1;1 成功 -1 失败
+
+未支付订单;kailian/KlShoppingOrder/userorders.do?ajax=ajax&waitpay=1;1 成功 -1 失败
+
+查看订单细节;kailian/KlShoppingShoppingcartproduct/userorderdetail.do?ajax=ajax;1 成功 -1 失败
+订单号;orderid;数字
+
+评论课程;kailian/CmsCommonComment/savecomment.do?ajax=ajax&targettype=20;1 成功 -1 失败
+课程id;targetid;数字;
+评论内容;cont;字符串;
+服务与描述相符度;pointDescriptionMatch;数字;0-10
+专业程度;pointPerfational;数字;0-10
+服务态度;pointServiceAttitude;数字;0-10
+预约成功率;pointAppointmentSuccessful;数字;0-10
+
+
+用户消息;kailian/CmsCommonMessage/messages.do?ajax=ajax;1 成功 -1 失败
+
+系统消息;kailian/CmsCommonMessage/messages.do?ajax=ajax&mtype=1;1 成功 -1 失败
+
+已删除消息;kailian/CmsCommonMessage/messages.do?ajax=ajax&mtype=2;1 成功 -1 失败
+
+删除消息;kailian/CmsCommonMessage/status.do?ajax=ajax&status=-1;1 成功 -1 失败
+消息id;id;数字
+
+还原消息;kailian/CmsCommonMessage/status.do?ajax=ajax&status=1;1 成功 -1 失败
+消息id;id;数字
+
+回复消息;kailian/CmsCommonMessage/postmessage.do?ajax=ajax;1 成功 -1 失败
+消息id;targetid;数字
+消息内容;content;字符串;0-200
+
+
+收藏店铺;kailian/CmsCommonSaved/addSave.do?type=10&ajax=ajax;1 成功 -1 失败
+店铺id;targetId;数字
+
+收藏商品;kailian/CmsCommonSaved/addSave.do?type=20&ajax=ajax;1 成功 -1 失败
+商品id;targetId;数字
+
+收藏的店铺;kailian/CmsCommonSaved/mysavetype.do?ajax=ajax&type=10;1 成功 -1 失败
+店铺id;targetId;数字
+
+收藏的商品;kailian/CmsCommonSaved/mysavetype.do?ajax=ajax&type=20;1 成功 -1 失败
+商品id;targetId;数字
+
+删除收藏;kailian/CmsCommonSaved/deleteSave.do?ajax=ajax;1 成功 -1 失败
+收藏id;id;数字

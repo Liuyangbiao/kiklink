@@ -1,0 +1,34 @@
+店铺说明
+
+id = "id";
+shop_name = "店名";
+logo = "店铺logo";
+shoptype = "店铺类型  机构：1  个人：2";
+provinceid = "省份id";
+province = "省份";
+cityid = "城市id";
+city = "城市";
+quid = "区县id";
+qu = "区县";
+
+phoneno = "联系电话";
+email = "电邮";
+address = "地址";
+postcode = "邮编";
+
+flower_percent = "被赞次数";
+served_clients = "服务客户次数";
+saved_count = "被收藏次数";
+introduction = "介绍";
+suggestreason = "推荐理由";
+moreservice = "更多服务";
+mapx = "地图经度";
+mapy = "地图维度";
+status = "状态 1 正常 2 推荐 其他 待审核或者被拒绝";
+addition = "服务设施";
+createtimelong = "创建时间";
+classtable = "课表";
+customtype = "服务人群";
+ext6 = "其他免费设施";
+ext7 = "其他收费设施";
+ext8 = "认证文字";

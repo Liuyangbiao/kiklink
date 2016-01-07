@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsSurveyOption" class="com.kailian.glo.model.CmsSurveyOption">
+        <result property="id" column="id"/>
+        <result property="optionName" column="optionName"/>
+        <result property="declearation" column="declearation"/>
+        <result property="coverimg" column="coverimg"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="surveyId" column="surveyId"/>
+        <result property="optionType" column="optionType"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsSurveyOption.columns">
+	    <![CDATA[
+        id ,optionName ,declearation ,coverimg ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,surveyId ,optionType 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsSurveyOption.insert" >
+    <![CDATA[
+        INSERT INTO cms_survey_option (
+	        id  ,
+	        optionName  ,
+	        declearation  ,
+	        coverimg  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        surveyId  ,
+	        optionType  
+        ) VALUES (
+        	#id# ,
+        	#optionName# ,
+        	#declearation# ,
+        	#coverimg# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#surveyId# ,
+        	#optionType# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsSurveyOption.update" >
+    <![CDATA[
+        UPDATE cms_survey_option SET
+	        optionName = #optionName# ,
+	        declearation = #declearation# ,
+	        coverimg = #coverimg# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        surveyId = #surveyId# ,
+	        optionType = #optionType# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsSurveyOption.delete">
+    <![CDATA[
+        DELETE FROM cms_survey_option WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsSurveyOption.getById" resultMap="RM.CmsSurveyOption">
+	    SELECT <include refid="CmsSurveyOption.columns"/>
+	    <![CDATA[
+	        FROM cms_survey_option 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsSurveyOption.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="optionName">
+		             optionName = #optionName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="declearation">
+		             declearation = #declearation#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coverimg">
+		             coverimg = #coverimg#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="surveyId">
+		             surveyId = #surveyId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="optionType">
+		             optionType = #optionType#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsSurveyOption.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_survey_option <include refid="CmsSurveyOption.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsSurveyOption.findPage" resultMap="RM.CmsSurveyOption">
+    	SELECT <include refid="CmsSurveyOption.columns"/> FROM cms_survey_option 
+		<include refid="CmsSurveyOption.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsSurveyOption.findTop" resultMap="RM.CmsSurveyOption">
+    	SELECT <include refid="CmsSurveyOption.columns"/> FROM cms_survey_option  
+    	<include refid="CmsSurveyOption.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

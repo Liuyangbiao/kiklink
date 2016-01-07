@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list> 
+
+  
+	<!-- Error Page定义 -->
+	<error-page>
+		<error-code>500</error-code>
+		<location>/commons/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/commons/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/commons/403.jsp</location>
+	</error-page>
+
+	<!--
+			Spring ApplicationContext配置文件的路径�,可使用通配符，多个路径用�1,号分隔
+			此参数用于后面的Spring-Context loader
+		-->
+	
+	<filter>
+		<filter-name>xssFilter</filter-name>
+		<filter-class>com.yebucuo.filter.XssFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>xssFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	 
+	
+	<filter>    
+		<filter-name>UrlRewriteFilter</filter-name>    
+		<filter-class>    
+           org.tuckey.web.filters.urlrewrite.UrlRewriteFilter    
+		</filter-class>    
+	</filter>      
+     
+	<filter-mapping>    
+		<filter-name>UrlRewriteFilter</filter-name>    
+		<url-pattern>*.html</url-pattern>    
+	</filter-mapping>   
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:spring/*.xml</param-value>
+	</context-param>
+
+	<!-- JSTL i18n定义-->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>i18n/messages</param-value>
+	</context-param>
+	
+	
+
+
+	<filter>
+		<filter-name>RequestFilter</filter-name>
+		<filter-class>com.yebucuo.filter.RequestFilter</filter-class>
+	</filter>
+  
+	<filter-mapping>
+		<filter-name>RequestFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+  
+	</filter-mapping>
+
+
+
+	<!-- 
+		<filter>
+			<filter-name>RightFilter</filter-name>
+			<filter-class>com.trends.glo.filter.RightFilter</filter-class>
+		</filter>
+		<filter-mapping>
+			<filter-name>RightFilter</filter-name>
+			<url-pattern>*.do</url-pattern>
+		</filter-mapping> -->
+	<!-- 
+			<filter>
+				<filter-name>HandleSessionFilter</filter-name>
+				<filter-class>com.trends.glo.filter.HandleSessionFilter</filter-class>
+			</filter>
+
+			<filter-mapping>
+				<filter-name>HandleSessionFilter</filter-name>
+				<url-pattern>/*</url-pattern>
+			</filter-mapping>
+		 -->
+
+	<!-- Character Encoding filter -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	
+	<!-- LoggerMDCFilter,存放在MDC中的数据，log4j可以直接引用并作为日志信息打印出来. 
+		<filter>
+			<filter-name>LoggerMDCFilter</filter-name>
+			<filter-class>com.yebucuo.common.filter.LoggerMDCFilter</filter-class>
+		</filter>
+
+
+		<filter-mapping>
+			<filter-name>LoggerMDCFilter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+-->
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+
+	<!--Spring ApplicationContext 载入 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.yebucuo.server.SessionListener</listener-class>
+	</listener>
+	<!--
+			使Spring支持request与session的scope,如:<bean id="loginAction"
+			class="com.foo.LoginAction" scope="request"/>
+		-->
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
+	<!-- Spring 刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>com.yebucuo.server.ServerStart</listener-class>
+	</listener> 
+	
+	<listener> 
+		<listener-class>com.yebucuo.servlet.StatusUpdateListener</listener-class> 
+	</listener> 
+
+	<!-- <servlet>
+			<description></description>
+			<display-name>startup</display-name>
+			<servlet-name>StartServlet</servlet-name>
+			<servlet-class>com.yebucuo.servlet.StartServlet</servlet-class>
+			<load-on-startup>1</load-on-startup>
+		  </servlet>
+
+-->
+ 
+
+	<!-- 
+		 <servlet>
+<servlet-name>Test</servlet-name> 
+<servlet-class>com.yebucuo.servlet.ServletSocketListener</servlet-class> 
+<load-on-startup>3</load-on-startup>
+</servlet> -->
+
+ 
+  
+ 
+	<!-- wanda magazine animation utils end -->
+	  
+	<!--
+<filter> 
+<filter-name>CharacterEncodingFilter</filter-name> 
+<filter-class>com.yebucuo.servlet.EncodeFilter</filter-class> 
+</filter> 
+<filter-mapping> 
+<filter-name>CharacterEncodingFilter</filter-name> 
+<url-pattern>*.do</url-pattern> 
+</filter-mapping> 
+ 
+-->
+
+	<filter>
+		<filter-name>struts2-cleanup</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+	</filter>
+	<filter>
+		<filter-name>struts2Filter</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>struts2-cleanup</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2Filter</filter-name>
+		<url-pattern>*.do</url-pattern>
+		<dispatcher>REQUEST</dispatcher>   
+		<dispatcher>FORWARD</dispatcher>   
+		<dispatcher>INCLUDE</dispatcher> 
+	</filter-mapping>
+	
+	
+	<!-- 	
+<servlet>  
+		   <servlet-name>AutoServlet</servlet-name>  
+		   <servlet-class>com.yebucuo.servlet.AutoServlet</servlet-class>  
+		   <load-on-startup>10</load-on-startup>  
+		 </servlet>  
+<servlet-mapping>  
+			<servlet-name>AutoServlet</servlet-name>  
+			<url-pattern>/AutoServlet</url-pattern>  
+		 </servlet-mapping> 
+			 -->
+	
+	<servlet>
+		<servlet-name>statics</servlet-name>
+   //相对于classes
+		<servlet-class>com.yebucuo.servlet.StaticsServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>statics</servlet-name>
+   //分大小写 是一个当前项目为准。
+		<url-pattern>/statics</url-pattern>
+	</servlet-mapping>	
+  
+  
+	<servlet>
+		<servlet-name>ipdata</servlet-name>
+   //相对于classes
+		<servlet-class>com.yebucuo.servlet.IpServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>ipdata</servlet-name>
+   //分大小写 是一个当前项目为准。
+		<url-pattern>/ipdata</url-pattern>
+	</servlet-mapping>	
+  
+  
+	<servlet>
+		<servlet-name>valid</servlet-name>
+   //相对于classes
+		<servlet-class>com.yebucuo.servlet.ValidNumServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>valid</servlet-name>
+   //分大小写 是一个当前项目为准。
+		<url-pattern>/valid</url-pattern>
+	</servlet-mapping>	
+  
+	
+	<servlet>
+		<servlet-name>Test</servlet-name> 
+		<servlet-class>com.yebucuo.servlet.SomeServlet</servlet-class> 
+		<load-on-startup>5</load-on-startup>
+	</servlet>
+	
+	
+	<jsp-config>
+		<taglib>        
+			<taglib-uri>/tags</taglib-uri>   
+			<taglib-location>/WEB-INF/tld/datetag.tld</taglib-location>            
+		</taglib>   
+	</jsp-config>
+  
+	<!-- 第三方登录之QQ -->
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>com.connect.qq.servlet.QQConnectServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/loginforqq</url-pattern>
+	</servlet-mapping>
+
+</web-app>

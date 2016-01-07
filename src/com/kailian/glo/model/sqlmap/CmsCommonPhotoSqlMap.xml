@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsCommonPhoto" class="com.kailian.glo.model.CmsCommonPhoto">
+        <result property="id" column="id"/>
+        <result property="ownnerid" column="ownnerid"/>
+        <result property="ownnertype" column="ownnertype"/>
+        <result property="targetType" column="targetType"/>
+        <result property="targetId" column="targetId"/>
+        <result property="resourcetype" column="resourcetype"/>
+        <result property="category" column="category"/>
+        <result property="resource" column="resource"/>
+        <result property="name" column="name"/>
+        <result property="comment" column="comment"/>
+        <result property="quanzhong" column="quanzhong"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsCommonPhoto.columns">
+	    <![CDATA[
+        id ,ownnerid ,ownnertype ,targetType ,targetId ,resourcetype ,category ,resource ,name ,comment ,quanzhong ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsCommonPhoto.insert" >
+    <![CDATA[
+        INSERT INTO cms_common_photo (
+	        id  ,
+	        ownnerid  ,
+	        ownnertype  ,
+	        targetType  ,
+	        targetId  ,
+	        resourcetype  ,
+	        category  ,
+	        resource  ,
+	        name  ,
+	        comment  ,
+	        quanzhong  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#ownnerid# ,
+        	#ownnertype# ,
+        	#targetType# ,
+        	#targetId# ,
+        	#resourcetype# ,
+        	#category# ,
+        	#resource# ,
+        	#name# ,
+        	#comment# ,
+        	#quanzhong# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsCommonPhoto.update" >
+    <![CDATA[
+        UPDATE cms_common_photo SET
+	        ownnerid = #ownnerid# ,
+	        ownnertype = #ownnertype# ,
+	        targetType = #targetType# ,
+	        targetId = #targetId# ,
+	        resourcetype = #resourcetype# ,
+	        category = #category# ,
+	        resource = #resource# ,
+	        name = #name# ,
+	        comment = #comment# ,
+	        quanzhong = #quanzhong# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsCommonPhoto.delete">
+    <![CDATA[
+        DELETE FROM cms_common_photo WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsCommonPhoto.getById" resultMap="RM.CmsCommonPhoto">
+	    SELECT <include refid="CmsCommonPhoto.columns"/>
+	    <![CDATA[
+	        FROM cms_common_photo 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsCommonPhoto.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ownnerid">
+		             ownnerid = #ownnerid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ownnertype">
+		             ownnertype = #ownnertype#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="targetType">
+		             targetType = #targetType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="targetId">
+		             targetId = #targetId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="resourcetype">
+		             resourcetype = #resourcetype#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="category">
+		             category = #category#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="resource">
+		             resource = #resource#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="name">
+		             name = #name#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="comment">
+		             comment = #comment#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="quanzhong">
+		             quanzhong = #quanzhong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsCommonPhoto.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_common_photo <include refid="CmsCommonPhoto.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsCommonPhoto.findPage" resultMap="RM.CmsCommonPhoto">
+    	SELECT <include refid="CmsCommonPhoto.columns"/> FROM cms_common_photo 
+		<include refid="CmsCommonPhoto.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsCommonPhoto.findTop" resultMap="RM.CmsCommonPhoto">
+    	SELECT <include refid="CmsCommonPhoto.columns"/> FROM cms_common_photo  
+    	<include refid="CmsCommonPhoto.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

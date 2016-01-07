@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsCommonComment" class="com.kailian.glo.model.CmsCommonComment">
+        <result property="id" column="id"/>
+        <result property="userid" column="userid"/>
+        <result property="username" column="username"/>
+        <result property="userphoto" column="userphoto"/>
+        <result property="targetType" column="targetType"/>
+        <result property="targetId" column="targetId"/>
+        <result property="commentType" column="commentType"/>
+        <result property="comment" column="comment"/>
+        <result property="pointDescriptionMatch" column="pointDescriptionMatch"/>
+        <result property="pointPerfational" column="pointPerfational"/>
+        <result property="pointServiceAttitude" column="pointServiceAttitude"/>
+        <result property="pointAppointmentSuccessful" column="pointAppointmentSuccessful"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="targetid2" column="targetid2"/>
+        <result property="point" column="point"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsCommonComment.columns">
+	    <![CDATA[
+        id ,userid ,username ,userphoto ,targetType ,targetId ,commentType ,comment ,pointDescriptionMatch ,pointPerfational ,pointServiceAttitude ,pointAppointmentSuccessful ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,targetid2,point 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsCommonComment.insert" >
+    <![CDATA[
+        INSERT INTO cms_common_comment (
+	        id  ,
+	        userid  ,
+	        username  ,
+	        userphoto  ,
+	        targetType  ,
+	        targetId  ,
+	        commentType  ,
+	        comment  ,
+	        pointDescriptionMatch  ,
+	        pointPerfational  ,
+	        pointServiceAttitude  ,
+	        pointAppointmentSuccessful  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        targetid2  ,
+	        point
+        ) VALUES (
+        	#id# ,
+        	#userid# ,
+        	#username# ,
+        	#userphoto# ,
+        	#targetType# ,
+        	#targetId# ,
+        	#commentType# ,
+        	#comment# ,
+        	#pointDescriptionMatch# ,
+        	#pointPerfational# ,
+        	#pointServiceAttitude# ,
+        	#pointAppointmentSuccessful# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#targetid2# ,
+        	#point#
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsCommonComment.update" >
+    <![CDATA[
+        UPDATE cms_common_comment SET
+	        userid = #userid# ,
+	        username = #username# ,
+	        userphoto = #userphoto# ,
+	        targetType = #targetType# ,
+	        targetId = #targetId# ,
+	        commentType = #commentType# ,
+	        comment = #comment# ,
+	        pointDescriptionMatch = #pointDescriptionMatch# ,
+	        pointPerfational = #pointPerfational# ,
+	        pointServiceAttitude = #pointServiceAttitude# ,
+	        pointAppointmentSuccessful = #pointAppointmentSuccessful# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        targetid2 = #targetid2# ,
+	        point = #point#
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsCommonComment.delete">
+    <![CDATA[
+        DELETE FROM cms_common_comment WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsCommonComment.getById" resultMap="RM.CmsCommonComment">
+	    SELECT <include refid="CmsCommonComment.columns"/>
+	    <![CDATA[
+	        FROM cms_common_comment 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsCommonComment.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userid">
+		             userid = #userid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="username">
+		             username = #username#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userphoto">
+		             userphoto = #userphoto#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="targetType">
+		             targetType = #targetType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="targetId">
+		             targetId = #targetId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="commentType">
+		             commentType = #commentType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="comment">
+		             comment = #comment#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointDescriptionMatch">
+		             pointDescriptionMatch = #pointDescriptionMatch#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointPerfational">
+		             pointPerfational = #pointPerfational#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointServiceAttitude">
+		             pointServiceAttitude = #pointServiceAttitude#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointAppointmentSuccessful">
+		             pointAppointmentSuccessful = #pointAppointmentSuccessful#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="targetid2">
+		             targetid2 = #targetid2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="point">
+		             point = #point#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsCommonComment.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_common_comment <include refid="CmsCommonComment.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsCommonComment.findPage" resultMap="RM.CmsCommonComment">
+    	SELECT <include refid="CmsCommonComment.columns"/> FROM cms_common_comment 
+		<include refid="CmsCommonComment.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsCommonComment.findTop" resultMap="RM.CmsCommonComment">
+    	SELECT <include refid="CmsCommonComment.columns"/> FROM cms_common_comment  
+    	<include refid="CmsCommonComment.findPage.where"/>
+    	
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	
+	<sql id="CmsCommonComment.columns2">
+	    <![CDATA[
+        id ,userid ,username ,userphoto ,targetType ,targetId ,commentType ,comment ,avg(pointDescriptionMatch) as pointDescriptionMatch ,avg(pointPerfational) as pointPerfational ,avg(pointServiceAttitude) as pointServiceAttitude ,avg(pointAppointmentSuccessful) as pointAppointmentSuccessful ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,count(*) as targetId2,point 
+	    ]]>
+	</sql>
+
+
+<sql id="CmsCommonComment.findPage.where2">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userid">
+		             userid = #userid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="username">
+		             username = #username#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userphoto">
+		             userphoto = #userphoto#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="targetType">
+		             targetType = #targetType# 
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="targetId">
+		             targetId = #targetId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="commentType">
+		             commentType = #commentType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="comment">
+		             comment = #comment#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointDescriptionMatch">
+		             pointDescriptionMatch = #pointDescriptionMatch#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointPerfational">
+		             pointPerfational = #pointPerfational#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointServiceAttitude">
+		             pointServiceAttitude = #pointServiceAttitude#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="pointAppointmentSuccessful">
+		             pointAppointmentSuccessful = #pointAppointmentSuccessful#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="targetid2">
+		             targetid2 = #targetid2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="point">
+		             point = #point#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+
+<select id="CmsCommonComment.findAvg" resultMap="RM.CmsCommonComment">
+    	SELECT <include refid="CmsCommonComment.columns2"/> FROM cms_common_comment  
+    	<include refid="CmsCommonComment.findPage.where2"/>
+    	
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+    
+    
+</sqlMap>
+

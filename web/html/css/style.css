@@ -1,0 +1,78 @@
+body {
+	background:#ffffff;
+	padding:0px;
+	margin:0px;
+	font-family:"黑体";
+	position:relative;
+}
+
+#header1 {
+	text-align:center;
+	background:#F8F8F8;
+	border-bottom:1px solid #8F8F8F;
+	font-size:20px;
+	height:40px;
+	line-height:40px;
+	vertical-align:middle;
+	color:#000000;
+}
+
+#cont {
+	height:400px;
+	overflow:auto;
+	position:relative;
+}
+
+#cont div {
+	height:auto;
+	margin-left:50px;
+	padding-top:10px;
+	font-size:20px;;
+	font-weight:normal;
+	border-bottom:1px solid #8F8F8F;
+	cursor:pointer;
+	padding-bottom:20px;
+}
+
+#cont div input {
+	width:200px;
+	height:30px;
+	margin-left:0px;
+	padding-bottom:20px;
+}
+
+#tail {
+	height:50px;
+	background:#F8F8F8;
+	border-top:1px solid #8F8F8F;
+}
+
+
+#tail div {
+	font-size:12px;
+	text-align:center;
+	float:left;
+	cursor:pointer;
+	font-weight:normal;
+}
+#tail div img {
+	width:25px;
+	height:25px;
+	margin:3px;
+}
+
+
+#shang-img {
+	position:absolute;
+	left:20px;
+	cursor:pointer;
+}
+
+#xia-img {
+	position:absolute;
+	cursor:pointer;
+}
+
+
+
+

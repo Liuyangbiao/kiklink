@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsStaticsGather" class="com.kailian.glo.model.CmsStaticsGather">
+        <result property="id" column="id"/>
+        <result property="gatherType" column="gatherType"/>
+        <result property="timeType" column="timeType"/>
+        <result property="data" column="data"/>
+        <result property="count" column="count"/>
+        <result property="visitYear" column="visitYear"/>
+        <result property="visitMonth" column="visitMonth"/>
+        <result property="visitDate" column="visitDate"/>
+        <result property="visitDay" column="visitDay"/>
+        <result property="visitHour" column="visitHour"/>
+        <result property="visitMinute" column="visitMinute"/>
+        <result property="siteid" column="siteid"/>
+        <result property="siteDomain" column="siteDomain"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsStaticsGather.columns">
+	    <![CDATA[
+        id ,gatherType ,timeType ,data ,count ,visitYear ,visitMonth ,visitDate ,visitDay ,visitHour ,visitMinute ,siteid ,siteDomain ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,status 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsStaticsGather.insert" >
+    <![CDATA[
+        INSERT INTO cms_statics_gather (
+	        id  ,
+	        gatherType  ,
+	        timeType  ,
+	        data  ,
+	        count  ,
+	        visitYear  ,
+	        visitMonth  ,
+	        visitDate  ,
+	        visitDay  ,
+	        visitHour  ,
+	        visitMinute  ,
+	        siteid  ,
+	        siteDomain  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        status  
+        ) VALUES (
+        	#id# ,
+        	#gatherType# ,
+        	#timeType# ,
+        	#data# ,
+        	#count# ,
+        	#visitYear# ,
+        	#visitMonth# ,
+        	#visitDate# ,
+        	#visitDay# ,
+        	#visitHour# ,
+        	#visitMinute# ,
+        	#siteid# ,
+        	#siteDomain# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#status# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsStaticsGather.update" >
+    <![CDATA[
+        UPDATE cms_statics_gather SET
+	        gatherType = #gatherType# ,
+	        timeType = #timeType# ,
+	        data = #data# ,
+	        count = #count# ,
+	        visitYear = #visitYear# ,
+	        visitMonth = #visitMonth# ,
+	        visitDate = #visitDate# ,
+	        visitDay = #visitDay# ,
+	        visitHour = #visitHour# ,
+	        visitMinute = #visitMinute# ,
+	        siteid = #siteid# ,
+	        siteDomain = #siteDomain# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        status = #status# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsStaticsGather.delete">
+    <![CDATA[
+        DELETE FROM cms_statics_gather WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsStaticsGather.getById" resultMap="RM.CmsStaticsGather">
+	    SELECT <include refid="CmsStaticsGather.columns"/>
+	    <![CDATA[
+	        FROM cms_statics_gather 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsStaticsGather.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="gatherType">
+		             gatherType = #gatherType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="timeType">
+		             timeType = #timeType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="data">
+		             data = #data#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="count">
+		             count = #count#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitYear">
+		             visitYear = #visitYear#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitMonth">
+		             visitMonth = #visitMonth#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitDate">
+		             visitDate = #visitDate#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitDay">
+		             visitDay = #visitDay#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitHour">
+		             visitHour = #visitHour#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitMinute">
+		             visitMinute = #visitMinute#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="siteid">
+		             siteid = #siteid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="siteDomain">
+		             siteDomain = #siteDomain#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsStaticsGather.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_statics_gather <include refid="CmsStaticsGather.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsStaticsGather.findPage" resultMap="RM.CmsStaticsGather">
+    	SELECT <include refid="CmsStaticsGather.columns"/> FROM cms_statics_gather 
+		<include refid="CmsStaticsGather.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsStaticsGather.findTop" resultMap="RM.CmsStaticsGather">
+    	SELECT <include refid="CmsStaticsGather.columns"/> FROM cms_statics_gather  
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

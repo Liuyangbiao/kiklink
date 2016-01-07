@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CtUserProvince" class="com.kailian.glo.model.CtUserProvince">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="firstchar" column="firstchar"/>
+        <result property="imghead" column="imghead"/>
+        <result property="img1" column="img1"/>
+        <result property="img2" column="img2"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CtUserProvince.columns">
+	    <![CDATA[
+        id ,name ,firstchar ,imghead ,img1 ,img2 
+	    ]]>
+	</sql>
+	
+    <insert id="CtUserProvince.insert" >
+    <![CDATA[
+        INSERT INTO ct_user_province (
+	        id  ,
+	        name  ,
+	        firstchar  ,
+	        imghead  ,
+	        img1  ,
+	        img2  
+        ) VALUES (
+        	#id# ,
+        	#name# ,
+        	#firstchar# ,
+        	#imghead# ,
+        	#img1# ,
+        	#img2# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CtUserProvince.update" >
+    <![CDATA[
+        UPDATE ct_user_province SET
+	        name = #name# ,
+	        firstchar = #firstchar# ,
+	        imghead = #imghead# ,
+	        img1 = #img1# ,
+	        img2 = #img2# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CtUserProvince.delete">
+    <![CDATA[
+        DELETE FROM ct_user_province WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CtUserProvince.getById" resultMap="RM.CtUserProvince">
+	    SELECT <include refid="CtUserProvince.columns"/>
+	    <![CDATA[
+	        FROM ct_user_province 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CtUserProvince.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="name">
+		             name = #name#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="firstchar">
+		             firstchar = #firstchar#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="imghead">
+		             imghead = #imghead#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="img1">
+		             img1 = #img1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="img2">
+		             img2 = #img2#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CtUserProvince.findPage.count" resultClass="long">
+        SELECT count(*) FROM ct_user_province <include refid="CtUserProvince.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CtUserProvince.findPage" resultMap="RM.CtUserProvince">
+    	SELECT <include refid="CtUserProvince.columns"/> FROM ct_user_province 
+		<include refid="CtUserProvince.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CtUserProvince.findTop" resultMap="RM.CtUserProvince">
+    	SELECT <include refid="CtUserProvince.columns"/> FROM ct_user_province  
+    	<include refid="CtUserProvince.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

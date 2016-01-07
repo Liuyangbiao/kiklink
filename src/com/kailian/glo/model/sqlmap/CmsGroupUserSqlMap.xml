@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsGroupUser" class="com.kailian.glo.model.CmsGroupUser">
+        <result property="id" column="id"/>
+        <result property="groupid" column="groupid"/>
+        <result property="groupname" column="groupname"/>
+        <result property="groupphoto" column="groupphoto"/>
+        <result property="userid" column="userid"/>
+        <result property="username" column="username"/>
+        <result property="photo" column="photo"/>
+        <result property="userlevel" column="userlevel"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsGroupUser.columns">
+	    <![CDATA[
+        id ,groupid ,groupname ,groupphoto ,userid ,username ,photo ,userlevel ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsGroupUser.insert" >
+    <![CDATA[
+        INSERT INTO cms_group_user (
+	        id  ,
+	        groupid  ,
+	        groupname  ,
+	        groupphoto  ,
+	        userid  ,
+	        username  ,
+	        photo  ,
+	        userlevel  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#groupid# ,
+        	#groupname# ,
+        	#groupphoto# ,
+        	#userid# ,
+        	#username# ,
+        	#photo# ,
+        	#userlevel# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsGroupUser.update" >
+    <![CDATA[
+        UPDATE cms_group_user SET
+	        groupid = #groupid# ,
+	        groupname = #groupname# ,
+	        groupphoto = #groupphoto# ,
+	        userid = #userid# ,
+	        username = #username# ,
+	        photo = #photo# ,
+	        userlevel = #userlevel# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsGroupUser.delete">
+    <![CDATA[
+        DELETE FROM cms_group_user WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsGroupUser.getById" resultMap="RM.CmsGroupUser">
+	    SELECT <include refid="CmsGroupUser.columns"/>
+	    <![CDATA[
+	        FROM cms_group_user 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsGroupUser.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="groupid">
+		             groupid = #groupid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="groupname">
+		             groupname = #groupname#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="groupphoto">
+		             groupphoto = #groupphoto#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userid">
+		             userid = #userid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="username">
+		             username = #username#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="photo">
+		             photo = #photo#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userlevel">
+		             userlevel = #userlevel#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsGroupUser.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_group_user <include refid="CmsGroupUser.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsGroupUser.findPage" resultMap="RM.CmsGroupUser">
+    	SELECT <include refid="CmsGroupUser.columns"/> FROM cms_group_user 
+		<include refid="CmsGroupUser.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsGroupUser.findTop" resultMap="RM.CmsGroupUser">
+    	SELECT <include refid="CmsGroupUser.columns"/> FROM cms_group_user  
+    	<include refid="CmsGroupUser.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

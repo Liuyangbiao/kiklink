@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsStRehuopai" class="com.kailian.glo.model.CmsStRehuopai">
+        <result property="id" column="id"/>
+        <result property="actname" column="actname"/>
+        <result property="closedate" column="closedate"/>
+        <result property="keywords" column="keywords"/>
+        <result property="description" column="description"/>
+        <result property="coTime" column="co_time"/>
+        <result property="coPosition" column="co_position"/>
+        <result property="busWay" column="bus_way"/>
+        <result property="driveWay" column="drive_way"/>
+        <result property="coProcess1" column="co_process1"/>
+        <result property="coProcess2" column="co_process2"/>
+        <result property="coProcess3" column="co_process3"/>
+        <result property="coProcess4" column="co_process4"/>
+        <result property="coProcess5" column="co_process5"/>
+        <result property="coProcess6" column="co_process6"/>
+        <result property="coProcess7" column="co_process7"/>
+        <result property="coProcess8" column="co_process8"/>
+        <result property="coProcess9" column="co_process9"/>
+        <result property="coProcess10" column="co_process10"/>
+        <result property="coTypes" column="co_types"/>
+        <result property="coAttentions" column="co_attentions"/>
+        <result property="price" column="price"/>
+        <result property="priceTip" column="price_tip"/>
+        <result property="bigimg1" column="bigimg1"/>
+        <result property="bigimg2" column="bigimg2"/>
+        <result property="bigimg3" column="bigimg3"/>
+        <result property="bigimg4" column="bigimg4"/>
+        <result property="bigimg5" column="bigimg5"/>
+        <result property="bigimg6" column="bigimg6"/>
+        <result property="ext1" column="ext1"/>
+        <result property="ext2" column="ext2"/>
+        <result property="ext3" column="ext3"/>
+        <result property="ext4" column="ext4"/>
+        <result property="ext5" column="ext5"/>
+        <result property="extInt1" column="extInt1"/>
+        <result property="extInt2" column="extInt2"/>
+        <result property="extInt3" column="extInt3"/>
+        <result property="extInt4" column="extInt4"/>
+        <result property="extInt5" column="extInt5"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsStRehuopai.columns">
+	    <![CDATA[
+        id ,actname ,closedate ,keywords ,description ,co_time ,co_position ,bus_way ,drive_way ,co_process1 ,co_process2 ,co_process3 ,co_process4 ,co_process5 ,co_process6 ,co_process7 ,co_process8 ,co_process9 ,co_process10 ,co_types ,co_attentions ,price ,price_tip ,bigimg1 ,bigimg2 ,bigimg3 ,bigimg4 ,bigimg5 ,bigimg6 ,ext1 ,ext2 ,ext3 ,ext4 ,ext5 ,extInt1 ,extInt2 ,extInt3 ,extInt4 ,extInt5 ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsStRehuopai.insert" >
+    <![CDATA[
+        INSERT INTO cms_st_rehuopai (
+	        id  ,
+	        actname  ,
+	        closedate  ,
+	        keywords  ,
+	        description  ,
+	        co_time  ,
+	        co_position  ,
+	        bus_way  ,
+	        drive_way  ,
+	        co_process1  ,
+	        co_process2  ,
+	        co_process3  ,
+	        co_process4  ,
+	        co_process5  ,
+	        co_process6  ,
+	        co_process7  ,
+	        co_process8  ,
+	        co_process9  ,
+	        co_process10  ,
+	        co_types  ,
+	        co_attentions  ,
+	        price  ,
+	        price_tip  ,
+	        bigimg1  ,
+	        bigimg2  ,
+	        bigimg3  ,
+	        bigimg4  ,
+	        bigimg5  ,
+	        bigimg6  ,
+	        ext1  ,
+	        ext2  ,
+	        ext3  ,
+	        ext4  ,
+	        ext5  ,
+	        extInt1  ,
+	        extInt2  ,
+	        extInt3  ,
+	        extInt4  ,
+	        extInt5  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#actname# ,
+        	#closedate# ,
+        	#keywords# ,
+        	#description# ,
+        	#coTime# ,
+        	#coPosition# ,
+        	#busWay# ,
+        	#driveWay# ,
+        	#coProcess1# ,
+        	#coProcess2# ,
+        	#coProcess3# ,
+        	#coProcess4# ,
+        	#coProcess5# ,
+        	#coProcess6# ,
+        	#coProcess7# ,
+        	#coProcess8# ,
+        	#coProcess9# ,
+        	#coProcess10# ,
+        	#coTypes# ,
+        	#coAttentions# ,
+        	#price# ,
+        	#priceTip# ,
+        	#bigimg1# ,
+        	#bigimg2# ,
+        	#bigimg3# ,
+        	#bigimg4# ,
+        	#bigimg5# ,
+        	#bigimg6# ,
+        	#ext1# ,
+        	#ext2# ,
+        	#ext3# ,
+        	#ext4# ,
+        	#ext5# ,
+        	#extInt1# ,
+        	#extInt2# ,
+        	#extInt3# ,
+        	#extInt4# ,
+        	#extInt5# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsStRehuopai.update" >
+    <![CDATA[
+        UPDATE cms_st_rehuopai SET
+	        actname = #actname# ,
+	        closedate = #closedate# ,
+	        keywords = #keywords# ,
+	        description = #description# ,
+	        co_time = #coTime# ,
+	        co_position = #coPosition# ,
+	        bus_way = #busWay# ,
+	        drive_way = #driveWay# ,
+	        co_process1 = #coProcess1# ,
+	        co_process2 = #coProcess2# ,
+	        co_process3 = #coProcess3# ,
+	        co_process4 = #coProcess4# ,
+	        co_process5 = #coProcess5# ,
+	        co_process6 = #coProcess6# ,
+	        co_process7 = #coProcess7# ,
+	        co_process8 = #coProcess8# ,
+	        co_process9 = #coProcess9# ,
+	        co_process10 = #coProcess10# ,
+	        co_types = #coTypes# ,
+	        co_attentions = #coAttentions# ,
+	        price = #price# ,
+	        price_tip = #priceTip# ,
+	        bigimg1 = #bigimg1# ,
+	        bigimg2 = #bigimg2# ,
+	        bigimg3 = #bigimg3# ,
+	        bigimg4 = #bigimg4# ,
+	        bigimg5 = #bigimg5# ,
+	        bigimg6 = #bigimg6# ,
+	        ext1 = #ext1# ,
+	        ext2 = #ext2# ,
+	        ext3 = #ext3# ,
+	        ext4 = #ext4# ,
+	        ext5 = #ext5# ,
+	        extInt1 = #extInt1# ,
+	        extInt2 = #extInt2# ,
+	        extInt3 = #extInt3# ,
+	        extInt4 = #extInt4# ,
+	        extInt5 = #extInt5# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsStRehuopai.delete">
+    <![CDATA[
+        DELETE FROM cms_st_rehuopai WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsStRehuopai.getById" resultMap="RM.CmsStRehuopai">
+	    SELECT <include refid="CmsStRehuopai.columns"/>
+	    <![CDATA[
+	        FROM cms_st_rehuopai 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsStRehuopai.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="actname">
+		             actname = #actname#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="closedate">
+		             closedate = #closedate#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="keywords">
+		             keywords = #keywords#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="description">
+		             description = #description#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coTime">
+		             co_time = #coTime#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coPosition">
+		             co_position = #coPosition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="busWay">
+		             bus_way = #busWay#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="driveWay">
+		             drive_way = #driveWay#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess1">
+		             co_process1 = #coProcess1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess2">
+		             co_process2 = #coProcess2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess3">
+		             co_process3 = #coProcess3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess4">
+		             co_process4 = #coProcess4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess5">
+		             co_process5 = #coProcess5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess6">
+		             co_process6 = #coProcess6#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess7">
+		             co_process7 = #coProcess7#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess8">
+		             co_process8 = #coProcess8#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess9">
+		             co_process9 = #coProcess9#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coProcess10">
+		             co_process10 = #coProcess10#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coTypes">
+		             co_types = #coTypes#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coAttentions">
+		             co_attentions = #coAttentions#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="price">
+		             price = #price#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="priceTip">
+		             price_tip = #priceTip#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="bigimg1">
+		             bigimg1 = #bigimg1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="bigimg2">
+		             bigimg2 = #bigimg2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="bigimg3">
+		             bigimg3 = #bigimg3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="bigimg4">
+		             bigimg4 = #bigimg4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="bigimg5">
+		             bigimg5 = #bigimg5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="bigimg6">
+		             bigimg6 = #bigimg6#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext1">
+		             ext1 = #ext1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext2">
+		             ext2 = #ext2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext3">
+		             ext3 = #ext3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext4">
+		             ext4 = #ext4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext5">
+		             ext5 = #ext5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt1">
+		             extInt1 = #extInt1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt2">
+		             extInt2 = #extInt2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt3">
+		             extInt3 = #extInt3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt4">
+		             extInt4 = #extInt4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt5">
+		             extInt5 = #extInt5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsStRehuopai.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_st_rehuopai <include refid="CmsStRehuopai.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsStRehuopai.findPage" resultMap="RM.CmsStRehuopai">
+    	SELECT <include refid="CmsStRehuopai.columns"/> FROM cms_st_rehuopai 
+		<include refid="CmsStRehuopai.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsStRehuopai.findTop" resultMap="RM.CmsStRehuopai">
+    	SELECT <include refid="CmsStRehuopai.columns"/> FROM cms_st_rehuopai  
+    	<include refid="CmsStRehuopai.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

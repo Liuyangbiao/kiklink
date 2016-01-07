@@ -1,0 +1,12 @@
+评价说明
+
+userid = "用户id";
+username = "用户名";
+userphoto = "评价者头像";
+target_id = "产品id";
+comment = "评价内容";
+point_description_match = "描述相符评分";
+point_perfational = "专业水准评分";
+point_service_attitude = "服务态度评分";
+point = "综合得分";
+point_appointment_successful = "预约成功率评分";

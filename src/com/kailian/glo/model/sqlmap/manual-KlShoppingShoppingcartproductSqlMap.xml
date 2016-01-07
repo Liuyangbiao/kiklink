@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<!-- 存放手写的sql -->
+<sqlMap>
+
+	<sql id="KlShoppingShoppingcartproduct.income.where">
+		<dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt4">
+		             extInt4 = #extInt4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="statusgt">
+		             status &gt; #statusgt#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopid">
+		             shopid = #shopid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="orderStatus">
+		             orderid in (select o.id from kl_shopping_order as o where  o.status = #orderStatus# )
+		       </isNotEmpty>
+		</dynamic>
+	</sql>
+
+	<select id="KlShoppingShoppingcartproduct.findPage.income" resultClass="float">
+        SELECT sum(price) FROM kl_shopping_shoppingcartproduct <include refid="KlShoppingShoppingcartproduct.income.where"/>  
+    </select>
+    
+
+
+</sqlMap>

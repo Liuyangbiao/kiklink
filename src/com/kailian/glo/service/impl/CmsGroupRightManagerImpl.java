@@ -1,0 +1,135 @@
+/*
+
+ */
+
+package com.kailian.glo.service.impl;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.kailian.glo.dao.ICmsDeleteBackupDao;
+import com.kailian.glo.model.CmsDeleteBackup;
+import com.kailian.glo.model.CmsGroupRight;
+
+import com.kailian.glo.model.CmsGroupRight;
+import com.kailian.glo.model.CmsStaticsFlow;
+import com.kailian.glo.vo.query.CmsGroupRightQuery;
+import com.yebucuo.util.Utils;
+
+import com.kailian.glo.service.ICmsGroupRightManager;
+import java.util.*;
+import org.apache.commons.lang.StringUtils;
+
+import com.yebucuo.common.base.*;
+import com.yebucuo.common.util.*;
+
+import cn.org.rapid_framework.util.*;
+import cn.org.rapid_framework.web.util.*;
+import cn.org.rapid_framework.page.*;
+import cn.org.rapid_framework.page.impl.*;
+
+import com.kailian.glo.model.*;
+import com.kailian.glo.dao.*;
+import com.kailian.glo.service.*;
+import com.kailian.glo.vo.query.*;
+
+import com.yebucuo.util.Utils;
+
+/**
+ * @author  wangdapeng
+ * @version 1.0
+ * @since 1.0
+ */
+
+
+@Service("cmsGroupRightManager")
+@Transactional
+public class CmsGroupRightManagerImpl extends BaseManager<CmsGroupRight,java.lang.Long> implements ICmsGroupRightManager{
+
+	private ICmsGroupRightDao cmsGroupRightDao;
+	private ICmsDeleteBackupDao cmsDeleteBackupDao;
+
+	/**增加setXXXX()方法,spring就可以通过autowire自动设置对象属性,请注意大小写*/
+	public void setCmsGroupRightDao(ICmsGroupRightDao dao) {
+		this.cmsGroupRightDao = dao;
+	}
+	
+	public void setCmsDeleteBackupDao(ICmsDeleteBackupDao dao) {
+		this.cmsDeleteBackupDao = dao;
+	}
+	
+	public EntityDao getEntityDao() {
+		return (EntityDao)this.cmsGroupRightDao;
+	}
+	
+	@Transactional(readOnly=true)
+	public Page findPage(CmsGroupRightQuery query) {
+		return cmsGroupRightDao.findPage(query);
+	}
+	@Transactional(readOnly=true)
+	public CmsGroupRight getById(java.lang.Long id){
+		return super.getById( id);
+	}
+	@Transactional
+	public void removeById(java.lang.Long id){
+		CmsGroupRight cmsGroupRight = this.getById(id);
+		if (cmsGroupRight != null) {
+			Map map = new HashMap();
+			map.put("object", cmsGroupRight);
+			String json = Utils.toJson(map);
+			CmsDeleteBackup cmsDeleteBackup = new CmsDeleteBackup();
+			cmsDeleteBackup.setTableName("CmsGroupRight");
+			cmsDeleteBackup.setContent(json);
+			cmsDeleteBackup.setCreatetimelong(System.currentTimeMillis());
+			cmsDeleteBackup.setModifytimelong(0L);
+			cmsDeleteBackup.setStatus(0);
+			this.cmsDeleteBackupDao.save(cmsDeleteBackup);
+		}
+		
+		super.removeById(id);
+	}
+	
+	/** 插入数据 */
+	@Transactional
+	public void save(CmsGroupRight entity){
+		super.save(entity);
+	}
+	
+	/** 更新数据 */
+	@Transactional
+	public void update(CmsGroupRight entity){
+		super.update(entity);
+	}
+	@Transactional(readOnly=true)
+	public boolean isUnique(CmsGroupRight entity, String uniquePropertyNames){
+		return super.isUnique( entity, uniquePropertyNames);
+	}
+	@Transactional(readOnly=true)
+	public List<CmsGroupRight> findAll(){
+		return super.findAll();
+	}
+	@Transactional
+	public void saveOrUpdate(CmsGroupRight entity) {
+		super.saveOrUpdate(entity);
+	}
+
+
+public List<CmsGroupRight> queryTop(int count, String sort) {
+	return this.cmsGroupRightDao.queryTop(count, sort);
+}
+
+public List<CmsGroupRight> queryTop(CmsGroupRightQuery query) {
+	return this.cmsGroupRightDao.queryTop(query);
+}
+
+public long queryCount(CmsGroupRightQuery query) {
+	return this.cmsGroupRightDao.queryCount(query);
+}
+
+
+
+}

@@ -1,0 +1,168 @@
+.helpNav{text-align:center; min-height:50px; _height:50px;}
+.helpNav h1{background:#3f3f3f; color:#fff; padding:8px 0;}
+.helpNav a{height:33px; line-height:33px; overflow:hidden; background:url(../image/lline8.gif) left bottom repeat-x; display:block; color:#232323;}
+.helpNav a:hover, .helpNav .aNow{color:#db030c; text-decoration:none;}
+
+.helpSide_01 h1{padding:15px 0 12px 0; margin:0 10px; border-bottom:#ddd solid 1px;}
+.helpSide_01 .list{padding-top:10px;}
+.helpSide_01 li{float:left; height:35px; line-height:35px; overflow:hidden; white-space:nowrap; padding:0 10px;}
+.helpSide_01 .li_01 a{font-size:17px; color:#8f8f8f;}
+.helpSide_01 .li_02 a{font-size:14px; color:#9e000c;}
+.helpSide_01 .li_03 a{color:#a36a2f; font-size:15px;}
+.helpSide_01 .li_04 a{color:#036f9f; font-size:17px;}
+.helpSide_01 .li_05 a{color:#8e8600; font-size:17px;}
+.helpSide_01 .li_06 a{color:#a26288; font-size:14px;}
+
+.helpSide_02 h1{padding:15px 0 12px 0; margin:0 10px; border-bottom:#ddd solid 1px;}
+.helpSide_02 .list{padding:10px;}
+.helpSide_02 li{padding-left:85px; height:70px; overflow:hidden; position:relative;}
+.helpSide_02 .imgDiv{position:absolute; left:5px; top:5px;}
+.helpSide_02 .num{position:absolute; left:0px; top:0px; z-index:10; background:url(../image/nimg22_6.png) left top no-repeat; width:26px; text-align:center; height:16px; line-height:12px; color:#fff; font-style:italic;}
+.helpSide_02 .name{padding:9px 0 5px 0;}
+.helpSide_02 .name a{color:#232323;}
+
+.helpTitle{height:36px; overflow:hidden; background:#efefef; border-bottom:#dbdbdb solid 1px; position:relative;}
+.helpTitle h1{padding-left:25px; line-height:36px; font-weight:400;}
+.helpTitle .pageNow{position:absolute; z-index:1; top:6px; right:25px;}
+
+.helpShow{padding:25px;}
+.helpShow h1{width:94px; height:24px; line-height:24px; text-align:center; background:url(../image/lcBtn12.gif) left top no-repeat; font-size:14px; color:#fff;}
+.helpShow h5{padding:15px 0 5px 0;}
+.helpShow .content{line-height:24px; background:url(../image/lline8.gif) left bottom repeat-x; padding-bottom:15px; text-align:justify;}
+.helpShow .content1{background:none;}
+
+.Question{padding:10px 25px;}
+.Question li{padding:18px 0; background:url(../image/lline8.gif) left bottom repeat-x;}
+.Question .Q{padding-left:53px; height:30px; line-height:24px; overflow:hidden; font-weight:bold; background:url(../image/nimg41_1.png) left top no-repeat;}
+.Question .A{padding-left:53px; line-height:24px; background:url(../image/nimg41_2.png) left top no-repeat;}
+.Question .table{padding:15px 0 7px 0;}
+.Question table{width:360px; overflow:hidden; border:#c8c8c8 dashed 1px; border-right:0px; border-bottom:0px; color:#848484;}
+.Question td{height:57px; overflow:hidden; border:#c8c8c8 dashed 1px; border-left:0px; border-top:0px; text-align:center; font-size:14px;}
+.Question td b{color:#333;}
+
+.ServiceCenter{padding:20px 25px; color:#333;}
+.ServiceCenter .tel{height:80px; background:#efefef url(../image/limg68.png) 45px center no-repeat; padding:25px 0 0 85px; overflow:hidden;}
+.ServiceCenter .tel b{font-size:44px; padding:0 20px;}
+.ServiceCenter h2{padding:50px 0 20px 50px; background:url(../image/lline8.gif) left top repeat-x;}
+.ServiceCenter .form{padding:0 0 45px 0; background:url(../image/lline8.gif) left bottom repeat-x;}
+.ServiceCenter li{padding-left:110px; height:35px; line-height:23px; overflow:hidden; position:relative;}
+.ServiceCenter li em{width:98px; text-align:right; display:block; overflow:hidden; position:absolute; left:0px; top:0px;}
+.ServiceCenter .input1{width:377px; height:21px; line-height:21px; padding:0 5px; border:#d0d0d0 solid 1px; float:left; color:#a3a3a3;}
+.ServiceCenter .tips{padding-left:8px; color:#e90000; float:left;}
+.ServiceCenter .input2{width:136px; margin-right:5px;}
+.ServiceCenter .selectDiv{width:93px; height:23px; overflow:hidden; float:left; background:url(../image/linput7.png) left top no-repeat; color:#a3a3a3;} 
+.ServiceCenter .li_01{height:100px; overflow:hidden;}
+.ServiceCenter textarea{width:560px; height:72px; border:#d0d0d0 solid 1px; padding:5px; color:#a3a3a3; font-size:12px;}
+.ServiceCenter .li_02{height:300px; overflow:hidden;}
+.ServiceCenter .li_02 textarea{height:272px;}
+.ServiceCenter .input3{width:65px; margin-right:5px;}
+.ServiceCenter .lzm{position:relative; top:1px; float:left; padding-right:10px;}
+.ServiceCenter .btnDiv{padding-top:45px; text-align:center; height:100px; overflow:hidden;}
+.ServiceCenter .btnDiv a{display:inline-block; width:146px; height:35px; line-height:35px; text-align:center; overflow:hidden; background:url(../image/lcBtn10.png) left top no-repeat; font-size:18px; color:#fff; margin:0 5px;}
+.ServiceCenter .btnDiv a:hover{background:url(../image/lcBtn11.png) left top no-repeat;}
+
+.Payment1{padding:25px; min-height:500px; _height:500px;}
+.Payment1 .name{padding:0 0 20px 0; color:#333;}
+.Payment1 table{width:360px; overflow:hidden; border:#c8c8c8 dashed 1px; border-right:0px; border-bottom:0px; color:#848484;}
+.Payment1 td{height:57px; overflow:hidden; border:#c8c8c8 dashed 1px; border-left:0px; border-top:0px; text-align:center; font-size:14px;}
+.Payment1 td b{color:#333;}
+.Payment1 .msg{line-height:24px; padding-top:25px; color:#848484;}
+
+.Cooperation{padding:35px 50px 0 50px;}
+.Cooperation ul{width:110%;}
+.Cooperation .list{width:680px; overflow:hidden; background:url(../image/lline8.gif) left bottom repeat-x;}
+.Cooperation .list li{float:left; width:138px; height:57px; overflow:hidden;}
+.Cooperation .list li img{border:#e6e6e6 solid 1px;}
+.Cooperation .list1{padding:25px 0 0 0; width:680px; overflow:hidden; background:url(../image/lline8.gif) left bottom repeat-x;}
+.Cooperation .list1 li{width:130px; padding-left:10px; height:26px; line-height:26px; overflow:hidden; float:left;}
+.Cooperation .list1 a{color:#000;}
+
+.contact{padding:0 0 0 25px; position:relative; min-height:750px; _height:750px;}
+.contact .list{width:210px; overflow:hidden;}
+.contact .imgDiv{position:absolute; top:30px; right:25px;}
+.contact li{background:url(../image/lline8.gif) left bottom repeat-x; padding-bottom:30px;}
+.contact h2{padding:25px 0 10px 0;}
+.contact .content{line-height:22px;}
+
+.jobTab{padding:20px 25px 0 25px; height:55px; overflow:hidden;}
+.jobTab li{float:left; height:33px; line-height:33px; width:106px; text-align:center; overflow:hidden; background:#b9b9b9; font-size:14px; margin-right:6px; color:#fff;}
+.jobTab .liNow{background:url(../image/lcBg2.png) left top no-repeat; height:39px;}
+
+.job{padding:0 25px 40px 25px; line-height:24px; color:#848484; min-height:635px; _height:635px;}
+.job h2{color:#474747;}
+
+.courseEnd{padding:15px;}
+.courseEnd .list{height:38px; background:#545454;}
+.courseEnd li{height:38px; line-height:38px; overflow:hidden; float:left; color:#fff; padding:0 15px; border-right:#949494 solid 1px;}
+.courseEnd li a{color:#fff;}
+.courseEnd li i{background:url(../image/lico10.png) right center no-repeat; padding-right:10px; font-style:normal;}
+.courseEnd li em{float:left; padding-right:10px;}
+.courseEnd .input1{width:47px; height:21px; line-height:21px; padding:0 5px; border:0px; background:#fff; overflow:hidden; float:left; position:relative; top:9px;}
+.courseEnd .tips{float:left; padding:0 5px;}
+.courseEnd .selectDiv{background:url(../image/lico11.png) right center no-repeat; float:left; width:60px; height:38px; overflow:hidden;}
+.courseEnd li .btn1{width:90px; height:38px; text-align:center; display:block; float:left; background:url(../image/lcBtn12.png) left center no-repeat;}
+/**/
+.courseEnd li .selectDiv1{background:url(../image/lselect.gif) left top no-repeat; width:95px; height:21px; line-height:21px; overflow:hidden; float:left; position:relative; top:9px; color:#FFF;}
+/**/
+.courseEnd td{height:130px; overflow:hidden; background:url(../image/lline10.gif) left bottom repeat-x;}
+.courseEnd td h2{position:relative; top:-20px;}
+.courseEnd td .content{position:relative; top:-10px;}
+.courseEnd .div0 img{position:relative; top:3px;}
+
+.shopEnd{padding:0 15px;}
+.shopEnd li{padding:20px 0; height:91px; overflow:hidden; background:url(../image/lline10.gif) left bottom repeat-x;}
+.shopEnd .fl{position:relative; height:91px; width:190px; overflow:hidden; padding-left:150px;}
+.shopEnd .fl .imgDiv{position:absolute; left:0px; top:0px;}
+.shopEnd .fl h2{padding:3px 0 10px 0;}
+.shopEnd .fl .mark{padding-top:10px; line-height:16px;}
+.shopEnd .fl .mark img{position:relative; top:5px;}
+.shopEnd .fl b{color:#e60012; padding-right:15px;}
+.shopEnd dd{float:left; padding-left:20px; width:110px; overflow:hidden; text-align:center;}
+
+.mapPart1{width:544px; overflow:hidden; border:#ddd solid 1px;}
+.mapPart1 h1{height:36px; line-height:36px; overflow:hidden; background:#efefef; padding-left:20px; font-weight:400; border-bottom:#ddd solid 1px;}
+.mapPart1 .imgDiv{padding:1px; height:494px; position:relative;}
+.mapPart1 .imgDiv a{display:block; position:absolute; z-index:10; background:url(../image/ico6.png) left top no-repeat; width:34px; height:44px; overflow:hidden;}
+
+.mapPart2{background:#FFF; width:424px; padding:0 5px 0 10px; height:534px; overflow:hidden; position:relative;}
+.mapPart2 .msg{height:43px; line-height:42px; overflow:hidden; background:url(../image/lline8.gif) left bottom repeat-x; color:#3f3f3f; padding-left:5px;}
+.mapPart2 .msg a{padding-right:10px; color:#3f3f3f;}
+.mapPart2 .msg a span{padding-right:10px; background:url(../image/lico13.gif) right center no-repeat; margin:0 3px; color:#828282;}
+.mapPart2 .box{height:470px; overflow:hidden; overflow-y:auto; position:relative; top:5px;}
+.mapPart2 .tag{height:60px; width:407px; overflow:hidden; padding-top:15px;}
+.mapPart2 .tag ul{width:110%;}
+.mapPart2 .tag li{float:left; padding-right:4px;}
+.mapPart2 .tag a{display:block; float:left; width:98px; height:40px; line-height:40px; text-align:center; overflow:hidden; background:url(../image/lcBtn14.gif) left top no-repeat;}
+.mapPart2 .price{/*background:url(../image/bg2.png) left 3px no-repeat; */width:370px; padding:0 15px; height:60px; position:relative;}
+.mapPart2 .price li{position:absolute; z-index:10; top:20px; white-space:nowrap;}
+/*.mapPart2 .price .bg{background:url(../image/bg1.png) left top no-repeat; height:8px; position:absolute; z-index:1; left:0px; top:3px;}
+.mapPart2 .price .li_01{background:url(../image/ico5.png) left top no-repeat;}
+.mapPart2 .price .li_02{background:url(../image/ico5.png) right top no-repeat;}*/
+.mapPart2 .more{height:42px; overflow:hidden;}
+.mapPart2 .more a{display:block; width:98px; height:32px; line-height:32px; text-align:center; overflow:hidden; background:url(../image/lcBtn15.gif) left top no-repeat; font-size:14px; color:#000; display:block;}
+.mapPart2 .list{width:407px; overflow:hidden;}
+.mapPart2 .list ul{width:110%;}
+.mapPart2 .list li{float:left; width:196px; height:200px; overflow:hidden; padding-right:15px;}
+.mapPart2 .list h2{height:23px; line-height:23px; overflow:hidden; padding-left:2px; position:relative;}
+.mapPart2 .list b{position:absolute; right:9px; top:0px; font-size:12px; color:#d2000a;}
+.mapPart2 .list .content{line-height:16px;}
+
+.mapLayer{width:344px; height:344px; overflow:hidden; background:url(../image/limg344.png) left top no-repeat; position:absolute; z-index:100; left:50%; top:50%; display:none;}
+.mapLayer .close{position:absolute; top:17px; right:17px; background:url(../image/close.gif) left top no-repeat; display:block; width:66px; height:17px; overflow:hidden;}
+.mapLayer .leftBtn{display:block; width:30px; height:76px; overflow:hidden; position:absolute; left:7px; top:104px; background:url(../image/lleftBtn1.png) left top no-repeat;}
+.mapLayer .rightBtn{display:block; width:30px; height:76px; overflow:hidden; position:absolute; right:7px; top:104px; background:url(../image/lrightBtn1.png) left top no-repeat;}
+.mapLayer .list{width:310px; margin:0 auto; overflow:hidden; padding-top:40px;}
+.mapLayer ul{width:2000%;}
+.mapLayer li{width:310px; overflow:hidden; float:left;}
+.mapLayer h2{padding-left:5px; height:30px; line-height:30px; overflow:hidden;}
+.mapLayer .content{line-height:20px; padding:0 5px;}
+
+.mapLayer1{width:370px; height:158px; overflow:hidden; background:url(../image/limg370.png) left top no-repeat; position:absolute; z-index:100; left:50%; top:50%; display:none;}
+.mapLayer1 .close{position:absolute; top:25px; right:0px; background:url(../image/close.gif) left top no-repeat; display:block; width:66px; height:17px; overflow:hidden;}
+.mapLayer1 .list{padding:50px 0 0 30px;}
+.mapLayer1 li{height:28px; line-height:28px; overflow:hidden; position:relative; padding-left:75px;}
+.mapLayer1 b{position:absolute; left:0px; top:0px;}
+.mapLayer1 a{padding-right:18px;}
+
+
+

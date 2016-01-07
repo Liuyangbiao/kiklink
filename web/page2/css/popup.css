@@ -1,0 +1,203 @@
+/*-------------------------------
+
+  POPUP.CSS
+
+-------------------------------*/
+.popup_back {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.popup_cont {
+  position: absolute;
+  z-index: 102;
+}
+.preloader {
+  z-index: 101;
+}
+/*---------------------
+
+  EDIT BELOW
+
+*/
+.popup_close {
+  color: #888;
+  cursor: pointer;
+  position: absolute;
+  padding: 5px;
+  right: 5px;
+  top: 0;
+}
+.popup_close:hover {
+  color: #111;
+}
+.popup_back {
+  cursor: pointer;
+  background-color: #100201;
+}
+div.popup {
+  padding: 25px;
+}
+.preloader {
+  left: 50%;
+  margin: -10px 0 0 -25px;
+  position: fixed;
+  top: 50%;
+}
+.popup-content-bottom {
+  background: url(../images/popup_bg_bottom_826x34.png) no-repeat top center;
+  width: 826px;
+  height: 34px;
+}
+.popup-content-center {
+  background: url(../images/popup_bg_826x1242.png) repeat-y top center;
+  width: 826px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.popup-content-center h1 {
+  margin-top: 100px;
+  text-align: center;
+}
+.popup-content-center dl {
+  font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", SimSun, "ËÎÌå", sans-serif;
+  padding: 10px 70px;
+}
+.popup-content-center dl dt {
+  font-size: 20px;
+  font-weight: bold;
+  background: url(../images/sprite2.png) no-repeat 0px -4px;
+  padding-left: 32px;
+  margin-bottom: 10px;
+}
+.popup-content-center dl dd {
+  font-size: 16px;
+  background: url(../images/sprite2.png) no-repeat 0px -28px;
+  padding-left: 24px;
+  margin: 0px 6px;
+  line-height: 40px;
+}
+.popup-content-center dl dd.form-group {
+  background-image: none;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+.popup-content-center dl dd.form-group .required {
+  color: #ff0002;
+  margin-right: 5px;
+}
+.popup-content-center dl dd.form-group label {
+  font-size: 16px;
+}
+.popup-content-center dl dd.form-group input {
+  height: 36px;
+  width: 300px;
+}
+.popup-content-center dl dd.split {
+  background-image: none;
+  border-bottom: 1px dashed #b5b5b5;
+  margin-bottom: 10px;
+}
+.popup-content-center dl dd p.note {
+  margin-top: -10px;
+  font-size: 14px;
+  color: #ff0000;
+  text-align: left;
+}
+.popup-content-center .btn-group {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.popup-content-center .btn {
+  font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", SimSun, "ËÎÌå", sans-serif;
+  color: #ffffff;
+  background-color: #e90000;
+  border-color: #e90000;
+  padding: 10px 70px;
+  font-size: 32px;
+  line-height: 30px;
+  border-radius: 0px;
+}
+.popup-content-center .btn:hover,
+.popup-content-center .btn:focus,
+.popup-content-center .btn:active,
+.popup-content-center .btn.active,
+.open > .dropdown-toggle.popup-content-center .btn {
+  color: #ffffff;
+  background-color: #b60000;
+  border-color: #ac0000;
+}
+.popup-content-center .btn:active,
+.popup-content-center .btn.active,
+.open > .dropdown-toggle.popup-content-center .btn {
+  background-image: none;
+}
+.popup-content-center .btn.disabled,
+.popup-content-center .btn[disabled],
+fieldset[disabled] .popup-content-center .btn,
+.popup-content-center .btn.disabled:hover,
+.popup-content-center .btn[disabled]:hover,
+fieldset[disabled] .popup-content-center .btn:hover,
+.popup-content-center .btn.disabled:focus,
+.popup-content-center .btn[disabled]:focus,
+fieldset[disabled] .popup-content-center .btn:focus,
+.popup-content-center .btn.disabled:active,
+.popup-content-center .btn[disabled]:active,
+fieldset[disabled] .popup-content-center .btn:active,
+.popup-content-center .btn.disabled.active,
+.popup-content-center .btn[disabled].active,
+fieldset[disabled] .popup-content-center .btn.active {
+  background-color: #e90000;
+  border-color: #e90000;
+}
+.popup-content-center .btn .badge {
+  color: #e90000;
+  background-color: #ffffff;
+}
+.popup-success {
+  background: url(../images/popup_bg_2.png) no-repeat top center;
+  width: 800px;
+  height: 703px;
+}
+.popup-success .content {
+  padding: 200px 245px;
+}
+.popup-success .content .pic-success {
+  margin-left: 40px;
+}
+.popup-success .content h1 {
+  margin: 0;
+  color: #ff0000;
+  font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", SimSun, "ËÎÌå", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  position: relative;
+}
+.popup-success .content h1 i {
+  position: absolute;
+  display: block;
+  font-size: 80px;
+  font-style: normal;
+  right: -10px;
+  top: -18px;
+}
+.popup-success .content p {
+  font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ", SimSun, "ËÎÌå", sans-serif;
+  font-size: 14px;
+  color: #323232;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+.popup-success .content .more {
+  text-align: right;
+}
+.popup-success .content a {
+  font-size: 12px;
+  color: #666666;
+  border: 1px solid #f39f9f;
+  padding: 5px;
+  text-decoration: none;
+}

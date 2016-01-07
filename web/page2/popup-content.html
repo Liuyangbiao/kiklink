@@ -1,0 +1,77 @@
+<div class="popup-content-center">
+
+	<h1>
+		<img src="images/popup_title_01_527x148.png" />
+	</h1>
+	<dl>
+		<dt>
+			你想知道的TA。。。
+		</dt>
+		<dd>
+			${map.c.coachName }
+		</dd>
+		<dd>
+			${fn:join(fn:split(map.c.topicAboutCoach, "\n"), "</dd><dd>") }
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			TA的能耐。。。
+		</dt>
+		<dd>${fn:join(fn:split(map.c.topicCoachCapacity, "\n"), "</dd><dd>") }</dd>
+	</dl>
+	<dl>
+		<dt>
+			约TA，你需要准备。。。
+		</dt>
+		<dd>${fn:join(fn:split(map.c.topicNeed, "\n"), "</dd><dd>") }</dd>
+	</dl>
+	<dl>
+		<dt>
+			马上约TA！
+		</dt>
+		<c:if test="${map.loginuser eq null} ">
+			<form action="${ctx }/kailian/CmsStRhppeople/regcoach.do?ajax=ajax" method="post" id="coachForm">
+				<dd class="form-group">
+					<label class="sr-only" for="text-1"><span class="required">*</span>您的姓名：</label>
+		    		<input type="text" class="form-control" name="pname" id="text-1" placeholder="">
+				</dd>
+				<dd class="form-group">
+					<label class="sr-only" for="text-2"><span class="required">*</span>您的电话：</label>
+		    		<input type="text" class="form-control" name="mobile" id="text-2" placeholder="">
+				</dd>
+				<dd class="form-group">
+					<label class="sr-only" for="text-3"><span class="required">*</span>您的工作：</label>
+		    		<input type="text" class="form-control" name="job" id="text-3" placeholder="">
+				</dd>
+				<dd class="form-group">
+					<label class="sr-only" for="text-4"><span class="required">*</span>您的职位：</label>
+		    		<input type="text" class="form-control" name="ext3" id="text-4" placeholder="">
+				</dd>
+				<dd class="split">&nbsp;</dd>
+			</form>
+		</c:if>
+		<dd>${fn:join(fn:split(map.c.nowInvite, "\n"), "</dd><dd>") }</dd>
+	</dl>
+	<div class="btn-group">
+		<button class="btn">我 要 约 TA</button>
+	</div>
+</div>
+<script>
+$(".btn").click(function(){
+	$.ajax({
+		cache: true,
+	    type: "POST",
+	    url: "${ctx }/kailian/CmsStRhppeople/regcoach.do?ajax=ajax",
+	    data:$('#coachForm').serialize(),
+	    async: false,
+	    error: function(request) {
+	        alert("预约失败。请重试！");
+	    },
+	    success: function(data) {
+	    	alert("预约成功！");
+	    }
+	})
+});
+</script>
+<div class="popup-content-bottom"></div>

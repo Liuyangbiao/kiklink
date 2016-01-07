@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsUserInfo" class="com.kailian.glo.model.CmsUserInfo">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="passwd" column="passwd"/>
+        <result property="thirdType" column="thirdType"/>
+        <result property="openid" column="openid"/>
+        <result property="source" column="source"/>
+        <result property="mobile" column="mobile"/>
+        <result property="email" column="email"/>
+        <result property="realName" column="realName"/>
+        <result property="provinceid" column="provinceid"/>
+        <result property="province" column="province"/>
+        <result property="cityid" column="cityid"/>
+        <result property="city" column="city"/>
+        <result property="quid" column="quid"/>
+        <result property="qu" column="qu"/>
+        <result property="birthYear" column="birthYear"/>
+        <result property="birthMonth" column="birthMonth"/>
+        <result property="birthDate" column="birthDate"/>
+        <result property="phone" column="phone"/>
+        <result property="address" column="address"/>
+        <result property="postCode" column="postCode"/>
+        <result property="photo" column="photo"/>
+        <result property="usertype" column="usertype"/>
+        <result property="createGroupCount" column="createGroupCount"/>
+        <result property="joinGroupCount" column="joinGroupCount"/>
+        <result property="createTopicCount" column="createTopicCount"/>
+        <result property="replyCount" column="replyCount"/>
+        <result property="points" column="points"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="lastlogintime" column="lastlogintime"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="sex" column="sex"/>
+        <result property="moneyleft" column="moneyleft"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsUserInfo.columns">
+	    <![CDATA[
+        id ,username ,passwd ,thirdType ,openid ,source ,mobile ,email ,realName ,provinceid ,province ,cityid ,city ,quid ,qu ,birthYear ,birthMonth ,birthDate ,phone ,address ,postCode ,photo ,usertype ,createGroupCount ,joinGroupCount ,createTopicCount ,replyCount ,points ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,sex,lastlogintime,moneyleft 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsUserInfo.insert" >
+    <![CDATA[
+        INSERT INTO cms_user_info (
+	        id  ,
+	        username  ,
+	        passwd  ,
+	        thirdType  ,
+	        openid  ,
+	        source  ,
+	        mobile  ,
+	        email  ,
+	        realName  ,
+	        provinceid  ,
+	        province  ,
+	        cityid  ,
+	        city  ,
+	        quid  ,
+	        qu  ,
+	        birthYear  ,
+	        birthMonth  ,
+	        birthDate  ,
+	        phone  ,
+	        address  ,
+	        postCode  ,
+	        photo  ,
+	        usertype  ,
+	        createGroupCount  ,
+	        joinGroupCount  ,
+	        createTopicCount  ,
+	        replyCount  ,
+	        points  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        sex  ,
+	        lastlogintime,
+	        moneyleft
+        ) VALUES (
+        	#id# ,
+        	#username# ,
+        	#passwd# ,
+        	#thirdType# ,
+        	#openid# ,
+        	#source# ,
+        	#mobile# ,
+        	#email# ,
+        	#realName# ,
+        	#provinceid# ,
+        	#province# ,
+        	#cityid# ,
+        	#city# ,
+        	#quid# ,
+        	#qu# ,
+        	#birthYear# ,
+        	#birthMonth# ,
+        	#birthDate# ,
+        	#phone# ,
+        	#address# ,
+        	#postCode# ,
+        	#photo# ,
+        	#usertype# ,
+        	#createGroupCount# ,
+        	#joinGroupCount# ,
+        	#createTopicCount# ,
+        	#replyCount# ,
+        	#points# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#sex# ,
+        	#lastlogintime#,
+        	#moneyleft#
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsUserInfo.update" >
+    <![CDATA[
+        UPDATE cms_user_info SET
+	        username = #username# ,
+	        passwd = #passwd# ,
+	        thirdType = #thirdType# ,
+	        openid = #openid# ,
+	        source = #source# ,
+	        mobile = #mobile# ,
+	        email = #email# ,
+	        realName = #realName# ,
+	        provinceid = #provinceid# ,
+	        province = #province# ,
+	        cityid = #cityid# ,
+	        city = #city# ,
+	        quid = #quid# ,
+	        qu = #qu# ,
+	        birthYear = #birthYear# ,
+	        birthMonth = #birthMonth# ,
+	        birthDate = #birthDate# ,
+	        phone = #phone# ,
+	        address = #address# ,
+	        postCode = #postCode# ,
+	        photo = #photo# ,
+	        usertype = #usertype# ,
+	        createGroupCount = #createGroupCount# ,
+	        joinGroupCount = #joinGroupCount# ,
+	        createTopicCount = #createTopicCount# ,
+	        replyCount = #replyCount# ,
+	        points = #points# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        sex = #sex# ,
+	        lastlogintime = #lastlogintime#,
+	        moneyleft=#moneyleft#
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsUserInfo.delete">
+    <![CDATA[
+        DELETE FROM cms_user_info WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsUserInfo.getById" resultMap="RM.CmsUserInfo">
+	    SELECT <include refid="CmsUserInfo.columns"/>
+	    <![CDATA[
+	        FROM cms_user_info 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsUserInfo.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="username">
+		             username = #username#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="passwd">
+		             passwd = #passwd#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="thirdType">
+		             thirdType = #thirdType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="openid">
+		             openid = #openid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="source">
+		             source = #source#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="mobile">
+		             mobile = #mobile#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="email">
+		             email = #email#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="moboremail">
+		             (email = #moboremail# or mobile=#moboremail#)
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="realName">
+		             realName = #realName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="provinceid">
+		             provinceid = #provinceid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="province">
+		             province = #province#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="cityid">
+		             cityid = #cityid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="city">
+		             city = #city#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="quid">
+		             quid = #quid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="qu">
+		             qu = #qu#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="birthYear">
+		             birthYear = #birthYear#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="birthMonth">
+		             birthMonth = #birthMonth#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="birthDate">
+		             birthDate = #birthDate#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="phone">
+		             phone = #phone#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="address">
+		             address = #address#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="postCode">
+		             postCode = #postCode#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="photo">
+		             photo = #photo#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="usertype">
+		             usertype = #usertype#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createGroupCount">
+		             createGroupCount = #createGroupCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="joinGroupCount">
+		             joinGroupCount = #joinGroupCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createTopicCount">
+		             createTopicCount = #createTopicCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="replyCount">
+		             replyCount = #replyCount#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="points">
+		             points = #points#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="sex">
+		             sex = #sex#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="lastlogintime">
+		             lastlogintime = #lastlogintime#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsUserInfo.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_user_info <include refid="CmsUserInfo.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsUserInfo.findPage" resultMap="RM.CmsUserInfo">
+    	SELECT <include refid="CmsUserInfo.columns"/> FROM cms_user_info 
+		<include refid="CmsUserInfo.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsUserInfo.findTop" resultMap="RM.CmsUserInfo">
+    	SELECT <include refid="CmsUserInfo.columns"/> FROM cms_user_info  
+    	<include refid="CmsUserInfo.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

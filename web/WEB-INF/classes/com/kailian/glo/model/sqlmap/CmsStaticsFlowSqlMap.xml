@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsStaticsFlow" class="com.kailian.glo.model.CmsStaticsFlow">
+        <result property="id" column="id"/>
+        <result property="longSession" column="longSession"/>
+        <result property="visitSession" column="visitSession"/>
+        <result property="ipAddress" column="ipAddress"/>
+        <result property="ipArea" column="ipArea"/>
+        <result property="visitType" column="visitType"/>
+        <result property="dayVisitTimes" column="dayVisitTimes"/>
+        <result property="userId" column="userId"/>
+        <result property="visitTime" column="visitTime"/>
+        <result property="visitTimeLong" column="visitTimeLong"/>
+        <result property="lastVisitTime" column="lastVisitTime"/>
+        <result property="lastVisitTimeLong" column="lastVisitTimeLong"/>
+        <result property="referer" column="referer"/>
+        <result property="refererSite" column="refererSite"/>
+        <result property="enterPage" column="enterPage"/>
+        <result property="searchEnge" column="searchEnge"/>
+        <result property="searchKey" column="searchKey"/>
+        <result property="os" column="os"/>
+        <result property="osVersion" column="osVersion"/>
+        <result property="hardwareType" column="hardwareType"/>
+        <result property="screenWidth" column="screenWidth"/>
+        <result property="screenHeight" column="screenHeight"/>
+        <result property="screenColor" column="screenColor"/>
+        <result property="browser" column="browser"/>
+        <result property="flashVersion" column="flashVersion"/>
+        <result property="cookieSupport" column="cookieSupport"/>
+        <result property="javaSupport" column="javaSupport"/>
+        <result property="visitYear" column="visitYear"/>
+        <result property="visitMonth" column="visitMonth"/>
+        <result property="visitDate" column="visitDate"/>
+        <result property="visitDay" column="visitDay"/>
+        <result property="visitHour" column="visitHour"/>
+        <result property="visitMinute" column="visitMinute"/>
+        <result property="siteid" column="siteid"/>
+        <result property="siteDomain" column="siteDomain"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="url" column="url"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsStaticsFlow.columns">
+	    <![CDATA[
+        id ,longSession ,visitSession ,ipAddress ,ipArea ,visitType ,dayVisitTimes ,userId ,visitTime ,visitTimeLong ,lastVisitTime ,lastVisitTimeLong ,referer ,refererSite ,enterPage ,searchEnge ,searchKey ,os ,osVersion ,hardwareType ,screenWidth ,screenHeight ,screenColor ,browser ,flashVersion ,cookieSupport ,javaSupport ,visitYear ,visitMonth ,visitDate ,visitDay ,visitHour ,visitMinute ,siteid ,siteDomain ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,url 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsStaticsFlow.insert" >
+    <![CDATA[
+        INSERT INTO cms_statics_flow (
+	        id  ,
+	        longSession  ,
+	        visitSession  ,
+	        ipAddress  ,
+	        ipArea  ,
+	        visitType  ,
+	        dayVisitTimes  ,
+	        userId  ,
+	        visitTime  ,
+	        visitTimeLong  ,
+	        lastVisitTime  ,
+	        lastVisitTimeLong  ,
+	        referer  ,
+	        refererSite  ,
+	        enterPage  ,
+	        searchEnge  ,
+	        searchKey  ,
+	        os  ,
+	        osVersion  ,
+	        hardwareType  ,
+	        screenWidth  ,
+	        screenHeight  ,
+	        screenColor  ,
+	        browser  ,
+	        flashVersion  ,
+	        cookieSupport  ,
+	        javaSupport  ,
+	        visitYear  ,
+	        visitMonth  ,
+	        visitDate  ,
+	        visitDay  ,
+	        visitHour  ,
+	        visitMinute  ,
+	        siteid  ,
+	        siteDomain  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        url  
+        ) VALUES (
+        	#id# ,
+        	#longSession# ,
+        	#visitSession# ,
+        	#ipAddress# ,
+        	#ipArea# ,
+        	#visitType# ,
+        	#dayVisitTimes# ,
+        	#userId# ,
+        	#visitTime# ,
+        	#visitTimeLong# ,
+        	#lastVisitTime# ,
+        	#lastVisitTimeLong# ,
+        	#referer# ,
+        	#refererSite# ,
+        	#enterPage# ,
+        	#searchEnge# ,
+        	#searchKey# ,
+        	#os# ,
+        	#osVersion# ,
+        	#hardwareType# ,
+        	#screenWidth# ,
+        	#screenHeight# ,
+        	#screenColor# ,
+        	#browser# ,
+        	#flashVersion# ,
+        	#cookieSupport# ,
+        	#javaSupport# ,
+        	#visitYear# ,
+        	#visitMonth# ,
+        	#visitDate# ,
+        	#visitDay# ,
+        	#visitHour# ,
+        	#visitMinute# ,
+        	#siteid# ,
+        	#siteDomain# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#url# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsStaticsFlow.update" >
+    <![CDATA[
+        UPDATE cms_statics_flow SET
+	        longSession = #longSession# ,
+	        visitSession = #visitSession# ,
+	        ipAddress = #ipAddress# ,
+	        ipArea = #ipArea# ,
+	        visitType = #visitType# ,
+	        dayVisitTimes = #dayVisitTimes# ,
+	        userId = #userId# ,
+	        visitTime = #visitTime# ,
+	        visitTimeLong = #visitTimeLong# ,
+	        lastVisitTime = #lastVisitTime# ,
+	        lastVisitTimeLong = #lastVisitTimeLong# ,
+	        referer = #referer# ,
+	        refererSite = #refererSite# ,
+	        enterPage = #enterPage# ,
+	        searchEnge = #searchEnge# ,
+	        searchKey = #searchKey# ,
+	        os = #os# ,
+	        osVersion = #osVersion# ,
+	        hardwareType = #hardwareType# ,
+	        screenWidth = #screenWidth# ,
+	        screenHeight = #screenHeight# ,
+	        screenColor = #screenColor# ,
+	        browser = #browser# ,
+	        flashVersion = #flashVersion# ,
+	        cookieSupport = #cookieSupport# ,
+	        javaSupport = #javaSupport# ,
+	        visitYear = #visitYear# ,
+	        visitMonth = #visitMonth# ,
+	        visitDate = #visitDate# ,
+	        visitDay = #visitDay# ,
+	        visitHour = #visitHour# ,
+	        visitMinute = #visitMinute# ,
+	        siteid = #siteid# ,
+	        siteDomain = #siteDomain# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        url = #url# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsStaticsFlow.delete">
+    <![CDATA[
+        DELETE FROM cms_statics_flow WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsStaticsFlow.getById" resultMap="RM.CmsStaticsFlow">
+	    SELECT <include refid="CmsStaticsFlow.columns"/>
+	    <![CDATA[
+	        FROM cms_statics_flow 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsStaticsFlow.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="longSession">
+		             longSession = #longSession#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitSession">
+		             visitSession = #visitSession#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ipAddress">
+		             ipAddress = #ipAddress#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ipArea">
+		             ipArea = #ipArea#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitType">
+		             visitType = #visitType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="dayVisitTimes">
+		             dayVisitTimes = #dayVisitTimes#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userId">
+		             userId = #userId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitTime">
+		             visitTime = #visitTime#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitTimeLong">
+		             visitTimeLong = #visitTimeLong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="lastVisitTime">
+		             lastVisitTime = #lastVisitTime#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="lastVisitTimeLong">
+		             lastVisitTimeLong = #lastVisitTimeLong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="referer">
+		             referer = #referer#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="refererSite">
+		             refererSite = #refererSite#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="enterPage">
+		             enterPage = #enterPage#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="searchEnge">
+		             searchEnge = #searchEnge#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="searchKey">
+		             searchKey = #searchKey#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="os">
+		             os = #os#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="osVersion">
+		             osVersion = #osVersion#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="hardwareType">
+		             hardwareType = #hardwareType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="screenWidth">
+		             screenWidth = #screenWidth#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="screenHeight">
+		             screenHeight = #screenHeight#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="screenColor">
+		             screenColor = #screenColor#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="browser">
+		             browser = #browser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="flashVersion">
+		             flashVersion = #flashVersion#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="cookieSupport">
+		             cookieSupport = #cookieSupport#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="javaSupport">
+		             javaSupport = #javaSupport#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitYear">
+		             visitYear = #visitYear#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitMonth">
+		             visitMonth = #visitMonth#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitDate">
+		             visitDate = #visitDate#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitDay">
+		             visitDay = #visitDay#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitHour">
+		             visitHour = #visitHour#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="visitMinute">
+		             visitMinute = #visitMinute#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="siteid">
+		             siteid = #siteid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="siteDomain">
+		             siteDomain = #siteDomain#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="url">
+		             url = #url#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsStaticsFlow.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_statics_flow <include refid="CmsStaticsFlow.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsStaticsFlow.findPage" resultMap="RM.CmsStaticsFlow">
+    	SELECT <include refid="CmsStaticsFlow.columns"/> FROM cms_statics_flow 
+		<include refid="CmsStaticsFlow.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsStaticsFlow.findTop" resultMap="RM.CmsStaticsFlow">
+    	SELECT <include refid="CmsStaticsFlow.columns"/> FROM cms_statics_flow  
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

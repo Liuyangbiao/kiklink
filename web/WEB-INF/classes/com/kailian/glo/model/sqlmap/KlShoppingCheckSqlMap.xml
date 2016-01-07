@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.KlShoppingCheck" class="com.kailian.glo.model.KlShoppingCheck">
+        <result property="id" column="id"/>
+        <result property="userid" column="userid"/>
+        <result property="coachName" column="coachName"/>
+        <result property="shoppingProductId" column="shoppingProductId"/>
+        <result property="toUserId" column="toUserId"/>
+        <result property="toUsername" column="toUsername"/>
+        <result property="progress" column="progress"/>
+        <result property="progressComment" column="progressComment"/>
+        <result property="progressTime" column="progressTime"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+        <result property="ext1" column="ext1"/>
+        <result property="ext2" column="ext2"/>
+        <result property="ext3" column="ext3"/>
+        <result property="ext4" column="ext4"/>
+        <result property="ext5" column="ext5"/>
+        <result property="extInt1" column="extInt1"/>
+        <result property="extInt2" column="extInt2"/>
+        <result property="extInt3" column="extInt3"/>
+        <result property="extInt4" column="extInt4"/>
+        <result property="extInt5" column="extInt5"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="KlShoppingCheck.columns">
+	    <![CDATA[
+        id ,userid ,coachName ,shoppingProductId ,toUserId ,toUsername ,progress ,progressComment ,progressTime ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser ,ext1 ,ext2 ,ext3 ,ext4 ,ext5 ,extInt1 ,extInt2 ,extInt3 ,extInt4 ,extInt5 
+	    ]]>
+	</sql>
+	
+    <insert id="KlShoppingCheck.insert" >
+    <![CDATA[
+        INSERT INTO kl_shopping_check (
+	        id  ,
+	        userid  ,
+	        coachName  ,
+	        shoppingProductId  ,
+	        toUserId  ,
+	        toUsername  ,
+	        progress  ,
+	        progressComment  ,
+	        progressTime  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  ,
+	        ext1  ,
+	        ext2  ,
+	        ext3  ,
+	        ext4  ,
+	        ext5  ,
+	        extInt1  ,
+	        extInt2  ,
+	        extInt3  ,
+	        extInt4  ,
+	        extInt5  
+        ) VALUES (
+        	#id# ,
+        	#userid# ,
+        	#coachName# ,
+        	#shoppingProductId# ,
+        	#toUserId# ,
+        	#toUsername# ,
+        	#progress# ,
+        	#progressComment# ,
+        	#progressTime# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# ,
+        	#ext1# ,
+        	#ext2# ,
+        	#ext3# ,
+        	#ext4# ,
+        	#ext5# ,
+        	#extInt1# ,
+        	#extInt2# ,
+        	#extInt3# ,
+        	#extInt4# ,
+        	#extInt5# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="KlShoppingCheck.update" >
+    <![CDATA[
+        UPDATE kl_shopping_check SET
+	        userid = #userid# ,
+	        coachName = #coachName# ,
+	        shoppingProductId = #shoppingProductId# ,
+	        toUserId = #toUserId# ,
+	        toUsername = #toUsername# ,
+	        progress = #progress# ,
+	        progressComment = #progressComment# ,
+	        progressTime = #progressTime# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# ,
+	        ext1 = #ext1# ,
+	        ext2 = #ext2# ,
+	        ext3 = #ext3# ,
+	        ext4 = #ext4# ,
+	        ext5 = #ext5# ,
+	        extInt1 = #extInt1# ,
+	        extInt2 = #extInt2# ,
+	        extInt3 = #extInt3# ,
+	        extInt4 = #extInt4# ,
+	        extInt5 = #extInt5# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="KlShoppingCheck.delete">
+    <![CDATA[
+        DELETE FROM kl_shopping_check WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="KlShoppingCheck.getById" resultMap="RM.KlShoppingCheck">
+	    SELECT <include refid="KlShoppingCheck.columns"/>
+	    <![CDATA[
+	        FROM kl_shopping_check 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="KlShoppingCheck.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userid">
+		             userid = #userid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coachName">
+		             coachName = #coachName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shoppingProductId">
+		             shoppingProductId = #shoppingProductId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="toUserId">
+		             toUserId = #toUserId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="toUsername">
+		             toUsername = #toUsername#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="progress">
+		             progress = #progress#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="progressComment">
+		             progressComment = #progressComment#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="progressTime">
+		             progressTime = #progressTime#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext1">
+		             ext1 = #ext1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext2">
+		             ext2 = #ext2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext3">
+		             ext3 = #ext3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext4">
+		             ext4 = #ext4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext5">
+		             ext5 = #ext5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt1">
+		             extInt1 = #extInt1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt2">
+		             extInt2 = #extInt2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt3">
+		             extInt3 = #extInt3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt4">
+		             extInt4 = #extInt4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt5">
+		             extInt5 = #extInt5#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="KlShoppingCheck.findPage.count" resultClass="long">
+        SELECT count(*) FROM kl_shopping_check <include refid="KlShoppingCheck.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="KlShoppingCheck.findPage" resultMap="RM.KlShoppingCheck">
+    	SELECT <include refid="KlShoppingCheck.columns"/> FROM kl_shopping_check 
+		<include refid="KlShoppingCheck.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="KlShoppingCheck.findTop" resultMap="RM.KlShoppingCheck">
+    	SELECT <include refid="KlShoppingCheck.columns"/> FROM kl_shopping_check  
+    	<include refid="KlShoppingCheck.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

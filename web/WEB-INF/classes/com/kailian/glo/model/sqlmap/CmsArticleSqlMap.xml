@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsArticle" class="com.kailian.glo.model.CmsArticle">
+        <result property="id" column="id"/>
+        <result property="channelId" column="channelId"/>
+        <result property="path" column="path"/>
+        <result property="titile" column="titile"/>
+        <result property="shortTitle" column="shortTitle"/>
+        <result property="keywords" column="keywords"/>
+        <result property="metaTags" column="metaTags"/>
+        <result property="description" column="description"/>
+        <result property="author" column="author"/>
+        <result property="origin" column="origin"/>
+        <result property="channelType" column="channelType"/>
+        <result property="titleImg" column="titleImg"/>
+        <result property="contentImg" column="contentImg"/>
+        <result property="content" column="content"/>
+        <result property="rank" column="rank"/>
+        <result property="display" column="display"/>
+        <result property="flower" column="flower"/>
+        <result property="egg" column="egg"/>
+        <result property="link" column="link"/>
+        <result property="additionJson" column="additionJson"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsArticle.columns">
+	    <![CDATA[
+        id ,channelId ,path ,titile ,shortTitle ,keywords ,metaTags ,description ,author ,origin ,channelType ,titleImg ,contentImg ,content ,rank ,display ,flower ,egg ,link ,additionJson ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsArticle.insert" >
+    <![CDATA[
+        INSERT INTO cms_article (
+	        id  ,
+	        channelId  ,
+	        path  ,
+	        titile  ,
+	        shortTitle  ,
+	        keywords  ,
+	        metaTags  ,
+	        description  ,
+	        author  ,
+	        origin  ,
+	        channelType  ,
+	        titleImg  ,
+	        contentImg  ,
+	        content  ,
+	        rank  ,
+	        display  ,
+	        flower  ,
+	        egg  ,
+	        link  ,
+	        additionJson  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#channelId# ,
+        	#path# ,
+        	#titile# ,
+        	#shortTitle# ,
+        	#keywords# ,
+        	#metaTags# ,
+        	#description# ,
+        	#author# ,
+        	#origin# ,
+        	#channelType# ,
+        	#titleImg# ,
+        	#contentImg# ,
+        	#content# ,
+        	#rank# ,
+        	#display# ,
+        	#flower# ,
+        	#egg# ,
+        	#link# ,
+        	#additionJson# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsArticle.update" >
+    <![CDATA[
+        UPDATE cms_article SET
+	        channelId = #channelId# ,
+	        path = #path# ,
+	        titile = #titile# ,
+	        shortTitle = #shortTitle# ,
+	        keywords = #keywords# ,
+	        metaTags = #metaTags# ,
+	        description = #description# ,
+	        author = #author# ,
+	        origin = #origin# ,
+	        channelType = #channelType# ,
+	        titleImg = #titleImg# ,
+	        contentImg = #contentImg# ,
+	        content = #content# ,
+	        rank = #rank# ,
+	        display = #display# ,
+	        flower = #flower# ,
+	        egg = #egg# ,
+	        link = #link# ,
+	        additionJson = #additionJson# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsArticle.delete">
+    <![CDATA[
+        DELETE FROM cms_article WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsArticle.getById" resultMap="RM.CmsArticle">
+	    SELECT <include refid="CmsArticle.columns"/>
+	    <![CDATA[
+	        FROM cms_article 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsArticle.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="channelId">
+		             channelId = #channelId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="path">
+		             path = #path#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="titile">
+		             titile like '%$titile$%'
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shortTitle">
+		             shortTitle = #shortTitle#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="keywords">
+		             keywords = #keywords#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="metaTags">
+		             metaTags = #metaTags#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="description">
+		             description = #description#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="author">
+		             author = #author#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="origin">
+		             origin = #origin#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="channelType">
+		             channelType = #channelType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="titleImg">
+		             titleImg = #titleImg#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="contentImg">
+		             contentImg = #contentImg#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="content">
+		             content = #content#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="rank">
+		             rank = #rank#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="display">
+		             display = #display#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="flower">
+		             flower = #flower#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="egg">
+		             egg = #egg#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="link">
+		             link = #link#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="additionJson">
+		             additionJson = #additionJson#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		         <isNotEmpty prepend="AND" property="createtimelongstart">
+		             createtimelong &gt; #createtimelongstart#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelongend">
+		             createtimelong &lt; #createtimelongend#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsArticle.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_article <include refid="CmsArticle.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsArticle.findPage" resultMap="RM.CmsArticle">
+    	SELECT <include refid="CmsArticle.columns"/> FROM cms_article 
+		<include refid="CmsArticle.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsArticle.findTop" resultMap="RM.CmsArticle">
+    	SELECT <include refid="CmsArticle.columns"/> FROM cms_article  
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

@@ -1,0 +1,83 @@
+.train{padding:0 25px;}
+.train li{background:url(../image/lline1.gif) left bottom repeat-x; position:relative; min-height:164px; _height:164px; padding-left:85px;}
+.train .imgDiv{position:absolute; left:0px; top:15px;}
+.train h5{padding:15px 0 5px 0;}
+.train h5 a{color:#666;}
+.train h5 span{padding-left:45px; font-weight:100; color:#999;}
+.train .content{color:#666; padding-bottom:10px;}
+.train .list{width:406px; overflow:hidden;}
+.train dl{width:110%;}
+.train dd{float:left; width:142px; height:97px; overflow:hidden;}
+.train .btn{height:39px; overflow:hidden; background:url(../image/lline1.gif) left bottom repeat-x; padding-top:1px;}
+.train .btn a{height:37px; line-height:37px; overflow:hidden; display:block; background:#f2f2f2; text-align:center;}
+
+.sideGroup li{height:85px; overflow:hidden; padding-left:85px; position:relative;}
+.sideGroup .imgDiv{position:absolute; z-index:1; left:10px; top:12px;}
+.sideGroup .content{color:#808080; line-height:18px; padding-top:12px;}
+
+.sideList1{min-height:30px; _height:30px; padding:10px 0;}
+.sideList1 li{height:22px; line-height:22px; overflow:hidden; background:url(../image/ico5.gif) 19px center no-repeat; padding-left:25px;}
+
+.sideList2{padding:0 8px;}
+.sideList2 li{height:68px; overflow:hidden; background:url(../image/line1.gif) bottom repeat-x; padding-left:68px; position:relative; color:#666;}
+.sideList2 .imgDiv{position:absolute; z-index:1; left:0px; top:15px;}
+.sideList2 h2{font-weight:100; padding:15px 0 5px 0;}
+.sideList2 h2 a{color:#e60012;}
+
+.sellerPart1{width:547px; overflow:hidden;}
+
+.sellerPart2{width:222px; overflow:hidden;}
+#sellerPart2{height:207px; overflow:hidden; border:#e1e1e0 solid 1px; border-top:0px; background:#FFF;}
+.sellerPart2Btn{display:block; background:url(../image/btn5.gif) left top no-repeat; width:102px; height:29px; line-height:29px; text-align:center; overflow:hidden; position:absolute; z-index:1; top:6px; right:4px; color:#FFF;}
+
+.integral{height:44px; line-height:32px; border-bottom:#e6e6e6 solid 1px; padding:12px 12px 0 26px; background:#efefef; font-size:14px;}
+.integral .fr a{display:block; background:url(../image/btn6.gif); width:175px; height:32px; line-height:32px; text-align:center; overflow:hidden; color:#FFF;}
+.integral .fr a:hover{color:#FFF;}
+
+.collection{padding:10px 0 0 6px;}
+.collection li{float:left; width:108px; padding-left:150px; height:125px; overflow:hidden; position:relative; border-bottom:#e8e8e8 solid 1px; color:#999;}
+.collection .imgDiv{position:absolute; z-index:1; left:6px; top:16px;}
+.collection h1{padding:18px 0 5px 0;}
+
+.collection2{padding:10px 25px;}
+.collection2 li{height:33px; line-height:33px; overflow:hidden; padding-left:20px; border-bottom:#efefef solid 1px; position:relative; color:#999; background:url(../image/ico6.gif) 6px center no-repeat;}
+.collection2 li span{position:absolute; z-index:1; top:0px; right:5px;}
+
+.shortMsg{padding:30px 30px 0 24px;}
+.shortMsg li{height:130px; position:relative; overflow:hidden; padding-left:87px;}
+.shortMsg .imgDiv{position:absolute; z-index:1; left:0px; top:0px; width:60px; text-align:center; font-size:16px;}
+.shortMsg .imgDiv div{padding-bottom:6px;}
+.shortMsg .name{font-size:14px; height:25px; padding:0 0 0 5px;}
+.shortMsg .name span{color:#999; font-size:12px; padding-left:20px;}
+.shortMsg .btnDiv{position:absolute; z-index:1; top:3px; right:0px; white-space:nowrap; color:#999;}
+.shortMsg .btnDiv a{color:#666;}
+.shortMsg .content{background:url(../image/shortMsg.gif) left top no-repeat; height:47px; overflow:hidden; font-size:14px; padding:20px 15px 0 15px;}
+.shortMsg .pageNum{background:url(../image/line1.gif) top repeat-x;}
+
+.timeLayer{position:absolute; z-index:100; background:url(../image/timeLayer.png) left top no-repeat; width:215px; height:219px; padding:0 15px; overflow:hidden; left:50%; top:50%; margin-left:-85px; display:none;}
+.timeLayer h5{padding:28px 0 10px 0; border-bottom:#ddd dashed 1px;}
+.timeLayer .btn{display:block; background:url(../image/btn5.png) left top no-repeat; width:61px; height:24px; line-height:24px; text-align:center; color:#FFF; position:absolute; z-index:101; top:22px; right:15px;}
+.timeLayer .list{height:148px; overflow:hidden; overflow-y:auto; padding-top:6px;}
+.timeLayer li{height:24px; line-height:24px; overflow:hidden;}
+.timeLayer li input{float:left; margin-right:5px; position:relative; top:3px;}
+
+.sellerPart2Layer{background:url(../image/sellerPart2Layer.png) left top no-repeat; width:443px; height:352px; overflow:hidden; display:none;}
+.sellerPart2Layer .form{height:110px; padding:7px 0 0 5px; overflow:hidden; background:#f0f0f0; border:#e2e2e2 solid 1px; margin-top:15px;}
+.sellerPart2Layer li{height:34px; line-height:24px; overflow:hidden;}
+.sellerPart2Layer li em{float:left; padding:0 6px;}
+.sellerPart2Layer li select{float:left; border:#CCC solid 1px; padding:2px;}
+.sellerPart2Layer li .btn{margin-left:6px;}
+.sellerPart2Layer .btn{display:block; background:url(../image/btn10.gif); width:95px; height:25px; line-height:25px; text-align:center; overflow:hidden;}
+.sellerPart2Layer .btnDiv1{padding:15px 0;}
+.sellerPart2Layer .btnDiv{padding-top:15px;}
+.sellerPart2Layer .btnDiv input{background:url(../image/btn11.gif); width:90px; height:32px; font-size:14px; color:#FFF;}
+
+
+
+
+
+
+
+
+
+

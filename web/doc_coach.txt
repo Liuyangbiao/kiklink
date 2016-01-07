@@ -1,0 +1,5 @@
+教练说明
+
+name:教练名字
+profile：简介
+photo：照片

@@ -1,0 +1,44 @@
+产品说明
+
+id = "课程id";
+shop_id = "店铺id";
+name = "课程名字";
+price = "价格";
+class_count = "课时";
+per_class_minutes = "每节课时长";
+categoryid = "类别  球类,10,健身瑜伽,20,运动恢复,30,水上冰上,40,极限户外,50,舞蹈,60,射击搏击格斗,70";
+valid_days = "课程截止日期";
+teach_type = "授课类型 一对一,1,多对一,2,一对多,3";
+return_class_count = "取消预约";
+photo = "封面图";
+provinceid = "省份id";
+province = "省份";
+cityid = "城市id";
+city = "城市";
+quid = "区县id";
+qu = "区县";
+
+goto_home = "是否提供上门服务";
+place_price_inclued = "包含场地费";
+place_addition = "场地说明";
+all_consulting = "全程指导";
+free_consulting = "免费指导";
+description = "基本信息";
+tags = "标签";
+saved_count = "被收藏次数";
+buyed_count = "购买次数";
+flower_count = "被赞次数";
+egg_count = "被拍次数";
+middle_count = "middlecount";
+status = "状态  1 正常 其他 编辑中或下线";
+addition = "详细信息";
+createtimelong = "创建时间";
+modifytimelong = "修改时间";
+ext1 = "详细地址";
+ext2 = "地图坐标，格式为116.46132,39.92553   经纬度逗号分隔，如果经纬度中右一个为负值，则没有具体坐标";
+ext3 = "预约码";
+ext4 = "教练id列表，逗号分隔";
+ext5 = "店名";
+ext_int1 = "课程类型";
+ext_int2 = "评价数量";
+subname = "副标题";

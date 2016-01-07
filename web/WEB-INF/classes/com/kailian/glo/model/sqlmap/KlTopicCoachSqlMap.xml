@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.KlTopicCoach" class="com.kailian.glo.model.KlTopicCoach">
+        <result property="id" column="id"/>
+        <result property="coachName" column="coachName"/>
+        <result property="coachSchool" column="coachSchool"/>
+        <result property="shopAdd" column="shopAdd"/>
+        <result property="sms" column="SMS"/>
+        <result property="personalDeclaration" column="personalDeclaration"/>
+        <result property="topicAboutCoach" column="topicAboutCoach"/>
+        <result property="topicCoachCapacity" column="topicCoachCapacity"/>
+        <result property="topicNeed" column="topicNeed"/>
+        <result property="nowInvite" column="nowInvite"/>
+        <result property="count" column="count"/>
+        <result property="phone" column="phone"/>
+        <result property="ext1" column="ext1"/>
+        <result property="ext2" column="ext2"/>
+        <result property="ext3" column="ext3"/>
+        <result property="ext4" column="ext4"/>
+        <result property="ext5" column="ext5"/>
+        <result property="extInt1" column="extInt1"/>
+        <result property="extInt2" column="extInt2"/>
+        <result property="extInt3" column="extInt3"/>
+        <result property="extInt4" column="extInt4"/>
+        <result property="extInt5" column="extInt5"/>
+        <result property="status" column="status"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="KlTopicCoach.columns">
+	    <![CDATA[
+        id ,coachName ,coachSchool ,shopAdd ,SMS ,personalDeclaration ,topicAboutCoach ,topicCoachCapacity ,topicNeed ,nowInvite ,count ,phone ,ext1 ,ext2 ,ext3 ,ext4 ,ext5 ,extInt1 ,extInt2 ,extInt3 ,extInt4 ,extInt5 ,status ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="KlTopicCoach.insert" >
+    <![CDATA[
+        INSERT INTO kl_topic_coach (
+	        id  ,
+	        coachName  ,
+	        coachSchool  ,
+	        shopAdd  ,
+	        SMS  ,
+	        personalDeclaration  ,
+	        topicAboutCoach  ,
+	        topicCoachCapacity  ,
+	        topicNeed  ,
+	        nowInvite  ,
+	        count  ,
+	        phone  ,
+	        ext1  ,
+	        ext2  ,
+	        ext3  ,
+	        ext4  ,
+	        ext5  ,
+	        extInt1  ,
+	        extInt2  ,
+	        extInt3  ,
+	        extInt4  ,
+	        extInt5  ,
+	        status  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#coachName# ,
+        	#coachSchool# ,
+        	#shopAdd# ,
+        	#sms# ,
+        	#personalDeclaration# ,
+        	#topicAboutCoach# ,
+        	#topicCoachCapacity# ,
+        	#topicNeed# ,
+        	#nowInvite# ,
+        	#count# ,
+        	#phone# ,
+        	#ext1# ,
+        	#ext2# ,
+        	#ext3# ,
+        	#ext4# ,
+        	#ext5# ,
+        	#extInt1# ,
+        	#extInt2# ,
+        	#extInt3# ,
+        	#extInt4# ,
+        	#extInt5# ,
+        	#status# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="KlTopicCoach.update" >
+    <![CDATA[
+        UPDATE kl_topic_coach SET
+	        coachName = #coachName# ,
+	        coachSchool = #coachSchool# ,
+	        shopAdd = #shopAdd# ,
+	        SMS = #sms# ,
+	        personalDeclaration = #personalDeclaration# ,
+	        topicAboutCoach = #topicAboutCoach# ,
+	        topicCoachCapacity = #topicCoachCapacity# ,
+	        topicNeed = #topicNeed# ,
+	        nowInvite = #nowInvite# ,
+	        count = #count# ,
+	        phone = #phone# ,
+	        ext1 = #ext1# ,
+	        ext2 = #ext2# ,
+	        ext3 = #ext3# ,
+	        ext4 = #ext4# ,
+	        ext5 = #ext5# ,
+	        extInt1 = #extInt1# ,
+	        extInt2 = #extInt2# ,
+	        extInt3 = #extInt3# ,
+	        extInt4 = #extInt4# ,
+	        extInt5 = #extInt5# ,
+	        status = #status# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="KlTopicCoach.delete">
+    <![CDATA[
+        DELETE FROM kl_topic_coach WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="KlTopicCoach.getById" resultMap="RM.KlTopicCoach">
+	    SELECT <include refid="KlTopicCoach.columns"/>
+	    <![CDATA[
+	        FROM kl_topic_coach 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="KlTopicCoach.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coachName">
+		             coachName = #coachName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coachSchool">
+		             coachSchool = #coachSchool#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopAdd">
+		             shopAdd = #shopAdd#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="sms">
+		             SMS = #sms#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="personalDeclaration">
+		             personalDeclaration = #personalDeclaration#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="topicAboutCoach">
+		             topicAboutCoach = #topicAboutCoach#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="topicCoachCapacity">
+		             topicCoachCapacity = #topicCoachCapacity#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="topicNeed">
+		             topicNeed = #topicNeed#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="nowInvite">
+		             nowInvite = #nowInvite#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="count">
+		             count = #count#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="phone">
+		             phone = #phone#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext1">
+		             ext1 = #ext1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext2">
+		             ext2 = #ext2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext3">
+		             ext3 = #ext3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext4">
+		             ext4 = #ext4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext5">
+		             ext5 = #ext5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt1">
+		             extInt1 = #extInt1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt2">
+		             extInt2 = #extInt2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt3">
+		             extInt3 = #extInt3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt4">
+		             extInt4 = #extInt4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt5">
+		             extInt5 = #extInt5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="KlTopicCoach.findPage.count" resultClass="long">
+        SELECT count(*) FROM kl_topic_coach <include refid="KlTopicCoach.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="KlTopicCoach.findPage" resultMap="RM.KlTopicCoach">
+    	SELECT <include refid="KlTopicCoach.columns"/> FROM kl_topic_coach 
+		<include refid="KlTopicCoach.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="KlTopicCoach.findTop" resultMap="RM.KlTopicCoach">
+    	SELECT <include refid="KlTopicCoach.columns"/> FROM kl_topic_coach  
+    	<include refid="KlTopicCoach.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

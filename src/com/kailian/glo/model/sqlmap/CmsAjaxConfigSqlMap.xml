@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsAjaxConfig" class="com.kailian.glo.model.CmsAjaxConfig">
+        <result property="id" column="id"/>
+        <result property="configtype" column="configtype"/>
+        <result property="configtypename" column="configtypename"/>
+        <result property="configname" column="configname"/>
+        <result property="ajaxulr" column="ajaxulr"/>
+        <result property="inputdetails" column="inputdetails"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsAjaxConfig.columns">
+	    <![CDATA[
+        id ,configtype ,configtypename ,configname ,ajaxulr ,inputdetails ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsAjaxConfig.insert" >
+    <![CDATA[
+        INSERT INTO cms_ajax_config (
+	        id  ,
+	        configtype  ,
+	        configtypename  ,
+	        configname  ,
+	        ajaxulr  ,
+	        inputdetails  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#configtype# ,
+        	#configtypename# ,
+        	#configname# ,
+        	#ajaxulr# ,
+        	#inputdetails# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsAjaxConfig.update" >
+    <![CDATA[
+        UPDATE cms_ajax_config SET
+	        configtype = #configtype# ,
+	        configtypename = #configtypename# ,
+	        configname = #configname# ,
+	        ajaxulr = #ajaxulr# ,
+	        inputdetails = #inputdetails# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsAjaxConfig.delete">
+    <![CDATA[
+        DELETE FROM cms_ajax_config WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsAjaxConfig.getById" resultMap="RM.CmsAjaxConfig">
+	    SELECT <include refid="CmsAjaxConfig.columns"/>
+	    <![CDATA[
+	        FROM cms_ajax_config 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsAjaxConfig.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="configtype">
+		             configtype = #configtype#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="configtypename">
+		             configtypename = #configtypename#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="configname">
+		             configname = #configname#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ajaxulr">
+		             ajaxulr = #ajaxulr#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="inputdetails">
+		             inputdetails = #inputdetails#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsAjaxConfig.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_ajax_config <include refid="CmsAjaxConfig.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsAjaxConfig.findPage" resultMap="RM.CmsAjaxConfig">
+    	SELECT <include refid="CmsAjaxConfig.columns"/> FROM cms_ajax_config 
+		<include refid="CmsAjaxConfig.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsAjaxConfig.findTop" resultMap="RM.CmsAjaxConfig">
+    	SELECT <include refid="CmsAjaxConfig.columns"/> FROM cms_ajax_config  
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

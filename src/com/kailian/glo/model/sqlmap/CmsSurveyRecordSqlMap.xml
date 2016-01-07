@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsSurveyRecord" class="com.kailian.glo.model.CmsSurveyRecord">
+        <result property="id" column="id"/>
+        <result property="optionId" column="optionId"/>
+        <result property="userword" column="userword"/>
+        <result property="syear" column="syear"/>
+        <result property="smonth" column="smonth"/>
+        <result property="sdate" column="sdate"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsSurveyRecord.columns">
+	    <![CDATA[
+        id ,optionId ,userword ,syear ,smonth ,sdate ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsSurveyRecord.insert" >
+    <![CDATA[
+        INSERT INTO cms_survey_record (
+	        id  ,
+	        optionId  ,
+	        userword  ,
+	        syear  ,
+	        smonth  ,
+	        sdate  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#optionId# ,
+        	#userword# ,
+        	#syear# ,
+        	#smonth# ,
+        	#sdate# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsSurveyRecord.update" >
+    <![CDATA[
+        UPDATE cms_survey_record SET
+	        optionId = #optionId# ,
+	        userword = #userword# ,
+	        syear = #syear# ,
+	        smonth = #smonth# ,
+	        sdate = #sdate# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsSurveyRecord.delete">
+    <![CDATA[
+        DELETE FROM cms_survey_record WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsSurveyRecord.getById" resultMap="RM.CmsSurveyRecord">
+	    SELECT <include refid="CmsSurveyRecord.columns"/>
+	    <![CDATA[
+	        FROM cms_survey_record 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsSurveyRecord.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="optionId">
+		             optionId = #optionId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userword">
+		             userword = #userword#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="syear">
+		             syear = #syear#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="smonth">
+		             smonth = #smonth#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="sdate">
+		             sdate = #sdate#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsSurveyRecord.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_survey_record <include refid="CmsSurveyRecord.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsSurveyRecord.findPage" resultMap="RM.CmsSurveyRecord">
+    	SELECT <include refid="CmsSurveyRecord.columns"/> FROM cms_survey_record 
+		<include refid="CmsSurveyRecord.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsSurveyRecord.findTop" resultMap="RM.CmsSurveyRecord">
+    	SELECT <include refid="CmsSurveyRecord.columns"/> FROM cms_survey_record  
+    	<include refid="CmsSurveyRecord.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

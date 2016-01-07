@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.KlShoppingPiliangtime" class="com.kailian.glo.model.KlShoppingPiliangtime">
+        <result property="id" column="id"/>
+        <result property="shopid" column="shopid"/>
+        <result property="userid" column="userid"/>
+        <result property="coachid" column="coachid"/>
+        <result property="shoppedclassid" column="shoppedclassid"/>
+        <result property="datefrom" column="datefrom"/>
+        <result property="dateto" column="dateto"/>
+        <result property="weekdays" column="weekdays"/>
+        <result property="timefrom" column="timefrom"/>
+        <result property="timeto" column="timeto"/>
+        <result property="timeok" column="timeok"/>
+        <result property="ext1" column="ext1"/>
+        <result property="ext2" column="ext2"/>
+        <result property="ext3" column="ext3"/>
+        <result property="ext4" column="ext4"/>
+        <result property="ext5" column="ext5"/>
+        <result property="extInt1" column="extInt1"/>
+        <result property="extInt2" column="extInt2"/>
+        <result property="extInt3" column="extInt3"/>
+        <result property="extInt4" column="extInt4"/>
+        <result property="extInt5" column="extInt5"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="KlShoppingPiliangtime.columns">
+	    <![CDATA[
+        id ,shopid ,userid ,coachid ,shoppedclassid ,datefrom ,dateto ,weekdays ,timefrom ,timeto ,timeok ,ext1 ,ext2 ,ext3 ,ext4 ,ext5 ,extInt1 ,extInt2 ,extInt3 ,extInt4 ,extInt5 ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="KlShoppingPiliangtime.insert" >
+    <![CDATA[
+        INSERT INTO kl_shopping_piliangtime (
+	        id  ,
+	        shopid  ,
+	        userid  ,
+	        coachid  ,
+	        shoppedclassid  ,
+	        datefrom  ,
+	        dateto  ,
+	        weekdays  ,
+	        timefrom  ,
+	        timeto  ,
+	        timeok  ,
+	        ext1  ,
+	        ext2  ,
+	        ext3  ,
+	        ext4  ,
+	        ext5  ,
+	        extInt1  ,
+	        extInt2  ,
+	        extInt3  ,
+	        extInt4  ,
+	        extInt5  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#shopid# ,
+        	#userid# ,
+        	#coachid# ,
+        	#shoppedclassid# ,
+        	#datefrom# ,
+        	#dateto# ,
+        	#weekdays# ,
+        	#timefrom# ,
+        	#timeto# ,
+        	#timeok# ,
+        	#ext1# ,
+        	#ext2# ,
+        	#ext3# ,
+        	#ext4# ,
+        	#ext5# ,
+        	#extInt1# ,
+        	#extInt2# ,
+        	#extInt3# ,
+        	#extInt4# ,
+        	#extInt5# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="KlShoppingPiliangtime.update" >
+    <![CDATA[
+        UPDATE kl_shopping_piliangtime SET
+	        shopid = #shopid# ,
+	        userid = #userid# ,
+	        coachid = #coachid# ,
+	        shoppedclassid = #shoppedclassid# ,
+	        datefrom = #datefrom# ,
+	        dateto = #dateto# ,
+	        weekdays = #weekdays# ,
+	        timefrom = #timefrom# ,
+	        timeto = #timeto# ,
+	        timeok = #timeok# ,
+	        ext1 = #ext1# ,
+	        ext2 = #ext2# ,
+	        ext3 = #ext3# ,
+	        ext4 = #ext4# ,
+	        ext5 = #ext5# ,
+	        extInt1 = #extInt1# ,
+	        extInt2 = #extInt2# ,
+	        extInt3 = #extInt3# ,
+	        extInt4 = #extInt4# ,
+	        extInt5 = #extInt5# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="KlShoppingPiliangtime.delete">
+    <![CDATA[
+        DELETE FROM kl_shopping_piliangtime WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="KlShoppingPiliangtime.getById" resultMap="RM.KlShoppingPiliangtime">
+	    SELECT <include refid="KlShoppingPiliangtime.columns"/>
+	    <![CDATA[
+	        FROM kl_shopping_piliangtime 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="KlShoppingPiliangtime.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shopid">
+		             shopid = #shopid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="userid">
+		             userid = #userid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="coachid">
+		             coachid = #coachid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="shoppedclassid">
+		             shoppedclassid = #shoppedclassid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="datefrom">
+		             datefrom = #datefrom#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="dateto">
+		             dateto = #dateto#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="weekdays">
+		             weekdays = #weekdays#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="timefrom">
+		             timefrom = #timefrom#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="timeto">
+		             timeto = #timeto#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="timeok">
+		             timeok = #timeok#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext1">
+		             ext1 = #ext1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext2">
+		             ext2 = #ext2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext3">
+		             ext3 = #ext3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext4">
+		             ext4 = #ext4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="ext5">
+		             ext5 = #ext5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt1">
+		             extInt1 = #extInt1#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt2">
+		             extInt2 = #extInt2#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt3">
+		             extInt3 = #extInt3#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt4">
+		             extInt4 = #extInt4#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="extInt5">
+		             extInt5 = #extInt5#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="KlShoppingPiliangtime.findPage.count" resultClass="long">
+        SELECT count(*) FROM kl_shopping_piliangtime <include refid="KlShoppingPiliangtime.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="KlShoppingPiliangtime.findPage" resultMap="RM.KlShoppingPiliangtime">
+    	SELECT <include refid="KlShoppingPiliangtime.columns"/> FROM kl_shopping_piliangtime 
+		<include refid="KlShoppingPiliangtime.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="KlShoppingPiliangtime.findTop" resultMap="RM.KlShoppingPiliangtime">
+    	SELECT <include refid="KlShoppingPiliangtime.columns"/> FROM kl_shopping_piliangtime  
+    	<include refid="KlShoppingPiliangtime.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

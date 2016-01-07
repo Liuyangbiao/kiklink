@@ -1,0 +1,449 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.2.min.css">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+
+</head>
+<body>
+
+
+	<div id="header" data-role="header" style="overflow:hidden;">
+    <h1 id='thett'>分类</h1>
+    	<a href="#" onclick="fanhui();" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="b" data-inline="true">Arrow left</a>
+
+		
+		<a href="#popupMenu" data-rel="popup"  data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-inline="true">Bars</a>
+		<div data-role="popup" id="popupMenu" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
+            <li data-role="divider" data-theme="e">请选择操作类型</li>
+            <li><a href="#popupLogin" onclick="shoucang();" data-rel="popup" data-position-to="window">添加书签</a>
+            
+            </li>
+            <li><a href="#">分享朋友圈</a></li>
+            <li><a href="#">分享到新浪微博</a></li>
+        </ul>
+		</div>
+
+	</div>
+	<div id="cont" onscroll="scrolled();">
+		
+	</div>
+	
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#" onclick="fanhui();" class="ui-btn-active" data-icon="grid">分类</a></li>
+						<li><a href="#" onclick="showshoucang();" data-icon="star" >收藏</a></li>
+						<li><a href="#" onclick="$('#popupSousuo').popup('open',null);" data-icon="search">搜索</a></li>
+						<li><a href="#" data-icon="gear">更多</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+<!-- 
+	<img class='shang-img' src='img/shang.png' onclick="next(-1);" />
+	<img class='xia-img' src='img/xia.png' onclick="next(1);" />
+-->
+	<a id='shang-img' href="#" onclick="next(-1);" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-theme="b">上一章</a>	
+	<a id='xia-img' href="#" onclick="next(1);" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-theme="b">下一章</a>	
+	
+	<div data-role="popup" id="popupLogin" data-dismissible="true" data-theme="a" class="ui-corner-all">
+		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        <div style="padding:10px 20px;">
+            <h3>请登录或者注册</h3>
+            <label for="un" class="ui-hidden-accessible">用户名:</label>
+            <input type="text" name="loginname" id="loginname" value="" placeholder="用户名" data-theme="a">
+            <label for="pw" class="ui-hidden-accessible">密码:</label>
+            <input type="password" name="passwd" id="passwd" value="" placeholder="密码" data-theme="a">
+            <button type="button" onclick="booklogin();" data-theme="b" data-icon="check">登录或注册</button>
+            <br/>
+            如用户名不存在，系统<br/>将自动为您注册。
+        </div>
+</div>
+
+
+<div data-role="popup" id="popupSousuo" data-dismissible="true" data-theme="a" class="ui-corner-all">
+		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+        <div style="padding:10px 20px;">
+            <h3>搜索</h3>
+            <label for="un" class="ui-hidden-accessible">关键字:</label>
+            <input type="text" name=bookname id="bookname" value="" placeholder="关键字" data-theme="a">
+            <button type="button" onclick="sousuoit();" data-theme="b" data-icon="check">搜索</button>
+        </div>
+</div>
+
+<div data-role="popup" id="positionWindow" class="ui-content" data-theme="d">
+    <p>I am positioned to the window.</p>
+</div>
+	
+</body>
+<script type="text/javascript">
+	var host1 = "http://benben.yebucuo.com:8080/wenxue/";
+	var duilie = new Array();
+	var dangqian = "cates";
+	var nowtop = 0;
+	var chaps;
+	var books;
+	var nowheight = 0;
+	var bodytop = 0;
+	
+	var userid = "";
+	
+	var nowchap = 0;
+	var nowbook = 0;
+	var nowbookname = "";
+	var nowchapname = "";
+	var nowcate = 0;
+	var nowchapid = 0;
+	var option = {};
+
+	$(document).ready(function(){
+		//$(document.body).width(300);
+		$('#header').css('width',$(document.body).width());
+		$('#tail div').css('width',$(document.body).width()/4);
+		$('#cont').css('height',$(document.body).height()-95);
+		
+		$('#shang-img').css('top', $(window).height()/2).hide();
+		$('#xia-img').css('top', $(window).height()/2).css('left',$(window).width()-32-80).hide();
+		
+		
+		showcates();
+	});
+	
+	
+	function showcates() {
+	
+	
+		duilie[0] = 0;
+		dangqian = "cates";
+
+		
+		$.ajax({     
+			type: "post",     
+			url: host1 + "glo/CtBkCates/listAjax.do?catelevel=2",     
+			contentType: "application/json; charset=utf-8",     
+			success: function (data) { 
+				var v = eval('(' + data + ')');
+				
+				var ct = "";
+				for (var i = 0; i < v['rows'].length; i ++) {
+					ct += "<div onclick=\"$('#thett').html('" + v['rows'][i]['catename'] + "');showbooks(" + v['rows'][i]['id'] + ");\">" + v['rows'][i]['catename'] + "</div>";
+				}
+				$('#cont').html(ct);
+				
+				
+			}    
+		}); 
+	}
+	
+	
+	function showbooks(id) {
+		if (id == null || id == 'undefined')
+			id = duilie[1];
+			
+		duilie[1] = id;
+		dangqian = "books";
+		nowcate = id;
+		
+		$.ajax({     
+			type: "post",     
+			url: host1 + "glo/CtBkBook/listAjax.do?cate2=" + id,     
+			contentType: "application/json; charset=utf-8",     
+			success: function (data) { 
+				var v = eval('(' + data + ')');
+				books = v;
+				var ct = "";
+				for (var i = 0; i < v['rows'].length; i ++) {
+					ct += "<div onclick=\"$('#thett').html('" + v['rows'][i]['bookname'] + "');nowbookname='" + v['rows'][i]['bookname'] + "';showchaps(" + v['rows'][i]['id'] + ");\">" + v['rows'][i]['bookname'] + "</div>";
+				}
+				$('#cont').html(ct);
+			}    
+		}); 
+	}
+	
+	
+	function sousuoit() {
+		
+		$.ajax({     
+			type: "post",     
+			url: host1 + "glo/CtBkBook/listAjax.do",
+			//?bookname=" +  encodeURIComponent($('#bookname').val()),     
+			contentType: "application/json; charset=utf-8",   
+			data:{'bookname':$('#bookname').val()},
+			contentType: "application/x-www-form-urlencoded; charset=utf-8",   
+			success: function (data) { 
+				var v = eval('(' + data + ')');
+				var ct = "";
+				for (var i = 0; i < v['rows'].length; i ++) {
+					ct += "<div onclick=\"$('#thett').html('" + v['rows'][i]['bookname'] + "');nowbook=" + i + ";showchaps(" + v['rows'][i]['id'] + ");\">" + v['rows'][i]['bookname'] + "</div>";
+				}
+				$('#cont').html(ct);
+			}    
+		}); 
+		$('#popupSousuo').popup('close');
+	}
+	
+	
+	function showchaps(id) {
+		if (id == null || id == 'undefined')
+			id = duilie[2];
+			
+		duilie[2] = id;
+		dangqian = "chaps";
+		nowbook = id;
+		
+				
+		$.ajax({     
+			type: "post",     
+			url: host1 + "glo/CtBkChapter/listAjax.do?bookid=" + id,     
+			contentType: "application/json; charset=gbk",     
+			success: function (data) { 
+				var v = eval('(' + data + ')');
+				var ct = "";
+				for (var i = 0; i < v['rows'].length; i ++) {
+										ct += "<div onclick=\"$('#thett').html('" + v['rows'][i]['chapname'] + "');nowchapname='" + v['rows'][i]['chapname'] + "';showconts(" + v['rows'][i]['id'] + ",'" + v['rows'][i]['path'] + "','" + v['rows'][i]['chapname'] + "'," + i + " );\">" + v['rows'][i]['chapname'] + "</div>";
+
+				}
+				$('#cont').html(ct);
+				chaps = v;
+			}    
+		}); 
+	}	
+	
+	
+	function showconts(id, path, title, nc) {
+
+		$('#shang-img').show();
+		$('#xia-img').show();
+	
+		duilie[3] = id;
+		dangqian = "conts";
+		nowtop = 0;
+		nowchap = nc;
+		nowchapid = id;
+		$('#thett').html(title);
+
+		$.ajax({     
+			type: "post",     
+			url: host1 + path,     
+			contentType: "application/json; charset=utf-8",     
+			success: function (data) { 
+				//var v = eval('(' + data + ')');
+				var ct = "<div style='margin:20px;margin-bottom:50px;'><span>" + title + "</span><br/>";
+				
+				data = data.replaceAll("^.+\r\n", "<br/>", true);
+				data = data.replaceAll("\r\n","<br/>", true);
+				
+				ct = ct + data + "<br/>";
+				ct = ct + "<a id='shang-img1' href='#' onclick='next(-1);' data-role=\"button\" data-mini=\"true\" data-inline=\"true\" data-icon=\"check\" data-theme=\"b\">上一章</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+				ct = ct + "<a id='shang-img1' href='#' onclick='next(1);' data-role=\"button\" data-mini=\"true\" data-inline=\"true\" data-icon=\"check\" data-theme=\"b\">下一章</a>";
+				ct = ct + "</div>";
+				
+				
+				$('#cont').html(ct + "");
+				$('#cont').animate({scrollTop:0}, '');
+				
+			}    
+		}); 
+		
+	}
+	
+	
+	//scrolled
+	function scrolled() {
+		if (dangqian != "conts")
+			return;
+			
+		var bodytop1 = document.body.scrollTop;
+
+		
+		var nowtop1 = (document.getElementById('cont').scrollTop);
+		if (nowtop1 > nowtop) {
+			$('#header').hide('');
+			$('#tail').hide('');
+			$('#cont').css('height', $(window).height());	
+			$('#shang-img').hide();
+			$('#xia-img').hide();
+			
+			//$('#cont').animate({scrollTop:0}, nowtop+300);
+		}
+		else {
+			$('#header').show('');
+			$('#tail').show('');
+			$('#cont').css('height', $(window).height()-95);	
+			$('#shang-img').show();
+			$('#xia-img').show();
+		}
+		nowtop = nowtop1;
+		
+		
+
+		if (bodytop1 < 0) {
+			$('#header').show('');
+			$('#tail').show('');
+			$('#cont').css('height', $(window).height()-95);	
+			$('#shang-img').show();
+			$('#xia-img').show();
+		}
+		else {
+			
+
+		}
+	}
+	
+	function next(jia) {
+		nowchap = nowchap + jia;
+
+		showconts(chaps['rows'][nowchap]['id'], chaps['rows'][nowchap]['path'], chaps['rows'][nowchap]['chapname'], nowchap) 
+	}
+	
+	
+	//收藏
+	function showshoucang() {
+		if (userid == "") {
+			$("#popupLogin").popup("open", option);
+			return;
+		}
+	
+	
+		$.ajax({     
+			type: "post",     
+			url: host1 + "glo/CtBkBookmarks/listAjax.do",     
+			data:{"userid":userid},
+			contentType: "application/json; charset=utf-8",     
+			data:{"userid":userid},
+			success: function (data) { 
+				var v = eval('(' + data + ')');
+				var ct = "";
+				for (var i = 0; i < v['rows'].length; i ++) {
+					ct += "<div onclick=\"gotoshoucang(" + v['rows'][i]['cate2'] + "," + v['rows'][i]['bookid'] + "," + v['rows'][i]['chapid'] + ",'" + v['rows'][i]['chapname'] + "'," + v['rows'][i]['extint1'] + ",'" + v['rows'][i]['ext1'] + "');\">" + v['rows'][i]['bookname'] + "--" +  v['rows'][i]['chapname']  + "</div>";
+				}
+				$('#cont').html(ct);
+				$('#thett').html('收藏');
+			}    
+		}); 
+	}
+	
+	//点击了收藏
+	function gotoshoucang(catei,booki,chapi,chapt, diji, path) {
+		duilie[1] = catei;
+		duilie[2] = booki;
+		duilie[3] = diji;
+		
+		//alert(chapi + "   " + diji);
+		showconts(chapi, path, chapt, diji);
+		
+		$.ajax({     
+			type: "post",     
+			url: host1 + "glo/CtBkChapter/listAjax.do?bookid=" + booki,     
+			contentType: "application/json; charset=gbk",     
+			success: function (data) { 
+				var v = eval('(' + data + ')');
+				chaps = v;
+			}    
+		}); 
+		
+		
+	}
+	
+	function shoucang() {
+		//alert(1);
+		//$("#popupMenu").popup("close");
+		//$("#popupLogin").popup("open", option);
+		setTimeout(
+			function(){
+			
+				//alert(nowchap);
+				if (userid != null && userid != "") {
+
+					$("#popupLogin").popup("close");
+					
+					$.ajax({     
+						type: "post",     
+						url: host1 + "glo/CtBkBookmarks/saveAjax.do" ,
+						//			+ "?bookid=" + nowbook + "&chapid=" + nowchapid
+						//			 + "&userid=" + userid + "&cate2=" + nowcate + "&extint1=" + nowchap , 
+						data:{"bookid":nowbook,"chapid":nowchapid,"userid":userid,"cate2":nowcate,"extint1":nowchap,
+								"bookname":nowbookname,"chapname":nowchapname,"ext1":chaps['rows'][nowchap]['path']   },
+						contentType: "application/x-www-form-urlencoded; charset=utf-8",  
+						success: function (data) { 
+							$("#positionWindow p").html("书签添加成功");
+							$("#positionWindow").popup("open",option);
+						}
+					});
+				}
+				
+				
+			},300); 
+	}
+	
+	//登录
+	function booklogin() {
+		$.ajax({     
+			type: "post",     
+			url: host1 + "glo/CyUser/booklogin.do?loginname=" + $('#loginname').val() + "&passwd=" + $('#passwd').val(),     
+			contentType: "application/json; charset=utf-8",     
+			success: function (data) { 
+				var v = eval('(' + data + ')');
+				
+				//alert(v['str']);
+				
+				
+				$("#positionWindow p").html(v['str']);
+				if (v['re'] >= 0) {
+					$("#popupLogin" ).popup( "close" );
+					$("#positionWindow").popup("open",option);
+					userid = v['user']['id'];
+				}
+				else {
+					$("#popupLogin" ).popup( "close" );
+					$("#positionWindow").popup("open",option);
+				}
+				
+			}    
+		}); 
+	}
+	
+	
+	
+	
+	function fanhui() {
+		if (dangqian == "cates") {
+		}
+		else if (dangqian == "books") {
+			showcates();
+		}
+		else if (dangqian == "chaps") {
+			showbooks(duilie[1]);
+		}
+		else if (dangqian == "conts") {
+			showchaps(duilie[2]);
+		}
+		
+		$('#shang-img').hide();
+		$('#xia-img').hide();
+	
+		//duilie.push(type);
+		//duilie.push(id);
+	}
+	
+	
+	function sousuo() {
+		if ($('#cont').html().indexOf('tu3.png')>0)
+			return;
+			
+		var ct = "<div><input id='sousuoinput' />&nbsp;&nbsp;<img src='img/tu3.png' /></div>";
+		$('#cont').html(ct + $('#cont').html());
+	}
+	
+</script>
+
+<script>
+    	window.location.href = "kailian/KlSellerProduct/siteindex.do?cid=0";
+    </script>
+
+</html>
+

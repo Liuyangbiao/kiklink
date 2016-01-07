@@ -1,0 +1,45 @@
+.pageBox{min-height:476px; _height:476px;}
+
+.Orders{padding:0 4px 10px 4px; background:#fff url(../image/lbg3.gif) left top repeat-x;}
+.Orders th{height:49px; border-right:#fff solid 1px; color:#6a6a6a;}
+.Orders .th_01{border-right:0px;}
+.Orders th select{border:#dbdbdb solid 1px; padding:2px;}
+.Orders th .selectDiv{width:80px; margin:0 auto; background:url(../image/lico.png) right center no-repeat; text-align:left;}
+.Orders td{height:36px; text-align:center; border-bottom:#dbdbdb solid 1px; color:#6a6a6a;}
+.Orders td a{color:#2471c9; padding:0 6px;}
+/**/
+.OrdersMsg{height:50px; line-height:50px; overflow:hidden; border-bottom:#dbdbdb solid 1px; background:#fff; padding-left:28px; font-size:14px;}
+.ordersShow td a{padding:0 3px;}
+/**/
+.course .timeA{color:#666;}
+
+.OrdersNotice{padding-top:30px; width:515px; overflow:hidden; margin:0 auto; text-align:center;}
+.OrdersNotice .bgT{background:url(../image/OrdersNoticeT.png); height:14px;}
+.OrdersNotice .bgB{background:url(../image/OrdersNoticeB.png); height:14px;}
+.OrdersNotice .bg{background:url(../image/OrdersNoticeBg.png) left repeat-y; min-height:50px; _height:50px;}
+.OrdersNotice .content{line-height:26px; font-size:14px; color:#6d6b6b; padding:30px 0;}
+.OrdersNotice .btnDiv{height:60px; overflow:hidden;}
+.OrdersNotice .btnDiv a{width:120px; height:32px; line-height:30px; text-align:center; display:inline-block; color:#fff; background:url(../image/lbtn1.png) left top no-repeat; font-size:14px;}
+
+.cardForm{height:62px; line-height:42px; overflow:hidden; background:#fff; border-bottom:#dbdbdb solid 1px; padding:22px 0 0 22px; font-size:14px;}
+.cardForm b{float:left;}
+.cardForm .input1{float:left; width:320px; padding:0 10px; height:40px; line-height:40px; border:#c9c9c9 solid 1px; margin-left:6px;
+border-radius:5px;
+-moz-border-radius:5px;
+}
+.cardForm .input2{width:200px;}
+.cardForm .btn1{width:76px; height:42px; border:0px; background:url(../image/lbtn4.png) left top no-repeat; cursor:pointer;  float:left; margin-left:6px;}
+
+.train{padding:0 30px 30px 30px;}
+.train li{background:url(../image/lline1.gif) left bottom repeat-x; position:relative; min-height:224px; _height:224px; padding-left:85px;}
+.train .imgDiv{position:absolute; left:0px; top:25px;}
+.train h5{padding:25px 0 6px 0;}
+.train h5 a{color:#666;}
+.train h5 span{padding-left:45px; font-weight:100; color:#999;}
+.train .content{color:#666; line-height:22px; min-height:40px; height:40px; padding-bottom:10px;}
+.train dd{float:left; width:160px; height:125px; overflow:hidden;}
+.train .btn{height:39px; overflow:hidden; background:url(../image/lline1.gif) left bottom repeat-x; padding-top:1px;}
+.train .btn a{height:37px; line-height:37px; overflow:hidden; display:block; background:#f2f2f2; text-align:center;}
+
+
+

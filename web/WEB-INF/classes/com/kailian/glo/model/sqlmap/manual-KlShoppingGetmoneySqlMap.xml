@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<!-- 存放手写的sql -->
+<sqlMap>
+	<update id="KlShoppingGetmoney.update.pdetail" >
+    <![CDATA[
+        UPDATE kl_shopping_shoppingcartproduct SET
+	       
+	        status = #status# 
+	       
+        WHERE 
+        	 shopid=#shopid#
+	         and orderid in (select o.id from kl_shopping_order as o where o.status = 20)
+	         and (status = null or status=30)
+    ]]>
+    </update>
+
+</sqlMap>

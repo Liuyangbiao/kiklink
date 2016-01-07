@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+   
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"   
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"   
+  version="2.0">   
+        
+  <tlib-version>1.0</tlib-version>   
+  <short-name>my</short-name>   
+  <uri>http://www.yebucuo.com</uri>   
+      
+  <!-- JSTL自定义函数  获取省份。 //记住下面黄北京下的名称必须一样 -->   
+  <!--
+  <function>   
+    <name>combine</name>               
+    <function-class>com.yebucuo.common.util.TagsUtil</function-class>   
+    <function-signature>java.lang.String combine(java.lang.String, java.lang.String)</function-signature>   
+  </function> 
+  
+  
+ 
+  <function>   
+    <name>drawSelect</name>               
+    <function-class>com.yebucuo.common.util.TagsUtil</function-class>   
+    <function-signature>java.lang.String drawSelect(java.lang.String, java.lang.String[][], java.lang.String)</function-signature>   
+  </function>   
+  <function>   
+    <name>utfEncode</name>               
+    <function-class>com.trends.util.TagsUtil</function-class>   
+    <function-signature>java.lang.String utfEncode(java.lang.String)</function-signature>   
+  </function>  
+  <function>   
+    <name>photo</name>               
+    <function-class>com.trends.util.TagsUtil</function-class>   
+    <function-signature>java.lang.String photo(java.lang.String, java.lang.String, java.lang.String, java.lang.String)</function-signature>   
+  </function>  
+  <function>   
+    <name>seturl</name>               
+    <function-class>com.trends.util.TagsUtil</function-class>   
+    <function-signature>java.lang.String seturl(java.lang.String, java.lang.String, java.lang.String, java.lang.String)</function-signature>   
+  </function> 
+  
+   <function>   
+    <name>tobase64</name>               
+    <function-class>com.trends.util.Base64Utils</function-class>   
+    <function-signature>java.lang.String encodeBase64(java.lang.String)</function-signature>   
+  </function> 
+  -->
+  <function>   
+    <name>errordiv</name>               
+    <function-class>com.yebucuo.util.JSTLTagUtils</function-class>   
+    <function-signature>java.lang.String errordiv(java.util.Map , java.lang.String  )</function-signature>   
+  </function>
+  
+   <function>   
+    <name>replaceall</name>               
+    <function-class>com.yebucuo.util.JSTLTagUtils</function-class>   
+    <function-signature>java.lang.String replaceall(java.lang.String , java.lang.String , java.lang.String  )</function-signature>   
+  </function>
+  
+  <function>   
+    <name>jvalue</name>               
+    <function-class>com.yebucuo.util.JSTLTagUtils</function-class>   
+    <function-signature>java.lang.String jvalue(java.lang.String , java.lang.String  )</function-signature>   
+  </function>
+  
+  <function>   
+    <name>setvalue</name>               
+    <function-class>com.yebucuo.util.JSTLTagUtils</function-class>   
+    <function-signature>java.lang.String setvalue(java.lang.String, java.lang.String  )</function-signature>   
+  </function>
+
+  <function>   
+    <name>input</name>               
+    <function-class>com.yebucuo.util.JSTLTagUtils</function-class>   
+    <function-signature>java.lang.String input(java.lang.String , java.lang.String , java.lang.String , int,int )</function-signature>   
+  </function> 
+   <function>  
+      <name>ajaxinput</name>               
+    <function-class>com.yebucuo.util.JSTLTagUtils</function-class>   
+    <function-signature>java.lang.String ajaxinput(java.lang.String  )</function-signature>   
+  </function> 
+  
+  
+  <function>   
+    <name>showcont</name>               
+    <function-class>com.yebucuo.util.JSTLTagUtils</function-class>   
+    <function-signature>java.lang.String showcont(java.lang.String , java.lang.String , java.lang.String , int )</function-signature>   
+  </function> 
+  
+  <function>   
+    <name>resultlist</name>               
+    <function-class>com.yebucuo.util.JSTLTagUtils</function-class>   
+    <function-signature>java.lang.String resultlist(java.util.List )</function-signature>   
+  </function> 
+  
+  <function>   
+    <name>getConfig</name>               
+    <function-class>com.yebucuo.util.ConfigUtils</function-class>   
+    <function-signature>java.lang.String getConfig(java.lang.String , java.lang.String )</function-signature>   
+  </function> 
+  
+   <function>   
+    <name>getIntConfig</name>               
+    <function-class>com.yebucuo.util.ConfigUtils</function-class>   
+    <function-signature>java.lang.String getIntConfig(int, int )</function-signature>   
+  </function> 
+  
+<function>  
+        <description>将Clob转换成String对象</description>  
+        <name>transTime</name>  
+        <function-class>com.yebucuo.util.JSTLDateUtils</function-class>  
+        <function-signature>java.lang.String transTime(long)</function-signature>  
+        <example>${my:transTime(time)}</example>  
+    </function> 
+    
+   <function>  
+        <description>预约时间</description>  
+        <name>coachTime</name>  
+        <function-class>com.yebucuo.util.JSTLDateUtils</function-class>  
+        <function-signature>java.lang.String coachTime(int, int, int)</function-signature>  
+        <example>${my:coachTime(d, t1, t2)}</example>  
+    </function> 
+    
+    
+    <function>  
+        <description>将Clob转换成String对象</description>  
+        <name>transDate</name>  
+        <function-class>com.yebucuo.util.JSTLDateUtils</function-class>  
+        <function-signature>java.lang.String transDate(long)</function-signature>  
+        <example>${my:transDate(time)}</example>  
+    </function> 
+    <function>  
+        <description>将int转为时间</description>  
+        <name>transIntToDate</name>  
+        <function-class>com.yebucuo.util.JSTLDateUtils</function-class>  
+        <function-signature>java.lang.String transIntToDate(int)</function-signature>  
+        <example>${my:transDate(time)}</example>  
+    </function> 
+     <function>  
+        <description>将Clob转换成String对象</description>  
+        <name>timedis</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.String timedis(long)</function-signature>  
+        <example>${my:timedis(time)}</example>  
+    </function> 
+    <function>  
+        <description>分页内容</description>  
+        <name>drawpage</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.String drawpage(cn.org.rapid_framework.page.Page, javax.servlet.http.HttpServletRequest, java.lang.String )</function-signature>  
+        <example>${my:drawpage(page, request, url1 )}</example>  
+    </function> 
+    
+    
+    <function>  
+        <description>星星</description>  
+        <name>stars</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.String stars(java.lang.String ,float )</function-signature>  
+        <example>${my:stars(ctx, 1.0 )}</example>  
+    </function> 
+    
+    <function>  
+        <description>获取数字</description>  
+        <name>getCount</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.Integer getCount(long, java.lang.String, java.lang.String  )</function-signature>  
+        <example>${my:getCount(1,'user','message' )}</example>  
+    </function> 
+    
+    <function>  
+        <description>获取数字</description>  
+        <name>getCountTag</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.String getCountTag(long, java.lang.String, java.lang.String  )</function-signature>  
+        <example>${my:getCountTag(1,'user','message' )}</example>  
+    </function> 
+    
+    <function>  
+        <description>截取字符串</description>  
+        <name>maxleng</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.String maxleng( java.lang.String,int  )</function-signature>  
+        <example>${my:maxleng('aaaa',2 )}</example>  
+    </function> 
+    
+    <function>  
+        <description>json转map</description>  
+        <name>showconfig</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.String showconfig(java.util.List, java.lang.String,java.lang.String  )</function-signature>  
+        <example>${my:showconfig(aa,'aaaa','aa')}</example>  
+    </function> 
+  
+  <function>  
+        <description>显示头像</description>  
+        <name>showHead</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.String showHead(javax.servlet.http.HttpServletRequest,java.lang.String, java.lang.Long )</function-signature>  
+        <example>${my:showconfig(aa,'aaaa','aa')}</example>  
+    </function> 
+    
+    <function>  
+        <description>获取配置</description>  
+        <name>config</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.String config(java.lang.String, java.lang.String )</function-signature>  
+        <example>${my:showconfig(aa,'aaaa','aa')}</example>  
+    </function> 
+    
+    <function>  
+        <description>显示小图</description>  
+        <name>smallphoto</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.lang.String smallphoto(javax.servlet.http.HttpServletRequest,java.lang.String, java.lang.String )</function-signature>  
+        <example>${my:showconfig(aa,'aaaa','aa')}</example>  
+    </function> 
+    
+    <function>  
+        <description>根据名字获取列表</description>  
+        <name>getBiaodans</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.util.List getBiaodans( java.lang.String )</function-signature>  
+        <example>${my:getBiaodans('aaaa')}</example>  
+    </function> 
+    
+    <function>  
+        <description>获取时长</description>  
+        <name>classLength</name>  
+        <function-class>com.yebucuo.util.JSTLTagUtils</function-class>  
+        <function-signature>java.util.List classLength( java.lang.String )</function-signature>  
+        <example>${my:classLength('aaaa')}</example>  
+    </function> 
+</taglib>   

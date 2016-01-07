@@ -1,0 +1,849 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name></x:Name><x:WorksheetOptions><x:Selected/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]-->
+<style type="text/css">
+.td
+{
+width: 84px;
+}
+.gdtjContainer .tb tr
+{
+text-align: center;
+vertical-align: middle;
+}
+.gdtjContainer .tb th
+{
+border-left: 0.5pt solid #000;
+border-bottom: 0.5pt solid #000;
+text-align: center;
+font-weight: normal;
+font-size: 10pt;
+middle: ;;height:30px;}
+.gdtjContainer .header th
+{
+font-size: 12pt;
+}
+.gdtjContainer .tb tr th.noleftborder
+{
+border-left: none;
+}
+.gdtjContainer .tb tr th.rightborder
+{
+border-right: 0.5pt solid #000;
+}
+</style>
+</head>
+<body>
+<div class="gdtjContainer">
+<table class="tb" cellspacing="0" cellpadding="0" border="0" width="1000px">
+	<tr>
+		<td>商家名称</td>
+		<td>地址</td>
+		<td>类别</td>
+		<td>链接</td>
+		<td>ID</td>
+		<td>电话</td>
+	</tr>
+	
+	<tr>
+		<td>英派斯华侨城店</td>
+		<td>北京市朝阳区金蝉北路</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_43.html</td>
+		<td>43</td>
+		<td>010-67388441 </td>
+	</tr>
+	
+	
+	<tr>
+		<td>卡莫瑜伽 世界城店</td>
+		<td>北京市朝阳区金汇路9号世界城商街D座3层</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_44.html</td>
+		<td>44</td>
+		<td>010-85907161</td>
+	</tr>
+	
+	
+	<tr>
+		<td>比如世界奇趣童年运动馆</td>
+		<td>北京市朝阳区京顺路111号比如世界购物中心2层</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_45.html</td>
+		<td>45</td>
+		<td>010-64304040，010-64304030</td>
+	</tr>
+	
+	
+	<tr>
+		<td>中美引力工作室</td>
+		<td>北京朝阳区东四环北路6号二区阳光上东安徒生花园27号楼一层119号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_46.html</td>
+		<td>46</td>
+		<td>010-51307001</td>
+	</tr>
+	
+	
+	<tr>
+		<td></td>
+		<td></td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_47.html</td>
+		<td>47</td>
+		<td></td>
+	</tr>
+	
+	
+	<tr>
+		<td>超级穿越车队俱乐部</td>
+		<td>北京市顺义区顺平南线 李遂镇电信局对面</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_48.html</td>
+		<td>48</td>
+		<td></td>
+	</tr>
+	
+	
+	<tr>
+		<td>李欣普拉提工作室</td>
+		<td>北京市海淀区西直门北大街天兆家园1号楼B座202</td>
+		<td>
+			
+				
+				个人
+			
+		</td>
+		<td>http://www.kiklink.com/shop_49.html</td>
+		<td>49</td>
+		<td>010-62268769</td>
+	</tr>
+	
+	
+	<tr>
+		<td>张岳鹏双人瑜伽（怡然工作室）</td>
+		<td>北京市西城区小金丝胡同2号</td>
+		<td>
+			
+				
+				个人
+			
+		</td>
+		<td>http://www.kiklink.com/shop_51.html</td>
+		<td>51</td>
+		<td>13241569164</td>
+	</tr>
+	
+	
+	<tr>
+		<td>必图拳馆</td>
+		<td>东三环南路54号劲松华腾园俱乐部B2楼（近富顿中心） </td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_52.html</td>
+		<td>52</td>
+		<td>010-57729590 </td>
+	</tr>
+	
+	
+	<tr>
+		<td>尚动空间工作室</td>
+		<td>朝阳区朝外SOHO，B座7206</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_53.html</td>
+		<td>53</td>
+		<td>010-57731387</td>
+	</tr>
+	
+	
+	<tr>
+		<td>戬射箭</td>
+		<td>北京市朝阳区工人体育场北路8号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_54.html</td>
+		<td>54</td>
+		<td>010-52902981</td>
+	</tr>
+	
+	
+	<tr>
+		<td>蜻蜓水上瑜伽会馆</td>
+		<td>北京市朝阳区青年路珠江罗马嘉园南门北行50米路西会所三层</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_55.html</td>
+		<td>55</td>
+		<td>010-53699080</td>
+	</tr>
+	
+	
+	<tr>
+		<td>王严健身房</td>
+		<td>北京市海淀区知春路17号院</td>
+		<td>
+			
+				
+				个人
+			
+		</td>
+		<td>http://www.kiklink.com/shop_56.html</td>
+		<td>56</td>
+		<td>82323756</td>
+	</tr>
+	
+	
+	<tr>
+		<td>凯旋击剑训练中心</td>
+		<td>北京海淀远大路1号金源燕莎E11电梯B2层</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_57.html</td>
+		<td>57</td>
+		<td>18910805242</td>
+	</tr>
+	
+	
+	<tr>
+		<td>隽体健身工作室</td>
+		<td>北京市朝阳区东三环中路建外SOHO西区11号楼三层1135</td>
+		<td>
+			
+				
+				个人
+			
+		</td>
+		<td>http://www.kiklink.com/shop_61.html</td>
+		<td>61</td>
+		<td>010-58691607</td>
+	</tr>
+	
+	
+	<tr>
+		<td>老千户外</td>
+		<td>北京市朝阳区十里堡</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_62.html</td>
+		<td>62</td>
+		<td>13810181985</td>
+	</tr>
+	
+	
+	<tr>
+		<td>青泉赢睿卡丁车</td>
+		<td>海淀区 田村北路0号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_64.html</td>
+		<td>64</td>
+		<td>010-88633008</td>
+	</tr>
+	
+	
+	<tr>
+		<td>必爱体健身俱乐部</td>
+		<td>北京市朝外乙大街朝外SOHO  0161A/C</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_65.html</td>
+		<td>65</td>
+		<td>(010)59004748</td>
+	</tr>
+	
+	
+	<tr>
+		<td>KMG以色列格斗</td>
+		<td>北京市朝阳区霄云路35号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_66.html</td>
+		<td>66</td>
+		<td>15010246131</td>
+	</tr>
+	
+	
+	<tr>
+		<td>梵厸经络瑜伽</td>
+		<td>北京市朝阳区东三环中路39号建外soho东区2号楼0102-C</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_67.html</td>
+		<td>67</td>
+		<td>010-59000410</td>
+	</tr>
+	
+	
+	<tr>
+		<td>海豚号潜水俱乐部</td>
+		<td>北京朝阳区建外SOHO西区16号楼B1-1590商铺</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_68.html</td>
+		<td>68</td>
+		<td>010-57187515</td>
+	</tr>
+	
+	
+	<tr>
+		<td>奥莱岩馆</td>
+		<td>朝阳区 东四环百子湾石门村5号（近大成国际）</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_69.html</td>
+		<td>69</td>
+		<td>010-67764705</td>
+	</tr>
+	
+	
+	<tr>
+		<td>点石攀岩</td>
+		<td>北京市朝阳区日坛北路6号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_70.html</td>
+		<td>70</td>
+		<td>010-85626352 </td>
+	</tr>
+	
+	
+	<tr>
+		<td>五轮馆-燕莎分馆</td>
+		<td>北京朝阳区燕莎桥东麦子店街39号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_71.html</td>
+		<td>71</td>
+		<td>400-007-0855</td>
+	</tr>
+	
+	
+	<tr>
+		<td>优胜美地</td>
+		<td>北京市朝阳区甜水西园17号万科公园五号官舍生活汇2楼(金台路地铁站B号出口200米)</td>
+		<td>
+			
+				
+				个人
+			
+		</td>
+		<td>http://www.kiklink.com/shop_72.html</td>
+		<td>72</td>
+		<td>010-65996750</td>
+	</tr>
+	
+	
+	<tr>
+		<td>功夫宝贝儿童早教金源店</td>
+		<td>北京市海淀区远大路1号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_73.html</td>
+		<td>73</td>
+		<td>010-88866003</td>
+	</tr>
+	
+	
+	<tr>
+		<td>功夫宝贝儿童早教龙旗店</td>
+		<td>北京市昌平区黄平路19号龙旗购物中心3层童兜天地</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_74.html</td>
+		<td>74</td>
+		<td>010-82989785</td>
+	</tr>
+	
+	
+	<tr>
+		<td>功夫宝贝儿童早教崇文店</td>
+		<td>北京东城区广渠门内大街新裕商务大厦90-1</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_75.html</td>
+		<td>75</td>
+		<td>010-67192919</td>
+	</tr>
+	
+	
+	<tr>
+		<td>功夫宝贝儿童早教蓝港店</td>
+		<td>朝阳区朝阳公园路6号蓝色港湾国际商区儿童城3楼</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_76.html</td>
+		<td>76</td>
+		<td>15313337636</td>
+	</tr>
+	
+	
+	<tr>
+		<td>功夫宝贝儿童早教燕郊店</td>
+		<td></td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_77.html</td>
+		<td>77</td>
+		<td></td>
+	</tr>
+	
+	
+	<tr>
+		<td>功夫宝贝儿童早教望京店</td>
+		<td>朝阳区阜通东大街6号院4号楼方恒购物中心2楼</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_78.html</td>
+		<td>78</td>
+		<td>010-84785960</td>
+	</tr>
+	
+	
+	<tr>
+		<td>功夫宝贝儿童早教大兴店</td>
+		<td>北京市大兴区西红门镇京良路10号乐家购物中心2 层</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_79.html</td>
+		<td>79</td>
+		<td>4000698819</td>
+	</tr>
+	
+	
+	<tr>
+		<td></td>
+		<td></td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_80.html</td>
+		<td>80</td>
+		<td></td>
+	</tr>
+	
+	
+	<tr>
+		<td>德曼▪爱莎东方舞瑜伽培训学校</td>
+		<td>北京市丰台区蒲黄榆物美大卖场5层</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_81.html</td>
+		<td>81</td>
+		<td>151010339798</td>
+	</tr>
+	
+	
+	<tr>
+		<td>北京欧艺博舞蹈学校</td>
+		<td>北京市东城区东中街东环广场B座B1</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_82.html</td>
+		<td>82</td>
+		<td>13911530904</td>
+	</tr>
+	
+	
+	<tr>
+		<td>炼津馆</td>
+		<td>北京市东城区天坛东路76号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_83.html</td>
+		<td>83</td>
+		<td>13693088461</td>
+	</tr>
+	
+	
+	<tr>
+		<td>上绎锋巢射箭馆</td>
+		<td>北京市朝阳区霄云路35号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_84.html</td>
+		<td>84</td>
+		<td>01064621051  01064672717 </td>
+	</tr>
+	
+	
+	<tr>
+		<td>百步穿杨射箭馆</td>
+		<td>北京市海淀区中关村南三街甲10号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_85.html</td>
+		<td>85</td>
+		<td>010-82622585 </td>
+	</tr>
+	
+	
+	<tr>
+		<td>罗兰钢管舞北京总部</td>
+		<td>北京市朝阳区长安街东沿线建国路88号SOHO现代城C座2005室</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_87.html</td>
+		<td>87</td>
+		<td>4006-123-689</td>
+	</tr>
+	
+	
+	<tr>
+		<td>靖熙尚道跆拳道方庄馆</td>
+		<td>北京市丰台区成寿寺路甲12号颐方园体育健康城A栋2楼</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_88.html</td>
+		<td>88</td>
+		<td>400-6682-876</td>
+	</tr>
+	
+	
+	<tr>
+		<td>东环保龄球馆</td>
+		<td>北京市东城区东中街9号东环广场A座写字楼地下一楼</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_89.html</td>
+		<td>89</td>
+		<td>010 64181808</td>
+	</tr>
+	
+	
+	<tr>
+		<td>悠季瑜伽东方广场店</td>
+		<td>北京市东城区王府井大街200号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_90.html</td>
+		<td>90</td>
+		<td>4000005698</td>
+	</tr>
+	
+	
+	<tr>
+		<td>红森综合武道馆</td>
+		<td>北京市海淀区蓝靛厂北路</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_91.html</td>
+		<td>91</td>
+		<td>010-53686088</td>
+	</tr>
+	
+	
+	<tr>
+		<td>Mr.Xu私人教练工作室</td>
+		<td>北京市东城区崇文门国瑞公寓C座807室</td>
+		<td>
+			
+				
+				个人
+			
+		</td>
+		<td>http://www.kiklink.com/shop_92.html</td>
+		<td>92</td>
+		<td>010-67093490</td>
+	</tr>
+	
+	
+	<tr>
+		<td>张建成咏春拳术馆</td>
+		<td>北京市朝阳区工人体育场北路8号三里屯SOHO B1-137室</td>
+		<td>
+			
+				
+				个人
+			
+		</td>
+		<td>http://www.kiklink.com/shop_93.html</td>
+		<td>93</td>
+		<td></td>
+	</tr>
+	
+	
+	<tr>
+		<td>北京欧艺博舞蹈学校</td>
+		<td>北京市东城区东中街东环广场B座B1</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_94.html</td>
+		<td>94</td>
+		<td>010-64168715</td>
+	</tr>
+	
+	
+	<tr>
+		<td>爱上水 索道滑水</td>
+		<td>顺义区 北小营镇白马路奥林匹克水上公园内(近潮白河) </td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_95.html</td>
+		<td>95</td>
+		<td>010-69402662</td>
+	</tr>
+	
+	
+	<tr>
+		<td>悠季瑜伽日坛公园会馆,</td>
+		<td>北京市朝阳区神路街39号院-3号-91</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_96.html</td>
+		<td>96</td>
+		<td>4000005698</td>
+	</tr>
+	
+	
+	<tr>
+		<td>悠季瑜伽望京会所</td>
+		<td>北京市朝阳区望花路甲1号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_97.html</td>
+		<td>97</td>
+		<td>4000005698 </td>
+	</tr>
+	
+	
+	<tr>
+		<td>悠季瑜伽朝阳公园会所</td>
+		<td>北京市朝阳区朝阳公园南路21号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_98.html</td>
+		<td>98</td>
+		<td>4000005698 </td>
+	</tr>
+	
+	
+	<tr>
+		<td>五轮馆-中关村分馆</td>
+		<td>北京市海淀区海淀大街30号</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_99.html</td>
+		<td>99</td>
+		<td>400-007-0855	</td>
+	</tr>
+	
+	
+	<tr>
+		<td>五轮馆-劲松店</td>
+		<td>朝阳区 东三环南路54号劲松华腾园俱乐部B2楼(近富顿中心)</td>
+		<td>
+			
+				机构
+				
+			
+		</td>
+		<td>http://www.kiklink.com/shop_100.html</td>
+		<td>100</td>
+		<td>400-007-0855</td>
+	</tr>
+	
+	
+</table>
+</div>
+</body>
+</html>

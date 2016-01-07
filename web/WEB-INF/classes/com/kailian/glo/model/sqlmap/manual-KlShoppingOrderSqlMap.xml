@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<!-- 存放手写的sql -->
+<sqlMap>
+<update id="KlShoppingOrder.updateCarProduct" >
+    <![CDATA[
+        UPDATE kl_shopping_shoppingcartproduct SET 
+	        status = #status# ,
+        WHERE 
+	        orderid in (select id from kl_shopping_order where id = #orderid#)
+    ]]>
+    </update>
+	<select id="queryBySql" resultClass="com.kailian.glo.model.KlShoppingOrder" remapResults="true" parameterClass="java.util.HashMap"> 
+		<isNotEmpty property="sql">$sql$</isNotEmpty> 
+	</select>
+</sqlMap>

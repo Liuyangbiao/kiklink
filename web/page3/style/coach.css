@@ -1,0 +1,83 @@
+.coachSide{padding:0 10px;}
+.coachSide h1{background:url(../image/lline5.gif) left bottom repeat-x; padding:15px 0;}
+.coachSide li{padding:0 0 0 70px; height:114px; overflow:hidden; border-bottom:#d8d8d8 solid 1px; position:relative;}
+.coachSide .imgDiv{position:absolute; left:0px; top:17px; overflow:hidden; width:61px; text-align:center; overflow:hidden;}
+.coachSide .imgDiv div{padding-top:7px;}
+.coachSide .content{line-height:22px; color:#232323; padding-top:15px;}
+.coachSide .content i{color:#d50111;}
+.coachSide .btn{padding:15px 0;}
+.coachSide .btn a{color:#fff; display:block; height:27px; line-height:27px; overflow:hidden; text-align:center; background:url(../image/lcBtn9.png) center top no-repeat; font-size:14px;}
+
+.coachFlash{height:310px; position:relative;}
+.coachFlash .fl{width:632px; height:294px; overflow:hidden; position:relative;}
+.coachFlash .fl li{position:absolute; left:0px; top:0px; z-index:1; width:632px; height:294px; display:none;}
+.coachFlash .fl .name{position:absolute; left:0px; bottom:0px; height:26px; line-height:26px; width:100%; overflow:hidden; background:url(../image/lcBg1.png) left top repeat;}
+.coachFlash .fl .name a{color:#fff; padding-left:15px;}
+/**/
+.coachFlash .fr{width:149px; position:relative; top:-6px; right:-6px;}
+.coachFlash .fr li{height:77px; text-align:center;}
+.coachFlash .fr li div{padding:6px 0; height:64px;}
+.coachFlash .fr a{display:block; width:137px; height:64px; overflow:hidden; background:#000; margin:0 auto;}
+.coachFlash .fr .liNow div{background:url(../image/bg4.gif) top repeat-x;}
+
+.coach{padding:0 20px;}
+.coach h1{padding:15px 0 10px 0;}
+.coach h1 a{font-size:12px; padding-left:20px;}
+.coach .fl li{width:241px; height:208px; overflow:hidden; text-align:center;}
+.coach .list1 li{height:252px;}
+.coach .fl .name{padding-top:10px;}
+.coach .fr{width:470px; overflow:hidden; padding-bottom:15px; position:relative; top:-5px;}
+.coach .fr li{height:32px; line-height:31px; overflow:hidden; background:url(../image/lline7.gif) left bottom repeat-x; position:relative;}
+.coach .fr li a{background:url(../image/lico10.gif) 5px center no-repeat; padding-left:15px;}
+.coach .fr li span{position:absolute; right:10px; top:0px; color:#a9a9a9;}
+
+.coachTitle{height:36px; overflow:hidden; background:#efefef; border:#dbdbdb solid 1px; border-bottom:0px; position:relative;}
+.coachTitle h1{padding-left:20px; line-height:36px; color:#000;}
+.coachTitle .pageNow{position:absolute; right:10px; top:5px; z-index:100;}
+
+.coachShow .link{padding:25px 20px 0 20px; text-align:right; height:35px; overflow:hidden;}
+.coachShow .link a{padding:0 2px;}
+.coachShow .title{text-align:center; font-size:26px; color:#000;}
+.coachShow .time{padding:10px 0 30px 0; text-align:center;}
+.coachShow .imgDiv{text-align:center;}
+.coachShow .content{padding:20px 0 15px 0; line-height:28px; border-bottom:#eaeaea solid 1px; margin:0 25px 25px 25px; text-align:justify;}
+.coachShow .btnDiv{padding:0 25px; height:70px; overflow:hidden;}
+.coachShow .btn{padding-top:22px; height:75px; overflow:hidden; background:#f5f4f4; border-top:#dbdbdb solid 1px; border-bottom:#dbdbdb solid 1px; position:relative; top:-26px; text-align:center;}
+
+.activeLayer{width:820px; height:385px; position:absolute; z-index:100; background:#FFF;}
+.activeLayer .ico{position:absolute; left:100px; top:-15px;}
+.activeLayer h1{font-size:20px; border-bottom:#e5e5e5 solid 1px; padding:50px 0 10px 120px; margin:0 50px;}
+.activeLayer .close{position:absolute; top:10px; right:10px; display:block; width:23px; height:22px; overflow:hidden; background:url(../image/nimg23.gif) left top no-repeat;}
+/**/
+.activeLayer .form{padding:28px 0 20px 0; border-bottom:#e5e5e5 solid 1px; margin:0 50px;}
+.activeLayer li{padding-left:245px; height:34px; line-height:26px; overflow:hidden; position:relative;}
+.activeLayer li em{position:absolute; left:0px; top:0px; display:block; width:232px; text-align:right; font-size:14px;}
+.activeLayer li a{color:#2472c9;}
+.activeLayer li span{font-size:14px; float:left; padding-right:10px;}
+.activeLayer .input1{width:356px; padding:0 5px; height:24px; line-height:24px; border:#d0d0d0 solid 1px; float:left;}
+.activeLayer .input2{width:200px;}
+.activeLayer .input3{width:80px;}
+.activeLayer .lzm, .activeLayer .tips{float:left; padding-left:10px;}
+.activeLayer .btn1{width:92px; height:26px; color:#fff; background:url(../image/lsBtn5.png) left top no-repeat; font-size:14px; cursor:pointer; float:left; margin-right:10px;}
+.activeLayer .btn2{background:url(../image/lsBtn6.png) left top no-repeat;}
+.activeLayer .link{padding-top:20px; text-align:center; height:35px; line-height:20px; overflow:hidden;}
+.activeLayer .link .a1{display:inline-block; background:url(../image/nimg22_1.png) center top no-repeat; width:30px; height:20px; position:relative; top:5px;}
+.activeLayer .link .a1:hover{background:url(../image/nimg22_1_1.png) center top no-repeat;}
+.activeLayer .link .a2{display:inline-block; background:url(../image/nimg22_2.png) center top no-repeat; width:30px; height:20px; position:relative; top:5px;}
+.activeLayer .link .a2:hover{background:url(../image/nimg22_2_1.png) center top no-repeat;}
+
+.activeLayer1{width:820px; height:200px; background:#fff; position:absolute; z-index:100; font-size:14px; display:none;}
+.activeLayer1 .close{position:absolute; top:10px; right:10px; display:block; width:23px; height:22px; overflow:hidden; background:url(../image/nimg23.gif) left top no-repeat;}
+.activeLayer1 .msg1{font-size:20px; text-align:center; padding-top:70px;}
+
+
+
+
+
+
+
+
+
+
+
+

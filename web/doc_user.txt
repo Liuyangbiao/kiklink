@@ -1,0 +1,19 @@
+个人资料说明
+
+id = "id";
+username = "用户名";
+passwd = "密码";
+third_type = "登陆类型";
+mobile = "手机号";
+email = "email";
+provinceid = "省份id";
+province = "省份";
+cityid = "城市id";
+city = "城市";
+quid = "区县id";
+qu = "区县";
+birth_year = "出生年";
+birth_month = "出生月";
+birth_date = "出生日";
+
+sex = "性别 1 男 2 女 0 未知";

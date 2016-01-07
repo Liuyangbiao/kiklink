@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsUserEmail" class="com.kailian.glo.model.CmsUserEmail">
+        <result property="id" column="id"/>
+        <result property="sourceType" column="sourceType"/>
+        <result property="fromUserId" column="fromUserId"/>
+        <result property="toUserId" column="toUserId"/>
+        <result property="fromUserName" column="fromUserName"/>
+        <result property="toUserName" column="toUserName"/>
+        <result property="fromUserPhoto" column="fromUserPhoto"/>
+        <result property="toUserPhoto" column="toUserPhoto"/>
+        <result property="content" column="content"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsUserEmail.columns">
+	    <![CDATA[
+        id ,sourceType ,fromUserId ,toUserId ,fromUserName ,toUserName ,fromUserPhoto ,toUserPhoto ,content ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsUserEmail.insert" >
+    <![CDATA[
+        INSERT INTO cms_user_email (
+	        id  ,
+	        sourceType  ,
+	        fromUserId  ,
+	        toUserId  ,
+	        fromUserName  ,
+	        toUserName  ,
+	        fromUserPhoto  ,
+	        toUserPhoto  ,
+	        content  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#sourceType# ,
+        	#fromUserId# ,
+        	#toUserId# ,
+        	#fromUserName# ,
+        	#toUserName# ,
+        	#fromUserPhoto# ,
+        	#toUserPhoto# ,
+        	#content# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsUserEmail.update" >
+    <![CDATA[
+        UPDATE cms_user_email SET
+	        sourceType = #sourceType# ,
+	        fromUserId = #fromUserId# ,
+	        toUserId = #toUserId# ,
+	        fromUserName = #fromUserName# ,
+	        toUserName = #toUserName# ,
+	        fromUserPhoto = #fromUserPhoto# ,
+	        toUserPhoto = #toUserPhoto# ,
+	        content = #content# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsUserEmail.delete">
+    <![CDATA[
+        DELETE FROM cms_user_email WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsUserEmail.getById" resultMap="RM.CmsUserEmail">
+	    SELECT <include refid="CmsUserEmail.columns"/>
+	    <![CDATA[
+	        FROM cms_user_email 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsUserEmail.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="sourceType">
+		             sourceType = #sourceType#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="fromUserId">
+		             fromUserId = #fromUserId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="toUserId">
+		             toUserId = #toUserId#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="fromUserName">
+		             fromUserName = #fromUserName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="toUserName">
+		             toUserName = #toUserName#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="fromUserPhoto">
+		             fromUserPhoto = #fromUserPhoto#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="toUserPhoto">
+		             toUserPhoto = #toUserPhoto#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="content">
+		             content = #content#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsUserEmail.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_user_email <include refid="CmsUserEmail.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsUserEmail.findPage" resultMap="RM.CmsUserEmail">
+    	SELECT <include refid="CmsUserEmail.columns"/> FROM cms_user_email 
+		<include refid="CmsUserEmail.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsUserEmail.findTop" resultMap="RM.CmsUserEmail">
+    	SELECT <include refid="CmsUserEmail.columns"/> FROM cms_user_email  
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+</sqlMap>
+

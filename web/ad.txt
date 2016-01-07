@@ -1,0 +1,1 @@
+{"total":2,"rows":[{"id":1,"modifytimelong":1359984326328,"theurl":"http://www.china.com","status":0,"adimage":"20130204212524_844.png","adtype":1,"modifyuser":1,"createtimelong":1359550906754},{"id":2,"modifytimelong":1359986008562,"status":222,"adimage":"20130204215313_717.png","adtype":2,"modifyuser":1,"addition":"1","createtimelong":1359985975722}]}

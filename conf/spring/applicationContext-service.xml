@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"    default-autowire="byName" default-lazy-init="true">
+
+	<!-- component-scan自动搜索@Component , @Controller , @Service , @Repository等标注的类 -->
+	<!-- 默认值如果适合，该项可以不用修改 -->
+	<context:component-scan base-package="com.**.service" />
+
+	<aop:config>  
+        <aop:aspect id="CmsAspect" ref="aspectBean">  
+            <!--配置com.spring.service包下所有类或接口的所有方法-->  
+            <aop:pointcut id="businessService"  
+                expression="execution(* com.kailian.glo.service.impl.Cms*TableManagerImpl.* (..))" /> 
+                <!-- 
+            <aop:before pointcut-ref="businessService" method="doBefore"/>  
+            -->
+            <aop:after pointcut-ref="businessService" method="doAfter"/>  
+            <!--
+            <aop:around pointcut-ref="businessService" method="doAround"/>  
+            <aop:after-throwing pointcut-ref="businessService" method="doThrowing" throwing="ex"/>  
+            -->
+            
+            <aop:pointcut id="configService"  
+                expression="execution(* com.kailian.glo.service.impl.CmsConfigManagerImpl.* (..))" /> 
+                <!-- 
+            <aop:before pointcut-ref="businessService" method="doBefore"/>  
+            -->
+            <aop:after pointcut-ref="configService" method="doAfter"/>  
+            
+            
+             <aop:pointcut id="templateService"  
+                expression="execution(* com.kailian.glo.service.impl.CmsTemplateManagerImpl.* (..))" /> 
+                <!-- 
+            <aop:before pointcut-ref="businessService" method="doBefore"/>  
+            -->
+            <aop:after pointcut-ref="templateService" method="doAfter"/>  
+            
+            
+             <aop:pointcut id="adminGroupService"  
+                expression="execution(* com.kailian.glo.service.impl.CmsAdminGroupManagerImpl.* (..))" /> 
+                <!-- 
+            <aop:before pointcut-ref="businessService" method="doBefore"/>  
+            -->
+            <aop:after pointcut-ref="adminGroupService" method="doAfter"/>  
+            
+            <aop:pointcut id="adminuserService"  
+                expression="execution(* com.kailian.glo.service.impl.CmsAdminuserManagerImpl.* (..))" /> 
+                <!-- 
+            <aop:before pointcut-ref="businessService" method="doBefore"/>  
+            -->
+            <aop:before pointcut-ref="adminuserService" method="deBefore"/>  
+            <aop:after pointcut-ref="adminuserService" method="doAfter"/>  
+            
+            <aop:pointcut id="klService"  
+                expression="execution(* com.kailian.glo.service.impl.Kl*ManagerImpl.* (..))" /> 
+            <aop:before pointcut-ref="klService" method="deBefore"/>  
+            <aop:after pointcut-ref="klService" method="doAfter"/>  
+            
+        </aop:aspect>  
+    </aop:config>  
+      
+
+      
+    <bean id="aspectBean" class="com.yebucuo.spring.aop.CmsAspect" />  
+
+
+
+</beans>

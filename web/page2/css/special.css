@@ -1,0 +1,409 @@
+.special .main {
+  position: relative;
+  background: url(../images/main_bg_36x36.jpg) repeat left top;
+  z-index: 1;
+  overflow-y: hidden;
+}
+.special .main .bg {
+  position: absolute;
+  height: 3000px;
+  width: 100%;
+  background: url(../images/bg_01_1920x1000.png) no-repeat center top;
+}
+.special .main .bg.bg-01 {
+  top: 0;
+  background-image: url(../images/bg_01_1920x3000.png);
+}
+.special .main .bg.bg-04 {
+  top: 500px;
+  height: 100%;
+  background: url(../images/bg_04_1920x2710.png) repeat-y center top;
+}
+.special .main .bg-banner {
+  background: url(../images/banner_bg_01_1920x718.jpg) no-repeat center top;
+  height: 500px;
+  position: absolute;
+  width: 100%;
+}
+.special .main .banner-holder {
+  position: relative;
+  text-align: center;
+  height: 500px;
+}
+.special .main .products-wrap {
+  position: relative;
+  border-top: 4px solid #df0505;
+  background: url(../images/products_wrap_bg_1920x107.png) no-repeat center 24px;
+  *background-position: center 28px;
+  z-index: 101;
+  margin-bottom: 40px;
+}
+.special .main .products-wrap .container h3 {
+  margin: 0;
+  text-align: center;
+}
+.special .main .products-wrap .container .row {
+  margin: 0 -10px;
+}
+.special .main .products-wrap .container .col {
+  position: relative;
+  float: left;
+  width: 27.775%;
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.special .main .products-wrap .container .col.col-offset {
+  margin-left: 8.33333333%;
+}
+.special .main .products-wrap .container .col .product {
+  position: relatvie;
+  background-color: #fff;
+  margin: 20px 10px 0;
+}
+.special .main .products-wrap .container .col .product .sale-tag {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+.special .main .products-wrap .container .col .product .info {
+  padding: 0px 20px 10px;
+}
+.special .main .products-wrap .container .col .product .info p {
+  margin: 5px 0;
+}
+.special .main .products-wrap .container .col .product .info p .name {
+  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.special .main .products-wrap .container .col .product .info p strong.price {
+  font-size: 38px;
+  font-weight: bold;
+  color: #fe0000;
+  margin-left: 10px;
+}
+.special .main .products-wrap .container .col .product .info p small.unit,
+.special .main .products-wrap .container .col .product .info p small.description {
+  font-size: 12px;
+  color: #666;
+}
+.special .main .products-wrap .container .col .product .info p b.name-extr {
+  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.special .main .products-wrap .container .col .product .info .btn {
+  color: #ffffff;
+  background-color: #df0505;
+  border-color: #df0505;
+  padding: 10px 30px;
+  font-size: 18px;
+  line-height: 18px;
+  border-radius: 0px;
+  text-decoration: none;
+  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+.special .main .products-wrap .container .col .product .info .btn:hover,
+.special .main .products-wrap .container .col .product .info .btn:focus,
+.special .main .products-wrap .container .col .product .info .btn:active,
+.special .main .products-wrap .container .col .product .info .btn.active,
+.open > .dropdown-toggle.special .main .products-wrap .container .col .product .info .btn {
+  color: #ffffff;
+  background-color: #ad0404;
+  border-color: #a30404;
+}
+.special .main .products-wrap .container .col .product .info .btn:active,
+.special .main .products-wrap .container .col .product .info .btn.active,
+.open > .dropdown-toggle.special .main .products-wrap .container .col .product .info .btn {
+  background-image: none;
+}
+.special .main .products-wrap .container .col .product .info .btn.disabled,
+.special .main .products-wrap .container .col .product .info .btn[disabled],
+fieldset[disabled] .special .main .products-wrap .container .col .product .info .btn,
+.special .main .products-wrap .container .col .product .info .btn.disabled:hover,
+.special .main .products-wrap .container .col .product .info .btn[disabled]:hover,
+fieldset[disabled] .special .main .products-wrap .container .col .product .info .btn:hover,
+.special .main .products-wrap .container .col .product .info .btn.disabled:focus,
+.special .main .products-wrap .container .col .product .info .btn[disabled]:focus,
+fieldset[disabled] .special .main .products-wrap .container .col .product .info .btn:focus,
+.special .main .products-wrap .container .col .product .info .btn.disabled:active,
+.special .main .products-wrap .container .col .product .info .btn[disabled]:active,
+fieldset[disabled] .special .main .products-wrap .container .col .product .info .btn:active,
+.special .main .products-wrap .container .col .product .info .btn.disabled.active,
+.special .main .products-wrap .container .col .product .info .btn[disabled].active,
+fieldset[disabled] .special .main .products-wrap .container .col .product .info .btn.active {
+  background-color: #df0505;
+  border-color: #df0505;
+}
+.special .main .products-wrap .container .col .product .info .btn .badge {
+  color: #df0505;
+  background-color: #ffffff;
+}
+.special .main .products-wrap .container .col .product .info .btn.btn-buy {
+  margin-top: 15px;
+}
+.special .other {
+  border-top: 4px solid #000;
+  background: url(../images/other_bg_36x36.jpg) left center;
+}
+.special .other .editor-words {
+  margin-top: 30px;
+}
+.special .other .editor-words .book {
+  position: relatvie;
+  background: url(../images/book_bg_747x612.png) no-repeat center top;
+  background-size: 100% 100%;
+  width: 672px;
+  margin: 0 auto;
+  z-index: 300;
+  position: relative;
+  padding: 10px 42px 30px;
+  width: 665px\9;
+  *width: 665px;
+}
+.special .other .editor-words .book .scroll {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0;
+  width: 100%;
+  background: url(../images/scroll_bg_747x7.png) no-repeat center top;
+  height: 8px;
+}
+.special .other .editor-words .book .paper {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  padding: 10px 50px 30px;
+  font-size: 12px;
+  line-height: 25px;
+  margin-top: -5px;
+  box-shadow: inset 0 3px 6px -1px rgba(0, 0, 0, 0.4);
+}
+.special .other .editor-words .book .paper h1 {
+  color: #3381dd;
+  font-size: 20px;
+  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.special .other .editor-words .book .paper h1 strong {
+  display: inline-block;
+  padding: 0 10px;
+  padding-bottom: 10px;
+  background: url(../images/line_01_107x7.png) repeat-x left bottom;
+}
+.special .other .editor-words .book .paper-bottom {
+  width: 100%;
+  height: 3px;
+  margin-bottom: -3px;
+  background: url(../images/paper_bottom.png) repeat-x 0 center;
+}
+.special .other .recommend-lessons {
+  margin-top: 20px;
+  padding-bottom: 50px;
+}
+.special .other .recommend-lessons h3 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.special .other .recommend-lessons .container {
+  width: 900px;
+}
+.special .other .recommend-lessons .container .lesson {
+  margin: 0 10px;
+}
+.special .other .recommend-lessons .container .lesson a {
+  position: relative;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.special .other .recommend-lessons .container .lesson a img {
+  display: block;
+  width: 100%;
+}
+.special .other .recommend-lessons .container .lesson a .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #470505;
+  opacity: 0.68;
+  filter: alpha(opacity=68);
+  /*IE7 fix*/
+  display: none;
+}
+.special .other .recommend-lessons .container .lesson a .lesson-detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.special .other .recommend-lessons .container .lesson a .lesson-detail .lesson-detail-wrap {
+  margin: 20px;
+  padding: 15px;
+  border: 1px dashed #959595;
+  height: 130px;
+  overflow: hidden;
+}
+.special .other .recommend-lessons .container .lesson a .lesson-detail span.price {
+  color: #ffe931;
+  font-size: 28px;
+  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+  font-weight: bold;
+}
+.special .other .recommend-lessons .container .lesson a .lesson-detail span.unit {
+  font-size: 14px;
+  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+  font-weight: bold;
+}
+.special .other .recommend-lessons .container .lesson a .lesson-detail span.name {
+  font-size: 18px;
+  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+  display: block;
+  font-weight: bold;
+}
+.special .other .recommend-lessons .container .lesson a .lesson-detail span.description {
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, SimSun, "宋体", "Microsoft YaHei", "微软雅黑", sans-serif;
+  display: block;
+}
+.special .other .recommend-lessons .container .lesson a:hover .mask,
+.special .other .recommend-lessons .container .lesson a:hover .lesson-detail {
+  display: block;
+}
+.special .other .recommend-lessons .container .owl-wrapper-outer {
+  z-index: 2;
+}
+.special .other .recommend-lessons .container .owl-controls {
+  z-index: 1;
+  position: absolute;
+  margin-top: -21px;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+}
+.special .other .recommend-lessons .container .owl-controls .owl-prev,
+.special .other .recommend-lessons .container .owl-controls .owl-next {
+  width: 27px;
+  height: 42px;
+  padding: 0px;
+  border-radius: 0px;
+  position: absolute;
+}
+.special .other .recommend-lessons .container .owl-controls .owl-prev {
+  left: -40px;
+  background: url(../images/sprite.png) no-repeat -72px -276px;
+}
+.special .other .recommend-lessons .container .owl-controls .owl-prev:hover {
+  background-position: -72px -234px;
+}
+.special .other .recommend-lessons .container .owl-controls .owl-next {
+  right: -40px;
+  background: url(../images/sprite.png) no-repeat -101px -276px;
+}
+.special .other .recommend-lessons .container .owl-controls .owl-next:hover {
+  background-position: -101px -234px;
+}
+.special.special-2 .main {
+  position: relative;
+  
+}
+.special.special-2 .banner {
+  position: relative;
+  text-align: center;
+  overflow-x: hidden;
+  height: 498px;
+}
+.special.special-2 .banner img {
+  position: absolute;
+  left: 50%;
+  margin-left: -960px;
+}
+.special.special-2 .container.shops {
+  width: 1000px;
+}
+.special.special-2 .container.shops h1 {
+  margin-top: 40px;
+  font-size: 24px;
+  font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
+.special.special-2 .container.shops h2 {
+  text-align: center;
+}
+.special.special-2 .container.shops h2 img {
+  display: block;
+  margin: 0 auto;
+}
+.special.special-2 .container.shops h3 {
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+.special.special-2 .container.shops p {
+  font-size: 12px;
+  line-height: 20px;
+  margin: 5px 0;
+}
+.special.special-2 .container.shops ul {
+  margin: 0px 50px 20px;
+}
+.special.special-2 .container.shops ul li {
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.special.special-2 .container.shops ul li:before,
+.special.special-2 .container.shops ul li:after {
+  content: " ";
+  display: table;
+}
+.special.special-2 .container.shops ul li:after {
+  clear: both;
+}
+.special.special-2 .container.shops ul li dl {
+  margin: 0;
+  padding: 0;
+}
+.special.special-2 .container.shops ul li dl dt {
+  margin: 0;
+  float: left;
+  width: 320px;
+}
+.special.special-2 .container.shops ul li dl dt img {
+  display: block;
+}
+.special.special-2 .container.shops ul li dl dd {
+  position: relative;
+  margin: 0;
+  float: left;
+  width: 520px;
+  padding: 30px;
+}
+.special.special-2 .container.shops ul li dl dd p {
+  color: #303030;
+  font-size: 12px;
+  line-height: 20px;
+}
+.special.special-2 .container.shops ul li dl dd .icon-starting {
+  width: 80px;
+  height: 45px;
+  background: url(../images/sprite.png) no-repeat 0px -320px;
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  bottom: 0px;
+}

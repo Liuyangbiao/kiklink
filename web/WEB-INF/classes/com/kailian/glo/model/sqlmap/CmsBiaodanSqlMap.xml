@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+<!-- 不使用namespace是由于sql搜索定位会比较方便 -->
+<sqlMap>
+
+    <resultMap id="RM.CmsBiaodan" class="com.kailian.glo.model.CmsBiaodan">
+        <result property="id" column="id"/>
+        <result property="listname" column="listname"/>
+        <result property="listkey" column="listkey"/>
+        <result property="loadonstartup" column="loadonstartup"/>
+        <result property="declaration" column="declaration"/>
+        <result property="parentid" column="parentid"/>
+        <result property="type" column="type"/>
+        <result property="status" column="status"/>
+        <result property="addition" column="addition"/>
+        <result property="createtimelong" column="createtimelong"/>
+        <result property="modifytimelong" column="modifytimelong"/>
+        <result property="createuser" column="createuser"/>
+        <result property="modifyuser" column="modifyuser"/>
+    </resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="CmsBiaodan.columns">
+	    <![CDATA[
+        id ,listname ,listkey ,loadonstartup ,declaration ,parentid ,type ,status ,addition ,createtimelong ,modifytimelong ,createuser ,modifyuser 
+	    ]]>
+	</sql>
+	
+    <insert id="CmsBiaodan.insert" >
+    <![CDATA[
+        INSERT INTO cms_biaodan (
+	        id  ,
+	        listname  ,
+	        listkey  ,
+	        loadonstartup  ,
+	        declaration  ,
+	        parentid  ,
+	        type  ,
+	        status  ,
+	        addition  ,
+	        createtimelong  ,
+	        modifytimelong  ,
+	        createuser  ,
+	        modifyuser  
+        ) VALUES (
+        	#id# ,
+        	#listname# ,
+        	#listkey# ,
+        	#loadonstartup# ,
+        	#declaration# ,
+        	#parentid# ,
+        	#type# ,
+        	#status# ,
+        	#addition# ,
+        	#createtimelong# ,
+        	#modifytimelong# ,
+        	#createuser# ,
+        	#modifyuser# 
+        )
+    ]]>
+    <!--
+    mysql:		type="post" SELECT  select last_insert_id()
+    sqlserver:	type="post" SELECT  @@identity  AS  ID
+    sybase:		type="post" SELECT  @@identity  AS  ID
+    oracle:		type="pre" 	SELECT  sequenceName.nextval AS ID FROM DUAL
+    DB2:		type="pre"	values nextval for sequenceName
+    -->
+        <selectKey resultClass="long" keyProperty="id"> 
+ 			SELECT LAST_INSERT_ID() 
+		</selectKey>
+    </insert>
+
+    <update id="CmsBiaodan.update" >
+    <![CDATA[
+        UPDATE cms_biaodan SET
+	        listname = #listname# ,
+	        listkey = #listkey# ,
+	        loadonstartup = #loadonstartup# ,
+	        declaration = #declaration# ,
+	        parentid = #parentid# ,
+	        type = #type# ,
+	        status = #status# ,
+	        addition = #addition# ,
+	        createtimelong = #createtimelong# ,
+	        modifytimelong = #modifytimelong# ,
+	        createuser = #createuser# ,
+	        modifyuser = #modifyuser# 
+        WHERE 
+	        id = #id# 
+    ]]>
+    </update>
+
+    <delete id="CmsBiaodan.delete">
+    <![CDATA[
+        DELETE FROM cms_biaodan WHERE
+        id = #id# 
+    ]]>
+    </delete>
+    
+    <select id="CmsBiaodan.getById" resultMap="RM.CmsBiaodan">
+	    SELECT <include refid="CmsBiaodan.columns"/>
+	    <![CDATA[
+	        FROM cms_biaodan 
+	        WHERE 
+		        id = #id# 
+	    ]]>
+    </select>
+
+	<sql id="CmsBiaodan.findPage.where">
+	    <dynamic prepend="WHERE">
+		       <isNotEmpty prepend="AND" property="id">
+		             id = #id#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="listname">
+		             listname = #listname#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="listkey">
+		             listkey = #listkey#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="loadonstartup">
+		             loadonstartup = #loadonstartup#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="declaration">
+		             declaration = #declaration#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="parentid">
+		             parentid = #parentid#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="type">
+		             type = #type#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="status">
+		             status = #status#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="addition">
+		             addition = #addition#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createtimelong">
+		             createtimelong = #createtimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifytimelong">
+		             modifytimelong = #modifytimelong#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="createuser">
+		             createuser = #createuser#
+		       </isNotEmpty>
+		       <isNotEmpty prepend="AND" property="modifyuser">
+		             modifyuser = #modifyuser#
+		       </isNotEmpty>
+	    </dynamic>	
+	</sql>
+	 
+    <select id="CmsBiaodan.findPage.count" resultClass="long">
+        SELECT count(*) FROM cms_biaodan <include refid="CmsBiaodan.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 #offset#,#pageSize#,#lastRows# 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="CmsBiaodan.findPage" resultMap="RM.CmsBiaodan">
+    	SELECT <include refid="CmsBiaodan.columns"/> FROM cms_biaodan 
+		<include refid="CmsBiaodan.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">$sortColumns$</isNotEmpty>
+		</dynamic>
+    </select>
+
+	
+	<select id="CmsBiaodan.findTop" resultMap="RM.CmsBiaodan">
+    	SELECT <include refid="CmsBiaodan.columns"/> FROM cms_biaodan  
+    	<include refid="CmsBiaodan.findPage.where"/>
+		<dynamic prepend="ORDER BY">
+			<isNotEmpty property="sortColumns">#sortColumns#</isNotEmpty>
+		</dynamic>
+		
+		<dynamic prepend="limit 0,">
+			<isNotEmpty property="maxCount">#maxCount#</isNotEmpty>
+		</dynamic>
+
+    </select>
+
+	
+</sqlMap>
+

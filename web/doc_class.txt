@@ -1,0 +1,23 @@
+购买的课程说明
+
+	orderid = "订单id";
+	shopid = "店铺id";
+	productid = "商品id";
+	product_name = "商品名";
+	shop_name = "店铺名";
+	city = "城市";
+	class_type = "课程类型";
+	status = "状态";    20 已付费  10 待付费
+	addition = "产品说明、拒绝原因";
+	ext1 = "用户名";
+	ext2 = "授课地点";
+	ext3 = "联系方式";
+	ext4 = "商家提现的支付id";
+	ext5 = "产品照片";
+	ext_int1 = "预约时间开始";
+	ext_int2 = "预约时间结束";
+	ext_int3 = "预约日期";
+	ext_int4 = "预约状态";   -30 无需预约  0 待确认  -10 预约被拒  -1 未预约   1 预约已确认   2/3  已授课   -2  已取消预约   
+	ext_int5 = "预约码";
+	userid = "用户id";
+	hashtrainsummary = "是否有训练记录";
